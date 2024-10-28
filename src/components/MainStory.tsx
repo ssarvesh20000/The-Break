@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MainStory() {
+const MainStory: React.FC = () => {
   return (
     <section className="main-story">
       <h2>Main Story Title</h2>

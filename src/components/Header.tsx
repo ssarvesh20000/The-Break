@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header() {
+const Header: React.FC = () => {
+  const article = ['what', 'yeah', 'no', 'you']
+  for (let i = 0; i < article.length; i++){
+    
+  }
+
   return (
     <header>
       <h1>The Break</h1>

@@ -1,11 +1,15 @@
 import React from 'react';
 
-function ArticleList() {
+interface ArticleListProps {
+  title: string;
+}
+
+const ArticleList: React.FC<ArticleListProps> = ({ title }) => {
   return (
     <section className="article-list">
       <h3>Other Articles</h3>
       <ul>
-        <li>Article 1</li>
+        <li>{title}</li>
         <li>Article 2</li>
         <li>Article 3</li>
       </ul>
@@ -14,3 +18,4 @@ function ArticleList() {
 }
 
 export default ArticleList;
+
