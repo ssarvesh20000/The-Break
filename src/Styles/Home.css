@@ -1,0 +1,103 @@
+.home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main-content {
+    width: 65%;
+}
+
+.main-article {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.main-title {
+    font-size: 1.8rem;
+    margin: 15px 0;
+}
+
+.main-description {
+    font-size: 1rem;
+    color: #555;
+}
+
+.main-author {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.secondary-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-image {
+    width: 40%;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.article h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.article-author {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.sidebar {
+    width: 30%;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.sidebar-article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidebar-image {
+    width: 40%;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.sidebar-article h4 {
+    font-size: 1rem;
+    color: #333;
+}
+
+.sidebar-author {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.read-more {
+    text-align: center;
+    font-size: 1.1rem;
+    color: gray;
+    margin-top: 20px;
+    font-style: italic;
+}

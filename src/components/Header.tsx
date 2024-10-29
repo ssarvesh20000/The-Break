@@ -1,24 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import '../Styles/Header.css';
 
 const Header: React.FC = () => {
-  const article = ['what', 'yeah', 'no', 'you']
-  for (let i = 0; i < article.length; i++){
-    
-  }
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+    });
 
-  return (
-    <header>
-      <h1>The Break</h1>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/san-diego">San Diego</Link>
-        <Link to="/united-states">United States</Link>
-        <Link to="/world-opinion">World Opinion</Link>
-        <Link to="/multimedia">Multimedia</Link>
-      </nav>
-    </header>
-  );
-}
+    return (
+        <header className="header">
+            <h1 className="header-title">The Break</h1>
+            <p className="header-date">{formattedDate}</p>
+        </header>
+    );
+};
 
 export default Header;
