@@ -11,8 +11,10 @@ const Header: React.FC = () => {
 
     return (
         <header className="header">
-            <h1 className="header-title">The Break</h1>
-            <p className="header-date">{formattedDate}</p>
+            <div className="header-content">
+                <h1 className="header-title">The Break</h1>
+                <p className="header-date">{formattedDate}</p>
+            </div>
         </header>
     );
 };
