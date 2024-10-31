@@ -26,6 +26,7 @@ const App: React.FC = () => {
                 <Route path="/multimedia" element={<Multimedia />} />
                 <Route path="/about" element={<About />} />
             </Routes>
+            
             <Footer />
         </Router>
     );
