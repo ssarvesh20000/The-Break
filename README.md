@@ -1,14 +1,33 @@
-# How to run this project:
+# The Break Project
 
-1. cd to TheBreak directoy
+TheBreak is a news platform that will allow authors to create articles for users to see.
 
-2. npm install
+## How to run this project
 
-3. npm run dev
+1. git clone using SSH or HTTPS.
 
-## Make sure:
+2. cd to TheBreak directoy
+
+3. npm install
+
+4. npm run dev
+
+## Make sure
 
 - You have node.js installed.
 - You have the latest version of it.
 - You have npm installed.
 - You have vite installed.
+
+## Explanation
+
+- The App.jsx is the main file that we are using to render the project.
+- The App.css is the main file that we are using to style the project.
+
+## Components
+
+- These are the templates that we are going to use for the project. So, each post, or button, will be here.
+
+## Pages
+
+- This is what it sounds like: The pages for the project.
