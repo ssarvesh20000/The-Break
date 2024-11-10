@@ -1,6 +1,8 @@
 import React from 'react';
+import '../Styles/Footer.css';
 
-function Footer() {
+
+const Footer: React.FC = () => {
   return (
     <footer>
       <div>

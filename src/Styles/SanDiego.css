@@ -1,0 +1,62 @@
+.san-diego-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.category-title {
+    font-size: 1rem;
+    color: gray;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.article {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.article-image {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.article-content {
+    flex: 1;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.article-author {
+    font-size: 0.9rem;
+    color: gray;
+    margin: 5px 0;
+}
+
+.article-excerpt {
+    font-size: 1rem;
+    color: #333;
+}
