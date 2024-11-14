@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Header.css';
 import '../Styles/NavBar.css';
 
@@ -30,10 +33,15 @@ const HeaderNav: React.FC = () => {
                     <li><Link to="/about">About</Link></li>
                 </ul>
                 <div className="nav-icons">
-                    <i className="icon-search">🔍</i>
-                    <i className="icon-social">📘</i>
-                    <i className="icon-social">📷</i>
-                    <i className="icon-social">🐦</i>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faInstagram} className="icon-social" />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faTwitter} className="icon-social" />
+                    </a>
+                    <a href="mailto:contact@yourwebsite.com">
+                        <FontAwesomeIcon icon={faEnvelope} className="icon-social" />
+                    </a>
                 </div>
             </nav>
         </div>
