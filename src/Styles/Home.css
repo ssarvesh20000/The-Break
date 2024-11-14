@@ -26,6 +26,17 @@
     border-left: 1px solid #ccc;
 }
 
+/* Home.css */
+.sidebar-article {
+    margin-bottom: 20px; /* Adjust this value to control the gap */
+}
+
+/* Optional: Add padding around the image for a cleaner layout */
+.sidebar-image {
+    padding: 15px; /* Optional, adjust as needed */
+}
+
+
 /* Main Article Styles */
 .main-article {
     text-align: left; /* Align text to left */
@@ -34,7 +45,7 @@
 
 .main-image {
     width: 100%;
-    height: auto;
+    height: 70%;
     border-radius: 5px;
 }
 

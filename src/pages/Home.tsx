@@ -27,18 +27,6 @@ const Home: React.FC = () => {
                     <p className="main-description">With an 80-degree summer heat hanging thick, perspiring attendees bite their nails at Dustin Reidy’s campaign watch party...</p>
                     <p className="main-author">Conor Webb - Aug 30, 2024</p>
                 </div>
-                <div className="secondary-articles">
-                    <div className="article">
-                        <img src={galaxyimg} alt="Secondary Article" className="article-image" />
-                        <h3>Graffiti, an Artistic and Political Tool</h3>
-                        <p className="article-author">Rory Schoenberger - Aug 30, 2024</p>
-                    </div>
-                    <div className="article">
-                        <img src={galaxyimg} alt="Secondary Article" className="article-image" />
-                        <h3>A Congressional Battleground: Orange County</h3>
-                        <p className="article-author">Bryant Pranboonpluk - Aug 30, 2024</p>
-                    </div>
-                </div>
             </section>
 
             {/* Right Sidebar */}

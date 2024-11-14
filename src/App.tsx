@@ -7,16 +7,18 @@ import WorldOpinion from './pages/WorldOpinion';
 import Culture from './pages/Culture';
 import Multimedia from './pages/Multimedia';
 import About from './pages/About';
-import Header from './components/Header';
-import NavBar from './components/NavBar';
+//import Header from './components/Header';
+//import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import HeaderNav from './components/HeaderNav';
 import './App.css';
 
 const App: React.FC = () => {
     return (
         <Router>
-            <Header />
-            <NavBar />
+            
+            <HeaderNav />
+            
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/san-diego" element={<SanDiego />} />

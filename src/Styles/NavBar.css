@@ -1,17 +1,61 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
+    justify-content: center; /* Center the navbar content */
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between nav-links and nav-icons */
 }
 
 .nav-links {
     display: flex;
     gap: 20px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.icon-social, .icon-search {
-    margin-left: 15px;
+.nav-links li {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
+}
+
+.nav-links li a {
+    color: #000; /* Black color for text */
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-links li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-search {
+    font-size: 1rem;
+    cursor: pointer;
+    color: #000;
+}
+
+.icon-social {
+    font-size: 1rem;
+    cursor: pointer;
+    color: #000;
+}
+
+.icon-social:hover, .icon-search:hover {
+    color: #555; /* Slightly change color on hover */
 }
