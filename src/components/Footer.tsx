@@ -1,15 +1,38 @@
 import React from 'react';
 import '../Styles/Footer.css';
-
+import logoImage from '../assets/galaxyimg.jpeg'; // Update this path
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <div>
+    <footer className="footer">
+      <div className="footer-section logo">
+        <img src={logoImage} alt="The Politic Logo" className="logo-image" />
+      </div>
+      <div className="footer-section read-more">
+        <h4>Read More</h4>
+        <ul>
+          <li>Local</li>
+          <li>National</li>
+          <li>World</li>
+          <li>Culture</li>
+          <li>Opinion</li>
+          <li>Columnists</li>
+          <li>Documentary</li>
+        </ul>
+      </div>
+      <div className="footer-section find-us">
         <h4>Find Us</h4>
-        <button onClick={() => alert('Masthead page')}>Masthead</button>
-        <button onClick={() => alert('History page')}>History</button>
-        <button onClick={() => alert('Contact Us page')}>Contact Us</button>
+        <ul>
+          <li>Mag</li>
+          <li>Masthead</li>
+          <li>Our History</li>
+          <li>Contact Us</li>
+        </ul>
+        <div className="social-icons">
+          <i className="fab fa-facebook-square"></i>
+          <i className="fab fa-instagram"></i>
+          <i className="fab fa-twitter"></i>
+        </div>
       </div>
     </footer>
   );
