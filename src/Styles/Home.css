@@ -163,3 +163,44 @@
     margin-top: 5px; /* Space between title and author/date */
 }
 
+
+/* Container to wrap all content in a three-column layout */
+.home-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+/* Wrapper to group sidebar and main content in a row */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    width: 20%; /* Adjusted to fit left of main content */
+    padding-right: 15px; /* Add spacing between left sidebar and main content */
+}
+
+/* Main Content */
+.main-content {
+    width: 55%; /* Main article area centered in the layout */
+}
+
+/* Right Sidebar */
+.sidebar {
+    width: 25%; /* Right sidebar width to match available space */
+    padding-left: 15px; /* Add spacing between right sidebar and main content */
+    border-left: 1px solid #ccc;
+}
+
+/* Video Section */
+.video-section {
+    width: 100%; /* Full width below other sections */
+    margin-top: 20px; /* Space above the video section */
+}
