@@ -12,6 +12,7 @@ import About from './pages/About';
 import Footer from './components/Footer';
 import HeaderNav from './components/HeaderNav';
 import './App.css';
+import ArticleView from './pages/ArticleView';
 
 const App: React.FC = () => {
     return (
@@ -27,6 +28,14 @@ const App: React.FC = () => {
                 <Route path="/culture" element={<Culture />} />
                 <Route path="/multimedia" element={<Multimedia />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/article/id:102" element= {<ArticleView />} />
+                <Route path="/article/id:202" element= {<ArticleView />} />
+                <Route path="/article/id:302" element= {<ArticleView />} />
+                <Route path="/article/id:402" element= {<ArticleView />} />
+                <Route path="/article/id:502" element= {<ArticleView />} />
+                <Route path="/article/id:602" element= {<ArticleView />} />
+                <Route path="/article/id:702" element= {<ArticleView />} />
+
             </Routes>
             
             <Footer />
