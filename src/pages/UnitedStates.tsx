@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/SanDiego.css';
-
+import { Link } from 'react-router-dom';
 import galaxyimg from '../assets/galaxyimg.jpeg';
 
 const UnitedStates: React.FC = () => {
@@ -12,7 +12,11 @@ const UnitedStates: React.FC = () => {
                 <div className="article">
                     <img src={galaxyimg} alt="Interview with Candidate" className="article-image" />
                     <div className="article-content">
-                        <h3 className="article-title">An Interview with San Diego Candidate John Doe</h3>
+                        <h3 className="article-title">
+                        <Link to="/article/id:102"
+                        style= {{textDecoration: "none", color:"inherit"}}>                            
+                        An Interview with San Diego Candidate John Doe
+                        </Link></h3>
                         <p className="article-author">Jane Smith - Oct 29, 2024</p>
                         <p className="article-excerpt">
                             Can you tell me a little bit about your background? Where are you from? What is your
@@ -23,7 +27,11 @@ const UnitedStates: React.FC = () => {
                 <div className="article">
                     <img src={galaxyimg} alt="Interview with Team Members" className="article-image" />
                     <div className="article-content">
-                        <h3 className="article-title">Interview with San Diego Council Members</h3>
+                        <h3 className="article-title">
+                        <Link to="/article/id:102"
+                        style= {{textDecoration: "none", color:"inherit"}}>                            
+                            Interview with San Diego Council Members
+                        </Link></h3>
                         <p className="article-author">Alex Johnson - Oct 29, 2024</p>
                         <p className="article-excerpt">
                             Council members shared insights about the upcoming election and their plans for the

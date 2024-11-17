@@ -49,6 +49,9 @@
     font-weight: bold;
     margin: 0;
 }
+.article-title:hover{
+    text-decoration: underline;
+}
 
 .article-author {
     font-size: 0.9rem;
