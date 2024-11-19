@@ -1,10 +1,11 @@
 import React from 'react';
-import '../Styles/SanDiego.css';
+import '../Styles/Catergory.css';
 import galaxyimg from '../assets/galaxyimg.jpeg';
 import { Link } from 'react-router-dom';
 
 const SanDiego: React.FC = () => {
     return (
+    <div className= "body">
         <div className="san-diego-page">
             <h2 className="category-title">Category</h2>
             <h1 className="page-title">San Diego</h1>
@@ -16,8 +17,7 @@ const SanDiego: React.FC = () => {
                         <Link to="/article/id:102"
                         style= {{textDecoration: "none", color:"inherit"}}> 
                             An Interview with San Diego Candidate John 
-                        </Link>
-                    </h3>
+                        </Link></h3>
                         <p className="article-author">Jane Smith - Oct 29, 2024</p>
                         <p className="article-excerpt">
                             Can you tell me a little bit about your background? Where are you from? What is your
@@ -42,6 +42,7 @@ const SanDiego: React.FC = () => {
                 </div>
                 {/* Add more articles as needed */}
             </div>
+        </div>
         </div>
     );
 };

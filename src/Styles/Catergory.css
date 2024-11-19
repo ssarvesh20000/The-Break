@@ -1,4 +1,21 @@
+:root{
+    --background-color: #fff;
+    --border-top: 1px solid #000;
+    --author: #808080;
+    --catergory-title: #000;
+
+}
+.darkmode{
+    --background-color: #000000;
+    --border-top: 1px solid #ffffff;
+    --author: #808080;
+    --catergory-title: #fff;
+}
+.body2{
+    background-color: var(--background-color);
+}
 .san-diego-page {
+    background-color: var(--background-color);
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -7,13 +24,14 @@
 
 .category-title {
     font-size: 1rem;
-    color: gray;
+    color:var(--background-color);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-align: center;
 }
 
 .page-title {
+    color: var(--background-color);
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
@@ -22,6 +40,7 @@
 }
 
 .articles {
+    background-color:var(--background-color);
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -29,11 +48,12 @@
 
 .article {
     display: flex;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #000000;
     padding-top: 20px;
 }
 
 .article-image {
+
     width: 150px;
     height: auto;
     border-radius: 5px;
@@ -55,7 +75,7 @@
 
 .article-author {
     font-size: 0.9rem;
-    color: gray;
+    color: var(--text-color);
     margin: 5px 0;
 }
 

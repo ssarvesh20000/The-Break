@@ -1,4 +1,18 @@
 /* Main page container */
+:root{
+    --background-article: #ffffff;
+    --article-title:#000;    
+
+}
+.darkmode{
+    --background-article: #000000;
+    --article-title:#ffffff;    
+ 
+ 
+}
+
+
+
 .article-page {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -6,13 +20,13 @@
     width: 100%;
     padding: 0; /* Remove any default padding for alignment */
     margin: 0; /* Ensure no extra spacing */
-    background-color: #f9f9f9; /* Optional: Light background */
+    background-color:var(--background-color); /* Optional: Light background */
 }
 
 /* Image on top */
 .article-image-top {
     width: 100%; /* Full width of the page */
-    height: 10px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure image doesn't stretch */
     margin-bottom: 20px; /* Add spacing below the image */
 }
@@ -22,7 +36,6 @@
     width: 100%; /* Take full width of the page */
     max-width: 800px; /* Limit the content width for better readability */
     padding: 16px;
-    background-color: #fff; /* Optional: White background for content */
     border-radius: 8px;
 
 }
@@ -32,14 +45,14 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0 0 12px;
-    color: #333;
+    color: var(--text-color);
     text-align: center; /* Center-align title */
 }
 
 /* Author styling */
 .article-author {
     font-size: 0.9rem;
-    color: #777;
+    color:var(--text-color);
     margin: 0 0 16px;
     text-align: center; /* Center-align author */
 }
@@ -48,7 +61,7 @@
 .article-excerpt {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555;
+    color:var(--text-color);
     margin: 0;
     text-align: justify; /* Justify for clean layout */
 }
