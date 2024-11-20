@@ -9,7 +9,7 @@
     --background-color: #000000;
     --border-top: 1px solid #ffffff;
     --author: #808080;
-    --catergory-title: #fff;
+    --catergory-title: #f8f6f6;
 }
 .body2{
     background-color: var(--background-color);
