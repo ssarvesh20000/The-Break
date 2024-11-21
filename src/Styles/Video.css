@@ -1,26 +1,30 @@
 /* Video.css */
+
 .video-container {
     width: 100%; /* Full width to span across home-container */
     padding: 20px;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Optional: adds a background color to distinguish the section */
+    background-color: var(--background-color); /* Optional: adds a background color to distinguish the section */
 }
 
 .video-container h2 {
+    background-color:var(--background-color);
     font-size: 2em;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--text-color);
     text-align: center; /* Center the heading */
 }
 
 .video-container p {
+    background-color:var(--background-color);
     font-size: 1em;
     margin-bottom: 20px;
-    color: #555;
+    color: var(--text-color);
     text-align: center; /* Center the description */
 }
 
 .video-grid {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -29,22 +33,26 @@
 }
 
 .video-item {
+    background-color:var(--background-color);
     text-align: center;
 }
 
 .video-item video {
+    background-color:var(--background-color);
     width: 100%;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-item h4 {
+    background-color:var(--background-color);
     font-size: 1.2em;
     margin-top: 10px;
-    color: #333;
+    color: var(--text-color);
 }
 
 .video-item p {
+    background-color:var(--background-color);
     font-size: 0.9em;
-    color: #777;
+    color: var(--text-color);
 }

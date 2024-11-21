@@ -2,12 +2,13 @@ import React from 'react';
 import '../Styles/Home.css';
 import '../Styles/Video.css';
 import galaxyimg from '../assets/galaxyimg.jpeg';
-import Video from '../components/Video';
+import Video from '../components/video';
 import { Link } from 'react-router-dom';
 
 
 const Home: React.FC = () => {
     return (
+    <div className= "body">
         <div className="home-container">
             {/* Main Content Wrapper */}
             <div className="content-wrapper">
@@ -30,6 +31,7 @@ const Home: React.FC = () => {
                         <p className="article-author">Emi Glass - Oct 29, 2024</p>
                     </div>
                 </aside>
+                
 
                 {/* Main Content */}
                 <section className="main-content">
@@ -86,6 +88,7 @@ const Home: React.FC = () => {
             <section className="video-section">
                 <Video />
             </section>
+        </div>
         </div>
     );
 };

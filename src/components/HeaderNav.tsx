@@ -44,7 +44,8 @@ const HeaderNav: React.FC = () => {
                     </a>
                 </div>
             </nav>
-        </div>
+            </div>
+
     );
 };
 

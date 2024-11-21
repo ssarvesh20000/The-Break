@@ -1,9 +1,10 @@
 import React from 'react';
-import '../Styles/SanDiego.css';
+import '../Styles/Catergory.css';
 import galaxyimg from '../assets/galaxyimg.jpeg';
 
 const Interview: React.FC = () => {
   return (
+    
     <div className="san-diego-page">
         <h2 className="category-title">Category</h2>
         <h1 className="page-title">Interview</h1>

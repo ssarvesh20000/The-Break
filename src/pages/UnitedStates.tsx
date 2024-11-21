@@ -1,10 +1,11 @@
 import React from 'react';
-import '../Styles/SanDiego.css';
+import '../Styles/Catergory.css';
 import { Link } from 'react-router-dom';
 import galaxyimg from '../assets/galaxyimg.jpeg';
 
 const UnitedStates: React.FC = () => {
     return (
+    <div className= "body"> 
         <div className="san-diego-page">
             <h2 className="category-title">Category</h2>
             <h1 className="page-title">United States</h1>
@@ -41,6 +42,7 @@ const UnitedStates: React.FC = () => {
                 </div>
                 {/* Add more articles as needed */}
             </div>
+        </div>
         </div>
     );
 };
