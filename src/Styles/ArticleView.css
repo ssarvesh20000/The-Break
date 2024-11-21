@@ -1,18 +1,4 @@
 /* Main page container */
-:root{
-    --background-article: #ffffff;
-    --article-title:#000;    
-
-}
-.darkmode{
-    --background-article: #000000;
-    --article-title:#ffffff;    
- 
- 
-}
-
-
-
 .article-page {
     display: flex;
     flex-direction: column; /* Stack elements vertically */

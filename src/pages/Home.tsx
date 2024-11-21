@@ -2,7 +2,7 @@ import React from 'react';
 import '../Styles/Home.css';
 import '../Styles/Video.css';
 import galaxyimg from '../assets/galaxyimg.jpeg';
-import Video from '../components/video';
+import Video from '../components/Video';
 //the-break/src/components/video.tsx
 import { Link } from 'react-router-dom';
 
