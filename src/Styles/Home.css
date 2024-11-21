@@ -1,5 +1,31 @@
+:root{
+    ----background-color:#ffffff;
+    --border:1px solid #cccccc;
+    --descrption: #555;
+    --aurthor:gray;
+    --article:#333;
+    --theme: #000;
+    --underline-color: #000000;
+
+}
+
+body.darkmode{
+    ----background-color:#000000;
+    --border:1px solid #000000;
+    --descrption: #ffffff;
+    --aurthor:#ffffff;
+    --article:#ffffff;
+    --theme: #fff;
+    --underline-color: #fff;
+}
+.body{
+    background-color:var(--background-color);
+}
 /* Container to wrap all content in a three-column layout */
+
 .home-container {
+
+    background-color:var(--background-color);
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -18,7 +44,6 @@
 
 /* Main Content */
 .main-content {
-
     width: 55%; /* Main article area centered in the layout */
 }
 
@@ -26,19 +51,20 @@
 .sidebar {
     font-family: 'Georgia', serif;
     font-size: 16px;
-    text-decoration: none;
     width: 25%; /* Right sidebar width to match available space */
     padding-left: 15px; /* Add spacing between right sidebar and main content */
-    border-left: 1px solid #ccc;
+    border-left: var(--border)
 }
 
 /* Home.css */
 .sidebar-article {
     font-weight: bold;
+    text-decoration: none;
     margin-bottom: 20px; /* Adjust this value to control the gap */
 }
 .sidebar-article:hover {
     text-decoration: underline;
+    text-decoration-color: var(--text-color);
 }
 
 /* Optional: Add padding around the image for a cleaner layout */
@@ -49,6 +75,7 @@
 
 /* Main Article Styles */
 .main-article {
+    color:var(--text-color);
     font-family: 'Georgia', serif;
     font-size: 25px;
     text-decoration: none;
@@ -58,6 +85,7 @@
 }
 .main-article:hover{
     text-decoration: underline;
+    text-decoration-color: var(--text-color);
 }
 
 
@@ -72,18 +100,18 @@
     font-size: 2rem;
     margin: 15px 0;
     font-weight: bold;
-    text-decoration: none;
+
 }
 
 .main-description {
     font-size: 1rem;
-    color: #555;
+    color:var(--text-color);
     margin-bottom: 10px;
 }
 
 .main-author {
     font-size: 0.85rem;
-    color: gray;
+    color:var(--text-color)
 }
 
 /* Secondary Articles in Main Content */
@@ -108,14 +136,15 @@
 }
 
 .article h3 {
+    
     font-size: 1.1rem;
-    color: #333;
+    color:var(--text-color);
     margin: 0;
 }
 
 .article-author {
     font-size: 0.8rem;
-    color: gray;
+    color:var(--text-color);
 }
 
 /* Right Sidebar Articles */
@@ -135,13 +164,13 @@
 
 .sidebar-article div {
     font-size: 1rem;
-    color: #333;
+    color:var(--text-color);
     margin: 0;
 }
 
 .sidebar-author {
     font-size: 0.75rem;
-    color: gray;
+    color:var(--text-color);
 }
 
 /* Left Sidebar Articles */
@@ -150,6 +179,11 @@
     flex-direction: column;
     margin-bottom: 20px;
 }
+.left-sidebar-article:hover{
+    text-decoration: underline;
+    text-decoration-color:var(--text-color) ;
+}
+
 
 .left-sidebar-article img {
     width: 100%;
@@ -160,26 +194,26 @@
 
 .left-sidebar-article div {
     font-size: 1rem;
-    color: #333;
+    color:var(--text-color);
     margin: 0;
 }
 
 .left-sidebar-author {
     font-size: 0.75rem;
-    color: gray;
+    color:var(--text-color);
 }
 
 /* Read More Section */
 .read-more {
     text-align: center;
     font-size: 1rem;
-    color: gray;
+    color:var(--text-color);
     margin-top: 20px;
     font-style: italic;
 }
 .article-author {
     font-size: 0.8rem; /* Smaller font for author/date */
-    color: gray;
+    color:var(--text-color);
     margin-top: 5px; /* Space between title and author/date */
 }
 
@@ -196,6 +230,7 @@
 
 /* Wrapper to group sidebar and main content in a row */
 .content-wrapper {
+    
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -203,6 +238,7 @@
 
 /* Left Sidebar */
 .left-sidebar {
+
     width: 20%; /* Adjusted to fit left of main content */
     padding-right: 15px; /* Add spacing between left sidebar and main content */
 }
@@ -211,18 +247,47 @@
 
 /* Main Content */
 .main-content {
+
     width: 55%; /* Main article area centered in the layout */
 }
 
 /* Right Sidebar */
 .sidebar {
+
     width: 25%; /* Right sidebar width to match available space */
     padding-left: 15px; /* Add spacing between right sidebar and main content */
-    border-left: 1px solid #ccc;
+    border-left: var(--border);
 }
 
 /* Video Section */
 .video-section {
+
     width: 100%; /* Full width below other sections */
     margin-top: 20px; /* Space above the video section */
+}
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#theme-switch svg{
+    fill: var(--theme)
+}
+#theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+.darkmode #theme-switch svg:last-child{
+    display:block;
 }

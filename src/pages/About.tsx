@@ -3,6 +3,7 @@ import '../Styles/About.css';
 
 const About: React.FC = () => {
   return (
+    <div className = "body3">
     <div className="about-container">
       {/* Masthead Section */}
       <section className="about-section masthead">
@@ -31,6 +32,7 @@ const About: React.FC = () => {
         <p>Phone: (123) 456-7890</p>
         <p>Address: 1234 News Lane, Media City, Country</p>
       </section>
+    </div>
     </div>
   );
 };

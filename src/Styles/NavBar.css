@@ -1,12 +1,25 @@
+:root{
+    --background-color:#ffffff;
+    --border-top: 1px solid #ccc;
+    --color: #000; 
+    --icon-hover:#4400ff;
+}
+.darkmode{
+    --background-color:#000000;
+    --border-top: 1px solid #ccc;
+    --color: #ffffff; 
+    --icon-hover:#4400ff;
+}
+
 .navbar {
     display: flex;
     justify-content: center; /* Center the navbar content */
     align-items: center;
     padding: 15px 20px;
-    background-color: #fff;
+    background-color: var(--background-color);
     font-family: Arial, sans-serif;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: var(--border-top);
+    border-bottom: var(--border-top);
 }
 
 .navbar-content {
@@ -31,7 +44,7 @@
 }
 
 .nav-links li a {
-    color: #000; /* Black color for text */
+    color: var(--text-color); /* Black color for text */
     text-decoration: none; /* Remove underline */
 }
 
@@ -47,15 +60,17 @@
 .icon-search {
     font-size: 1rem;
     cursor: pointer;
-    color: #000;
+    color: var(--text-color); /* Black color for text */
+
 }
 
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
-    color: #000;
+    color: var(--text-color); /* Black color for text */
+
 }
 
 .icon-social:hover, .icon-search:hover {
-    color: #3a0bb9; /* Slightly change color on hover */
+    color: var(--icon-hover); /* Slightly change color on hover */
 }

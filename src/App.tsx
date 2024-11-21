@@ -11,15 +11,16 @@ import About from './pages/About';
 //import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import HeaderNav from './components/HeaderNav';
+import Darkmode from './components/Darkmode';
 import './App.css';
 import ArticleView from './pages/ArticleView';
+
 
 const App: React.FC = () => {
     return (
         <Router>
-            
             <HeaderNav />
-            
+            <Darkmode />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/san-diego" element={<SanDiego />} />
