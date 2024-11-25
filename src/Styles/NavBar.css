@@ -1,14 +1,14 @@
-:root{
-    --background-color:#ffffff;
+:root {
+    --background-color: #ffffff;
     --border-top: 1px solid #ccc;
-    --color: #000; 
-    --icon-hover:#4400ff;
+    --color: #000;
+    --icon-hover: #4400ff;
 }
-.darkmode{
-    --background-color:#000000;
+.darkmode {
+    --background-color: #000000;
     --border-top: 1px solid #ccc;
-    --color: #ffffff; 
-    --icon-hover:#4400ff;
+    --color: #ffffff;
+    --icon-hover: #4400ff;
 }
 
 .navbar {
@@ -20,6 +20,8 @@
     font-family: Arial, sans-serif;
     border-top: var(--border-top);
     border-bottom: var(--border-top);
+    position: relative; /* Ensure proper stacking */
+    z-index: 1;
 }
 
 .navbar-content {
@@ -29,7 +31,7 @@
 }
 
 .nav-links {
-    display: flex;
+    display: flex; /* Always visible on larger screens */
     gap: 20px;
     list-style: none;
     margin: 0;
@@ -61,16 +63,73 @@
     font-size: 1rem;
     cursor: pointer;
     color: var(--text-color); /* Black color for text */
-
 }
 
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
     color: var(--text-color); /* Black color for text */
-
 }
 
-.icon-social:hover, .icon-search:hover {
+.icon-social:hover,
+.icon-search:hover {
     color: var(--icon-hover); /* Slightly change color on hover */
+}
+
+/* Hamburger menu button */
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    margin: 10px auto; /* Center the button horizontally */
+    text-align: center;
+}
+
+/* Toggle the menu visibility */
+.nav-links {
+    display: flex; /* Default display on larger screens */
+}
+
+.navbar.menu-open .nav-links {
+    display: flex; /* Ensure menu is shown when toggled */
+    flex-direction: column;
+}
+
+.nav-links.visible {
+    display: flex;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block; /* Show the button on smaller screens */
+        position: relative; /* Ensure proper flow for stacking */
+        z-index: 2; /* Ensure it's above the menu */
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default in smaller screens */
+        position: absolute;
+        top: 70px; /* Position menu below the button */
+        left: 0;
+        right: 0;
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-top: var(--border-top);
+        z-index: 1; /* Ensure it doesn't overlap higher elements */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better separation */
+    }
+
+    .nav-links.visible {
+        display: flex; /* Show menu when visible */
+    }
+
+    .nav-icons {
+        display: none; /* Hide social icons on mobile */
+    }
 }

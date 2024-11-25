@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/Header.css';
 import '../Styles/NavBar.css';
 
 const HeaderNav: React.FC = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
-        year: 'numeric'
+        year: 'numeric',
     });
 
     return (
@@ -22,8 +28,11 @@ const HeaderNav: React.FC = () => {
                     <p className="header-date">{formattedDate}</p>
                 </div>
             </header>
-            <nav className="navbar">
-                <ul className="nav-links">
+            <nav className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
+                <button className="menu-button" onClick={toggleMenu} aria-label="Toggle menu">
+                    <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
+                </button>
+                <ul className={`nav-links ${menuOpen ? 'visible' : ''}`}>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/san-diego">San Diego</Link></li>
                     <li><Link to="/united-states">United States</Link></li>
@@ -44,8 +53,7 @@ const HeaderNav: React.FC = () => {
                     </a>
                 </div>
             </nav>
-            </div>
-
+        </div>
     );
 };
 
