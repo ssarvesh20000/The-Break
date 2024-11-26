@@ -36,8 +36,8 @@ const HeaderNav: React.FC = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/san-diego">San Diego</Link></li>
                     <li><Link to="/united-states">United States</Link></li>
-                    <li><Link to="/world-opinion">World Opinion</Link></li>
-                    <li><Link to="/culture">Culture</Link></li>
+                    <li><Link to="/world">World</Link></li>
+                    <li><Link to="/Opinion">Opinion</Link></li>
                     <li><Link to="/multimedia">Multimedia</Link></li>
                     <li><Link to="/about">About</Link></li>
                 </ul>

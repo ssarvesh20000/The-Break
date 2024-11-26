@@ -3,12 +3,12 @@ import '../Styles/Catergory.css';
 import galaxyimg from '../assets/galaxyimg.jpeg';
 import { Link } from 'react-router-dom';
 
-const WorldOpinion: React.FC = () => {
+const World: React.FC = () => {
   return (
     <div className= "body">
         <div className="san-diego-page">
             <h2 className="category-title">Category</h2>
-            <h1 className="page-title">World Opinion</h1>
+            <h1 className="page-title">World</h1>
             <div className="articles">
                 <div className="article">
                     <img src={galaxyimg} alt="Interview with Candidate" className="article-image" />
@@ -47,4 +47,4 @@ const WorldOpinion: React.FC = () => {
 );
 };
 
-export default WorldOpinion;
+export default World;
