@@ -22,11 +22,3 @@
     margin: 0;
 }
 
-.header-date {
-    color:var(--text-color);
-    font-size: 1rem;
-    font-family: 'Georgia', serif; /* Match font with title */
-    font-style: italic; /* Match italic style with title */
-    font-weight: 900; /* Match weight with title */
-    margin-top: 5px;
-}
