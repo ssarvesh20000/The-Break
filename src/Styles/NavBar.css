@@ -13,25 +13,19 @@
 
 .navbar {
     display: flex;
-    justify-content: center; /* Center the navbar content */
     align-items: center;
+    justify-content: center; /* Center the entire navbar content */
     padding: 15px 20px;
     background-color: var(--background-color);
     font-family: Arial, sans-serif;
     border-top: var(--border-top);
     border-bottom: var(--border-top);
-    position: relative; /* Ensure proper stacking */
+    position: relative;
     z-index: 1;
 }
 
-.navbar-content {
-    display: flex;
-    align-items: center;
-    gap: 30px; /* Space between nav-links and nav-icons */
-}
-
 .nav-links {
-    display: flex; /* Always visible on larger screens */
+    display: flex;
     gap: 20px;
     list-style: none;
     margin: 0;
@@ -46,34 +40,29 @@
 }
 
 .nav-links li a {
-    color: var(--text-color); /* Black color for text */
-    text-decoration: none; /* Remove underline */
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 .nav-links li a:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline;
 }
 
 .nav-icons {
     display: flex;
     gap: 15px;
-}
-
-.icon-search {
-    font-size: 1rem;
-    cursor: pointer;
-    color: var(--text-color); /* Black color for text */
+    position: absolute; /* Ensure icons are independent of nav-links */
+    right: 20px; /* Keep them on the right */
 }
 
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
-    color: var(--text-color); /* Black color for text */
+    color: var(--text-color);
 }
 
-.icon-social:hover,
-.icon-search:hover {
-    color: var(--icon-hover); /* Slightly change color on hover */
+.icon-social:hover {
+    color: var(--icon-hover);
 }
 
 /* Hamburger menu button */
@@ -84,52 +73,38 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-color);
-    margin: 10px auto; /* Center the button horizontally */
+    margin: 10px auto;
     text-align: center;
-}
-
-/* Toggle the menu visibility */
-.nav-links {
-    display: flex; /* Default display on larger screens */
-}
-
-.navbar.menu-open .nav-links {
-    display: flex; /* Ensure menu is shown when toggled */
-    flex-direction: column;
-}
-
-.nav-links.visible {
-    display: flex;
+    position: absolute;
+    left: 20px; /* Place menu button on the left */
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .menu-button {
-        display: block; /* Show the button on smaller screens */
-        position: relative; /* Ensure proper flow for stacking */
-        z-index: 2; /* Ensure it's above the menu */
+        display: block;
     }
 
     .nav-links {
-        display: none; /* Hidden by default in smaller screens */
+        display: none;
+        flex-direction: column;
         position: absolute;
-        top: 70px; /* Position menu below the button */
+        top: 70px;
         left: 0;
         right: 0;
         background-color: var(--background-color);
-        flex-direction: column;
         align-items: center;
         padding: 20px 0;
         border-top: var(--border-top);
-        z-index: 1; /* Ensure it doesn't overlap higher elements */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better separation */
+        z-index: 1;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.visible {
-        display: flex; /* Show menu when visible */
+        display: flex;
     }
 
     .nav-icons {
-        display: none; /* Hide social icons on mobile */
+        display: none;
     }
 }

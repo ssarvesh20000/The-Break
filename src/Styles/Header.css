@@ -22,3 +22,11 @@
     margin: 0;
 }
 
+.header-title-link {
+    text-decoration: none; /* Remove underline for the link */
+    color: inherit; /* Inherit the color from the parent */
+}
+
+.header-title-link:hover {
+    opacity: 0.8; /* Add hover effect if needed */
+}
