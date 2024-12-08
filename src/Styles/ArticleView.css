@@ -1,68 +1,81 @@
 /* Main page container */
 .article-page {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
     width: 100%;
-    padding: 0; /* Remove any default padding for alignment */
-    margin: 0; /* Ensure no extra spacing */
-    background-color:var(--background-color); /* Optional: Light background */
-}
-
-/* Image on top */
-.article-image-top {
-    width: 100%; /* Full width of the page */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure image doesn't stretch */
-    margin-bottom: 20px; /* Add spacing below the image */
+    padding: 16px;
+    background-color: var(--background-color);
 }
 
 /* Article content container */
 .article-container {
-    width: 100%; /* Take full width of the page */
-    max-width: 800px; /* Limit the content width for better readability */
-    padding: 16px;
-    border-radius: 8px;
-
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 /* Article title styling */
 .article-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin: 0 0 12px;
+    margin-bottom: 8px;
     color: var(--text-color);
-    text-align: center; /* Center-align title */
 }
 
 /* Author styling */
 .article-author {
-    font-size: 0.9rem;
-    color:var(--text-color);
-    margin: 0 0 16px;
-    text-align: center; /* Center-align author */
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 16px;
 }
 
-/* Excerpt styling */
-.article-excerpt {
+/* Image styling - Larger size */
+.article-image {
+    float: left; /* Align the image to the left */
+    margin-right: 24px; /* Increase margin for cleaner spacing */
+    margin-bottom: 16px; /* Add spacing below the image */
+    width: 300px; /* Increased width for larger image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners */
+    shape-outside: rectangle(0, 0, 300px, auto); /* Adjust wrapping boundary */
+    clip-path: inset(0); /* Define wrapping boundary explicitly */
+}
+
+/* Clearfix for text wrapping under the image */
+.article-content::after {
+    content: "";
+    display: block;
+    clear: both; /* Ensures text flows correctly under the image */
+}
+
+/* Content text */
+.article-content {
     font-size: 1rem;
-    line-height: 1.6;
-    color:var(--text-color);
-    margin: 0;
-    text-align: justify; /* Justify for clean layout */
+    text-align: justify; /* Justify text for a clean look */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .article-container {
-        padding: 12px; /* Reduce padding for smaller screens */
+        padding: 12px;
     }
 
     .article-title {
-        font-size: 1.3rem; /* Adjust title size */
+        font-size: 1.5rem;
     }
 
     .article-author {
-        font-size: 0.8rem; /* Adjust author size */
+        font-size: 0.9rem;
+    }
+
+    .article-image {
+        float: none; /* Reset float for smaller screens */
+        display: block;
+        margin: 0 auto 16px; /* Center image for smaller screens */
+        width: 100%; /* Full width for smaller screens */
+        shape-outside: none; /* Disable custom wrapping for small screens */
     }
 }
