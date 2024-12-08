@@ -22,11 +22,11 @@
     margin: 0;
 }
 
-.header-date {
-    color:var(--text-color);
-    font-size: 1rem;
-    font-family: 'Georgia', serif; /* Match font with title */
-    font-style: italic; /* Match italic style with title */
-    font-weight: 900; /* Match weight with title */
-    margin-top: 5px;
+.header-title-link {
+    text-decoration: none; /* Remove underline for the link */
+    color: inherit; /* Inherit the color from the parent */
+}
+
+.header-title-link:hover {
+    opacity: 0.8; /* Add hover effect if needed */
 }
