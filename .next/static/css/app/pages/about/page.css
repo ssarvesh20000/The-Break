@@ -1,0 +1,71 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/Styles/about.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+/* About.css */
+.body3 {
+  background-color: var(--background-color);
+}
+
+.about-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Adjust spacing between columns */
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.about-section p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.masthead {
+  border-bottom: var(--border-bottom);
+  padding-bottom: 15px;
+}
+
+.mission {
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.contact {
+  padding: 15px;
+  border-top: var(--border-bottom);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .masthead,
+  .mission,
+  .contact {
+    margin-bottom: 20px;
+  }
+}
+
