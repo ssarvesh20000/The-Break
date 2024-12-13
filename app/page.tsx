@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
-import "./Styles/Home.css";
-import "./Styles/Video.css";
+import "@styles/Home.css";
+import "@styles/Video.css";
 import Image from "next/image";
 import galaxyimg from "../public/assets/galaxyimg.jpeg";
 import Video from "./components/video";
+import HeaderNav from "@components/HeaderNav";
+import Footer from "@components/Footer";
 // import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
@@ -13,6 +15,7 @@ const Home: React.FC = () => {
     <div className="body">
       <div className="home-container">
         {/* Main Content Wrapper */}
+        <HeaderNav></HeaderNav>
         <div className="content-wrapper">
           {/* Left Sidebar */}
           <aside className="left-sidebar">
@@ -45,7 +48,11 @@ const Home: React.FC = () => {
           {/* Main Content */}
           <section className="main-content">
             <div className="main-article">
-              <Image src={galaxyimg} alt="Main Article" className="main-image" />
+              <Image
+                src={galaxyimg}
+                alt="Main Article"
+                className="main-image"
+              />
               <div className="main_title">
                 {/* <Link
                   to="/article/id:302"
@@ -142,6 +149,7 @@ const Home: React.FC = () => {
           <Video />
         </section>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

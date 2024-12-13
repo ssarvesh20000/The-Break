@@ -1,12 +1,13 @@
 import React from 'react';
-import '../Styles/Footer.css';
-import logoImage from '../assets/galaxyimg.jpeg'; // Update this path
+import '@styles/Footer.css';
+// import logoImage from '../../public/assets/logo.png';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-section logo">
-        <img src={logoImage} alt="The Politic Logo" className="logo-image" />
+        {/* <Image src={logoImage} alt="The Politic Logo" className="logo-image" /> */}
       </div>
       <div className="footer-section read-more">
         <h4>Read More</h4>
