@@ -1,9 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/pages/articleView/page": "app/pages/articleView/page.js",
-  "/pages/interview/page": "app/pages/interview/page.js",
-  "/pages/multimedia/page": "app/pages/multimedia/page.js",
-  "/pages/sanDiego/page": "app/pages/sanDiego/page.js",
-  "/pages/unitedStates/page": "app/pages/unitedStates/page.js",
-  "/pages/world/page": "app/pages/world/page.js"
-}
