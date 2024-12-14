@@ -91,7 +91,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "assets/*": ["public/assets/*"],
+      "@assets/*": ["public/assets/*"],
       "@components/*": ["app/components/*"],
       "@styles/*": ["app/styles/*"],
     }

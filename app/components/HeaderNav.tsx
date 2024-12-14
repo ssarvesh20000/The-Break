@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTwitter, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
