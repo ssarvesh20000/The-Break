@@ -4,9 +4,10 @@ import Image from "next/image";
 import plus from "@assets/plusButton.png"
 import image from "@assets/image.png"
 import video from "@assets/video.png"
-
+import TextEditor from "@components/TextEditor";
 const Write = () => {
   const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
   return (
     <div>
       <input type="text" placeholder="Title" />
@@ -27,6 +28,7 @@ const Write = () => {
             </button>
           </div>
         )}
+      <TextEditor></TextEditor> 
       </div>
     </div>
       );
