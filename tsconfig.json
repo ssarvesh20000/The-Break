@@ -94,6 +94,7 @@
       "@assets/*": ["public/assets/*"],
       "@components/*": ["app/components/*"],
       "@styles/*": ["app/styles/*"],
+      "@/*": ["./*"],
     }
   },
   "include": [
