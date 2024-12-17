@@ -1,5 +1,6 @@
-import galaxyimg from '../assets/galaxyimg.jpeg';
-import '../Styles/ArticleView.css';
+import galaxyimg from '../../../public/assets/galaxyimg.jpeg';
+import '../../Styles/ArticleView.css';
+import Image from 'next/image';
 
 const ArticleView: React.FC = () => {
     return (
@@ -7,7 +8,7 @@ const ArticleView: React.FC = () => {
             <div className="article-container">
                 <h3 className="article-title">ARTICLE NAME HERE</h3>
                 <p className="article-author">Jane Smith - Oct 29, 2024</p>
-                <img 
+                <Image 
                     src={galaxyimg} 
                     alt="Galaxy Image for Interview with Candidate" 
                     className="article-image" 
