@@ -1,6 +1,7 @@
 import React from "react";
 import "../../Styles/Catergory.css";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
+import Image from "next/image";
 // import { Link } from 'react-router-dom';
 
 const Opinion: React.FC = () => {
@@ -11,7 +12,7 @@ const Opinion: React.FC = () => {
         <h1 className="page-title">Opinion</h1>
         <div className="articles">
           <div className="article">
-            <img
+            <Image
               src={galaxyimg}
               alt="Interview with Candidate"
               className="article-image"
@@ -34,7 +35,7 @@ const Opinion: React.FC = () => {
             </div>
           </div>
           <div className="article">
-            <img
+            <Image
               src={galaxyimg}
               alt="Interview with Team Members"
               className="article-image"
