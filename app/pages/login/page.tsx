@@ -1,6 +1,8 @@
 'use client';
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import '../../styles/login.css'; 
+
 
 const Login = () => {
     const router = useRouter();
@@ -33,11 +35,12 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
-            <form action="submit" onSubmit={handleLogin}>
-                <label htmlFor="email">Email:</label>
+        <div className="login-container">
+            {/*<h1>Login</h1>*/}
+            <form className="login-form" action="submit" onSubmit={handleLogin}>
+                <label className="label" htmlFor="email">Email:</label>
                 <input 
+                    className="input-field"
                     type="email" 
                     id="email" 
                     value={email} 
@@ -45,8 +48,9 @@ const Login = () => {
                     placeholder="Enter your email" 
                     required
                 />
-                <label htmlFor="password">Password:</label>
+                <label className="label" htmlFor="password">Password:</label>
                 <input 
+                    className="input-field"
                     type="password" 
                     id="password" 
                     value={password} 
@@ -54,11 +58,12 @@ const Login = () => {
                     placeholder="Enter your password" 
                     required
                 />
-                <button type="submit">Login</button>
+                <button className="login-button" type="submit">Login</button>
             </form>    
-            {message && <p>{message}</p>} 
+            {message && <p className="message">{message}</p>} 
         </div>
     );
+    
 };
 
 export default Login;

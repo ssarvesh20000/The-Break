@@ -1,5 +1,6 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import "../Styles/write.css"; // Ensure this path is correct based on your project structure
 
 function TextEditor() {
     const fontSizes = Array.from({ length: 100 }, (_, i) => i + 1);
@@ -9,7 +10,7 @@ function TextEditor() {
     };
 
     return (
-        <div>
+        <div className="textEditorContainer">
             <div id="editor">
                 <h1>Text Editor</h1>
                 <button id="bold" onClick={() => applyStyle('bold')}><i className="fas fa-bold"></i></button>
@@ -43,7 +44,8 @@ function TextEditor() {
 
                 <button id="orderedList" onClick={() => applyStyle('insertOrderedList')}><i className="fas fa-list-ol"></i></button>
                 <button id="unorderedList" onClick={() => applyStyle('insertUnorderedList')}><i className="fas fa-list-ul"></i></button>
-                <div contentEditable="true" id="textArea"></div>
+                
+                <div contentEditable="true" id="textArea" style={{ minHeight: '200px', border: '1px solid #ccc', padding: '10px', marginTop: '10px' }}></div>
             </div>
             <input type="color" id="textColorPicker" style={{ display: 'none' }} onChange={(e) => applyStyle('foreColor', e.target.value)}/>
             <input type="color" id="bgColorPicker" style={{ display: 'none' }} onChange={(e) => applyStyle('hiliteColor', e.target.value)}/>

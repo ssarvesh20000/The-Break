@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+//import '../../styles/dashboard.css';
+
 
 const Admin = () => {
   const router = useRouter();
@@ -12,12 +14,22 @@ const Admin = () => {
       router.push("/pages/login");
     }
   }, []);
+
   return (
     <div>
-        <h1>Welcome, Admin!</h1>
-        <Link href="/pages/login">Click here to back.</Link>
+      <h1>Welcome, Admin!</h1>
+      <div>
+        <Link href="/pages/login">
+          <button>Log out</button>
+        </Link>
+      </div>
+      <div>
+        <Link href="/pages/write">
+          <button>Writers page</button>
+        </Link>
+      </div>
     </div>
-  )
+  );
 };
 
 export default Admin;
