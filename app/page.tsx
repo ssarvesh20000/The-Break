@@ -1,3 +1,4 @@
+//HOME PAGE --> NEEDS TO BE SPLIT INTO THREE SEPERATE COMPONENTS(LEFT, MIDDLE, RIGHT, AND VIDEO?)
 import React from "react";
 import "@styles/Home.css";
 import "@styles/Video.css";

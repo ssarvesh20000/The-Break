@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from '../app/page';
+//the-break/app/page.tsx
 import SanDiego from './pages/sanDiego/page';
 import UnitedStates from './pages/unitedStates/page';
 import World from './pages/world/page';
@@ -11,7 +12,7 @@ import About from './pages/about/page';
 //import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import HeaderNav from './components/HeaderNav';
-import Darkmode from './components/Darkmode';
+//import Darkmode from './components/Darkmode';
 import './App.css';
 import ArticleView from './pages/articleView/page';
 
@@ -20,7 +21,6 @@ const App: React.FC = () => {
     return (
         <Router>
             <HeaderNav />
-            <Darkmode />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/san-diego" element={<SanDiego />} />

@@ -9,15 +9,6 @@
 
 }
 
-body.darkmode{
-    ----background-color:#000000;
-    --border:1px solid #000000;
-    --descrption: #ffffff;
-    --aurthor:#ffffff;
-    --article:#ffffff;
-    --theme: #fff;
-    --underline-color: #fff;
-}
 .body{
     background-color:var(--background-color);
 }
@@ -91,7 +82,7 @@ body.darkmode{
 
 .main-image {
     width: 100%;
-    height: 70%;
+    height: 10%;
     border-radius: 5px;
 }
 
@@ -266,28 +257,3 @@ body.darkmode{
     margin-top: 20px; /* Space above the video section */
 }
 
-#theme-switch{
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-#theme-switch svg{
-    fill: var(--theme)
-}
-#theme-switch svg:last-child{
-    display: none;
-}
-.darkmode #theme-switch svg:first-child{
-    display: none;
-}
-.darkmode #theme-switch svg:last-child{
-    display:block;
-}
