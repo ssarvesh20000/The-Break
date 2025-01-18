@@ -95,6 +95,7 @@
       "@components/*": ["app/components/*"],
       "@styles/*": ["app/styles/*"],
       "@/*": ["./*"],
+      "@lib/*": ["lib/*"],
     }
   },
   "include": [
@@ -102,7 +103,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/api/blog/route.ts", "app/components/TextEditor.jsx"  ],
   "exclude": [
     "node_modules"
   ]
