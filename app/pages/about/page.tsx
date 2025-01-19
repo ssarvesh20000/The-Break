@@ -1,9 +1,11 @@
 import React from 'react';
 import '../../Styles/about.css';
+import HeaderNav from "@components/HeaderNav";
 
 const About: React.FC = () => {
   return (
     <div className="body3">
+      <HeaderNav></HeaderNav>
       <div className="about-container">
         <div className="about-columns">
           {/* Left Column: Who We Are and Contact Us */}

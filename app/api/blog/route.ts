@@ -9,10 +9,12 @@ const LoadDB = async () =>{
 
 LoadDB();
 
+//retrieve info from database
 export async function GET(request: Request) {
     return NextResponse.json({message: "API Working"});
 }
 
+//add to database
 export async function POST(request: Request) {
     const formData = await request.formData();
     const timeStamp = Date.now();

@@ -15,10 +15,8 @@ const Footer: React.FC = () => {
           <li>Local</li>
           <li>National</li>
           <li>World</li>
-          <li>Culture</li>
           <li>Opinion</li>
-          <li>Columnists</li>
-          <li>Documentary</li>
+          <li>Multimedia</li>
         </ul>
       </div>
       <div className="footer-section find-us">

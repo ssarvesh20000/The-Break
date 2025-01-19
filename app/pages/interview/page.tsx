@@ -1,3 +1,4 @@
+//REMOVE THIS PAGE
 import React from 'react';
 import '../../Styles/Catergory.css';
 import galaxyimg from '../../../public/assets/galaxyimg.jpeg';

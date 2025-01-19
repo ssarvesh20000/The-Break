@@ -2,11 +2,13 @@ import React from "react";
 import "../../Styles/Catergory.css";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import Image from "next/image";
+import HeaderNav from "@components/HeaderNav";
 // import { Link } from 'react-router-dom';
 
 const Multimedia: React.FC = () => {
   return (
     <div className="body">
+      <HeaderNav></HeaderNav>
       <div className="san-diego-page">
         <h2 className="category-title">Category</h2>
         <h1 className="page-title">Multimedia</h1>
