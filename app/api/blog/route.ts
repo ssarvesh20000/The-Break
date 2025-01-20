@@ -3,6 +3,12 @@ import { ConnectDB } from "@/lib/mongo";
 //import { writeFile } from "fs/promises";
 const { NextResponse } = require('next/server');
 
+//import mongoose from 'mongoose';
+//import { GridFSBucket } from "mongodb";
+
+
+//let bucket: GridFSBucket;
+
 const LoadDB = async () =>{
     await ConnectDB();
 }

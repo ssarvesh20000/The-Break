@@ -1,4 +1,27 @@
 'use client'
+import React, { useState } from "react";
+import Image from "next/image";
+
+const BlogImage = ({ imageId, alt, className }: BlogImageProps) => {
+  if (!imageId) return null;
+  
+  return (
+    <img
+      src={`/api/blog/image?id=${imageId}`}
+      alt={alt}
+      className={className}
+    />
+  );
+};
+
+interface BlogImageProps {
+  imageId: string;
+  alt: string;
+  className?: string;
+}
+
+export default BlogImage;
+/*
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 export default function Home() {
@@ -42,3 +65,4 @@ export default function Home() {
     </form>
   );
 }
+*/

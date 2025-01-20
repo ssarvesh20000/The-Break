@@ -6,6 +6,7 @@ const Schema = new mongoose.Schema({
     author: { type: String, required: false },
     content: { type: String, required: false},
     image: { type: String, required: false },
+    //image: mongoose.Schema.Types.ObjectId, 
     date: { type: Date, default: Date.now },
 });
 
