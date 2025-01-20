@@ -259,3 +259,127 @@
     margin-top: 20px; /* Space above the video section */
 }
 
+@media screen and (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+
+    .main-article {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 428px) { /* iPhone 14 Pro Max */
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+
+    .main-article {
+        font-size: 1.1rem;
+    }
+
+    .video-section video {
+        width: 100%;
+        max-width: 100%; /* Full width for smaller screens */
+    }
+
+    .read-more {
+        font-size: 0.9rem;
+    }
+
+    .main-image {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 390px) { /* iPhone 14 Pro */
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+
+    .main-article {
+        font-size: 1rem;
+    }
+
+    .video-section video {
+        width: 100%;
+    }
+
+    .read-more {
+        font-size: 0.8rem;
+    }
+}
