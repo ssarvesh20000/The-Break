@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../Styles/about.css';
 import HeaderNav from "@components/HeaderNav";
+import Footer from "@components/Footer";
 
 const About: React.FC = () => {
   return (
@@ -37,10 +38,46 @@ const About: React.FC = () => {
                 stories and thoughtful analysis to our readers. Our masthead represents the voices
                 behind every article.
               </p>
+
+              {/* Editors Row */}
+              <div className="masthead-row">
+                <h3 className="role-title">Editors</h3>
+                <div className="masthead-grid two-items"> {/* Added two-items class */}
+                  <div className="headshot-container">
+                    <div className="headshot-placeholder">Image 1</div>
+                    <p className="headshot-name">Name 1</p>
+                  </div>
+                  <div className="headshot-container">
+                    <div className="headshot-placeholder">Image 2</div>
+                    <p className="headshot-name">Name 2</p>
+                  </div>
+                </div>
+              </div>
+
+
+              {/* Writers Row */}
+              <div className="masthead-row">
+                <h3 className="role-title">Writers</h3>
+                <div className="masthead-grid">
+                  <div className="headshot-container">
+                    <div className="headshot-placeholder">Image 3</div>
+                    <p className="headshot-name">Name 3</p>
+                  </div>
+                  <div className="headshot-container">
+                    <div className="headshot-placeholder">Image 4</div>
+                    <p className="headshot-name">Name 4</p>
+                  </div>
+                  <div className="headshot-container">
+                    <div className="headshot-placeholder">Image 5</div>
+                    <p className="headshot-name">Name 5</p>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

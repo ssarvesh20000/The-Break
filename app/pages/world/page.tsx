@@ -4,6 +4,7 @@ import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import Image from "next/image";
 // import { Link } from 'react-router-dom';
 import HeaderNav from "@components/HeaderNav";
+import Footer from "@components/Footer";
 
 const World: React.FC = () => {
   return (
@@ -62,6 +63,7 @@ const World: React.FC = () => {
           {/* Add more articles as needed */}
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

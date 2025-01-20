@@ -52,6 +52,80 @@
   padding: 15px;
   border-top: var(--border-bottom);
 }
+/* Masthead Section Styling */
+.masthead-row {
+  margin-bottom: 40px; /* Spacing between rows */
+}
+
+.role-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Default Masthead Grid */
+.masthead-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Default column width */
+  gap: 20px; /* Default gap between items */
+  justify-items: center; /* Centers items horizontally */
+}
+
+/* Masthead Grid for Two Items */
+.masthead-grid.two-items {
+  grid-template-columns: repeat(2, 120px); /* Fixed 2 columns for rows with only two items */
+  justify-content: center; /* Center-align two-item rows */
+  gap: 10px; /* Reduced gap for two-item rows */
+}
+
+/* Headshot Container */
+.headshot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Square Headshot Placeholder */
+.headshot-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #d3d3d3; /* Light grey placeholder */
+  border: 1px solid #ccc; /* Optional border for better visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  color: #666; /* Placeholder text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Name Style */
+.headshot-name {
+  margin-top: 10px;
+  font-size: 1em;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .masthead-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .headshot-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .headshot-name {
+    font-size: 0.9em;
+  }
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

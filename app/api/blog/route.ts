@@ -11,6 +11,8 @@ LoadDB();
 
 //retrieve info from database
 export async function GET(request: Request) {
+    const blogs = await BlogModel.find({});
+    
     return NextResponse.json({message: "API Working"});
 }
 

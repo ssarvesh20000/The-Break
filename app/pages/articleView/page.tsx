@@ -2,6 +2,7 @@ import galaxyimg from '../../../public/assets/galaxyimg.jpeg';
 import '../../Styles/ArticleView.css';
 import Image from 'next/image';
 import HeaderNav from "@components/HeaderNav";
+import Footer from "@components/Footer";
 
 const ArticleView: React.FC = () => {
     return (
@@ -37,6 +38,7 @@ const ArticleView: React.FC = () => {
                     </p>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

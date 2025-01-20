@@ -4,6 +4,7 @@ import "../../Styles/Catergory.css";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
+import Footer from "@components/Footer";
 
 const UnitedStates: React.FC = () => {
   return (
@@ -62,6 +63,7 @@ const UnitedStates: React.FC = () => {
           {/* Add more articles as needed */}
         </div>
       </div>
+      <Footer></Footer> 
     </div>
   );
 };

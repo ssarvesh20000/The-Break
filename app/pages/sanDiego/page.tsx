@@ -3,7 +3,7 @@ import "../../Styles/Catergory.css";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
-
+import Footer from "@components/Footer";
 // import { Link } from 'react-router-dom';
 
 const SanDiego: React.FC = () => {
@@ -63,6 +63,7 @@ const SanDiego: React.FC = () => {
           {/* Add more articles as needed */}
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
