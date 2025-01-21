@@ -4,12 +4,6 @@
     --color: #000;
     --icon-hover: #4400ff;
 }
-.darkmode {
-    --background-color: #000000;
-    --border-top: 1px solid #ccc;
-    --color: #ffffff;
-    --icon-hover: #4400ff;
-}
 
 .navbar {
     display: flex;
@@ -40,7 +34,7 @@
 }
 
 .nav-links li a {
-    color: var(--text-color);
+    color: black;
     text-decoration: none;
 }
 

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     background-color: #000041;
-    color: #fff;
+    color: white;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
 }
@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
 }
 
 .footer-section h4 {
@@ -19,6 +20,11 @@
     margin-bottom: 15px;
     border-bottom: 1px solid #fff;
     padding-bottom: 5px;
+   
+
+}
+.footer-bar a {
+    color: white;
 }
 
 .footer-section ul {
@@ -26,19 +32,25 @@
     list-style: none;
     padding: 0;
     margin: 0;
+  
 }
 
 .footer-section ul li {
 
     margin-bottom: 8px;
     cursor: pointer;
+    color: white;
 }
 
 .footer-section ul li:hover {
     text-decoration: underline;
 }
 
-.logo-image {
+.find-bar a{
+    color:white;
+}
+
+.footer-section.logo {
     width: 150px; /* Adjust the width to fit your design */
     height: auto;
     margin-bottom: 20px;
@@ -57,4 +69,35 @@
 
 .social-icons i:hover {
     color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center; /* Center-align sections */
+        text-align: center; /* Center text for better layout */
+        gap: 30px; /* Add more space between sections */
+    }
+    .footer-section {
+        align-items: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 430px) {
+    .footer {
+        padding: 20px 10px;
+    }
+    .footer-section h4 {
+        font-size: 1rem; /* Adjust font size for small screens */
+    }
+    .footer-section ul li {
+        font-size: 0.9rem;
+    }
+    .social-icons i {
+        font-size: 1.2rem; /* Reduce icon size */
+    }
 }
