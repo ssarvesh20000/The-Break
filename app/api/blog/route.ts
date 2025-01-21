@@ -5,22 +5,39 @@ const { NextResponse } = require('next/server');
 
 //import mongoose from 'mongoose';
 //import { GridFSBucket } from "mongodb";
-
-
 //let bucket: GridFSBucket;
+
+
 
 const LoadDB = async () =>{
     await ConnectDB();
 }
 
 LoadDB();
+/*
+//retrieve info from database:
 
-//retrieve info from database
 export async function GET(request: Request) {
     const blogs = await BlogModel.find({});
     
     return NextResponse.json({message: "API Working"});
 }
+
+*/
+export async function GET(request: Request) {
+    try {
+        const blogs = await BlogModel.find({});
+        return NextResponse.json({ success: true, data: blogs });
+    } catch (error) {
+        console.error("Error retrieving blogs:", error);
+        return NextResponse.json({ success: false, error: "Failed to fetch blogs" }, { status: 500 });
+    }
+}
+
+
+
+
+
 
 //add to database
 export async function POST(request: Request) {

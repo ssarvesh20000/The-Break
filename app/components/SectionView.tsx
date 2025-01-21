@@ -1,0 +1,1 @@
+//create a componenet where it connects to the first 5 articles from the database and displays them in a carousel
