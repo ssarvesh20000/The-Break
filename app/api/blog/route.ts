@@ -38,6 +38,8 @@ export async function GET(request: Request) {
 
 //add to database
 export async function POST(request: Request) {
+    await ConnectDB(); // redundant code, some reason doesnt work if it is not here will look into later - Fardin
+    // suspect it happens if user goes to /pages/write first
     const formData = await request.formData();
     const timeStamp = Date.now();
 
