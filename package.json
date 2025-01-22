@@ -9,8 +9,10 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
+    "eslint": "^9.18.0",
     "mongodb": "^6.12.0",
     "mongoose": "^8.9.5",
+    "next": "^15.1.5",
     "next-auth": "^5.0.0-beta.25",
     "react-toastify": "^11.0.3"
   },
