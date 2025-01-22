@@ -1,14 +1,18 @@
+'use client';
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import "../../../Styles/ArticleView.css";
+//the-break/app/Styles/ArticleView.css
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 
 const ArticleView = () => {
+  console.log("ArticleView");
   const router = useRouter();
   const { id } = router.query; // Get the article ID from the URL
+  console.log("Article ID:", id);
   const [article, setArticle] = useState<any>(null);
 
   useEffect(() => {
@@ -19,6 +23,7 @@ const ArticleView = () => {
         const response = await fetch(`/api/blog/${id}`);
         const data = await response.json();
         setArticle(data);
+        console.log("Article data:", article);
       } catch (error) {
         console.error("Error fetching article:", error);
       }
