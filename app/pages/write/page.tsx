@@ -85,6 +85,7 @@ const Write = () => {
           required 
         />
         <div>
+          <h1> Upload Image </h1>
           <button type="button" title="Add" onClick={() => setOpen(!open)}>
             <Image src={plus} alt="add" width={20} height={20} />
           </button>

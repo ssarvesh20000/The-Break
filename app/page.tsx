@@ -57,7 +57,7 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={blog.image || galaxyimg}
+                  src={galaxyimg}
                   alt={blog.title}
                   width={400}
                   height={300}
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={blogs[0].image || galaxyimg}
+                  src={`/api/blog/${blogs[blogs.length - 1].image}`} // old {blogs[0].image || galaxyimg}
                   alt={blogs[0].title}
                   className="main-image"
                   width={600}
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={blog.image || galaxyimg}
+                  src={galaxyimg}
                   alt={blog.title}
                   className="sidebar-image"
                   width={300}
