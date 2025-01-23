@@ -79,7 +79,7 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={`/api/blog/${blogs[blogs.length - 1].image}`} // old {blogs[0].image || galaxyimg}
+                  src={`/api/blog/${blogs[0].image}`}
                   alt={blogs[0].title}
                   className="main-image"
                   width={600}
