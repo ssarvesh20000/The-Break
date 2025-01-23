@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Styles/Catergory.css";
+import "@styles/Catergory.css";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";

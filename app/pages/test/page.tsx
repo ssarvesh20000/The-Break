@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from "react";
-import Image from "next/image";
 
 const BlogImage = ({ imageId, alt, className }: BlogImageProps) => {
   if (!imageId) return null;

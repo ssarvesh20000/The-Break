@@ -5,7 +5,7 @@ import plus from "@assets/plusButton.png";
 import image from "@assets/image.png";
 import video from "@assets/video.png";
 import TextEditor from "@components/TextEditor";
-import "../../Styles/write.css";
+import "@styles/write.css";
 
 const Write = () => {
   const [open, setOpen] = useState(false);

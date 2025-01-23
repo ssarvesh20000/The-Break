@@ -1,8 +1,7 @@
 'use client';
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import '../../styles/login.css'; 
-
+import '@styles/login.css'; 
 
 const Login = () => {
     const router = useRouter();

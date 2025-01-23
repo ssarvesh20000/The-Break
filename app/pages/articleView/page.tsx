@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
-import "../../../Styles/ArticleView.css";
+import "@styles/ArticleView.css";
 //the-break/app/Styles/ArticleView.css
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
