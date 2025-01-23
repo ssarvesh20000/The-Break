@@ -1,17 +1,17 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import "@styles/Home.css";
 import "@styles/Video.css";
 import Image from "next/image";
 import galaxyimg from "../public/assets/galaxyimg.jpeg";
-import Video from "./components/video";
+import Video from "@components/Video";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useRouter } from "next/navigation";
+import { Blog } from "@interfaces/Blog";
 
 const Home: React.FC = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         <div className="content-wrapper">
           {/* Left Sidebar */}
           <aside className="left-sidebar">
-            {blogs.slice(0, 2).map((blog: any) => (
+            {blogs.slice(0, 2).map((blog: Blog) => (
               <div
                 className="left-sidebar-article"
                 key={blog._id}
@@ -57,20 +57,20 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={galaxyimg}
+                  src={`/api/blog/${blog.image}`}
                   alt={blog.title}
                   width={400}
                   height={300}
                 />
                 <h2>{blog.title}</h2>
                 <p className="article-author">
-                  {blog.author} - {new Date(blog.createdAt).toLocaleDateString()}
+                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
                 </p>
               </div>
             ))}
           </aside>
 
-          {/* Main Content */}
+          {/* Main Content, shows first blog in returned json list */}
           <section className="main-content">
             {blogs[0] && (
               <div
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
                 <p className="main-description">{blogs[0].description}</p>
                 <p className="main-author">
                   {blogs[0].author} -{" "}
-                  {new Date(blogs[0].createdAt).toLocaleDateString()}
+                  {new Date(blogs[0].date).toLocaleDateString()}
                 </p>
               </div>
             )}

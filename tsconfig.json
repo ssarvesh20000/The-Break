@@ -93,6 +93,7 @@
     "paths": {
       "@assets/*": ["public/assets/*"],
       "@components/*": ["app/components/*"],
+      "@interfaces/*": ["app/interfaces/*"],
       "@styles/*": ["app/styles/*"],
       "@/*": ["./*"],
       "@lib/*": ["lib/*"],

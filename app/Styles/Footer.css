@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     justify-content: space-around;
-    background-color: #000041;
+    background-color: #ab8d54;
     color: white;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
@@ -14,7 +14,6 @@
 }
 
 .footer-section h4 {
-    
     font-size: 1.2rem;
     margin-bottom: 15px;
     border-bottom: 1px solid #fff;
@@ -26,14 +25,12 @@
 }
 
 .footer-section ul {
-
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .footer-section ul li {
-
     margin-bottom: 8px;
     cursor: pointer;
     color: white;
@@ -47,7 +44,7 @@
     color:white;
 }
 
-.footer-section.logo {
+.logo {
     width: 150px; /* Adjust the width to fit your design */
     height: auto;
     margin-bottom: 20px;

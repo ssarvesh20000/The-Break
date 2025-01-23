@@ -16,7 +16,6 @@ import HeaderNav from './components/HeaderNav';
 import './App.css';
 import ArticleView from './pages/articleView/page';
 
-
 const App: React.FC = () => {
     return (
         <Router>
@@ -45,4 +44,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
