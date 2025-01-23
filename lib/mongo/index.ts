@@ -5,10 +5,15 @@ require('dotenv').config();
 
 let bucket: GridFSBucket;
 
-export const ConnectDB = async () =>{
+export const ConnectDB = async () => {
     try {
-        await mongoose.connect(`${process.env.MONGODB_URI}`);
-        console.log("MongoDB connected");
+        if (mongoose.connection.readyState === 1) {
+            console.log("MongoDB already connected");
+        }
+        else {
+            await mongoose.connect(`${process.env.MONGODB_URI}`);
+            console.log("MongoDB connected");
+        }
 
         const db = mongoose.connection.db;
         if (!db) {

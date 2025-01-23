@@ -4,8 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 type Data = {
     message: string;
 }
-
-
+s
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     if (req.method === 'POST'){
         const { email, password } = req.body;

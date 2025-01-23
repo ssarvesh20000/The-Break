@@ -1,34 +1,15 @@
 import BlogModel from "@/lib/models/BlogModels";
 import { ConnectDB } from "@/lib/mongo";
-//import { writeFile } from "fs/promises";
-const { NextResponse } = require('next/server');
+import { NextResponse } from 'next/server';
 import { getBucket } from "@/lib/mongo";
 import { Readable } from "stream";
 
-//import mongoose from 'mongoose';
-//let bucket: GridFSBucket;
-
-const LoadDB = async () =>{
-    await ConnectDB();
-}
-
-LoadDB();
-/*
-//retrieve info from database:
-
+// TODO modify so it gets the 7 recent ones for home page, also add other endpoints for getting blogs of categories, 
+// GET function to get all the blogs in db
 export async function GET(request: Request) {
-    const blogs = await BlogModel.find({});
-    
-    return NextResponse.json({message: "API Working"});
-}
-
-*/
-export async function GET(request: Request) {
-    console.log("Fetching blogs...");
+    await ConnectDB(); // TODO look into more if calling connect db everytime is best idea
     try {
         const blogs = await BlogModel.find({});
-        console.log("Blogs retrieved successfully");
-        console.log(blogs);
         return NextResponse.json({ success: true, data: blogs });
     } catch (error) {
         console.error("Error retrieving blogs:", error);
@@ -38,8 +19,7 @@ export async function GET(request: Request) {
 
 //add to database
 export async function POST(request: Request) {
-    await ConnectDB(); // redundant code, some reason doesnt work if it is not here will look into later - Fardin
-    // suspect it happens if user goes to /pages/write first
+    await ConnectDB();
     const formData = await request.formData();
     const timeStamp = Date.now();
 

@@ -1,13 +1,12 @@
-import BlogModel from "@/lib/models/BlogModels";
 import { ConnectDB } from "@/lib/mongo";
 import { NextResponse, NextRequest } from "next/server";
-import { getBucket } from '@/lib/mongo'; // Adjust based on your project structure
+import { getBucket } from '@/lib/mongo'; 
 import { ObjectId } from 'mongodb';
-import { read } from "fs";
 
+// GET function to get an image given its id in the blog model
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   await ConnectDB();
-  const { id } = params;
+  const { id } = await params;
 
   try {
     console.log("Fetching image with ID:", id);
@@ -40,20 +39,3 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
     return NextResponse.json({ error: 'Image not found' }, { status: 404 });
   }
 }
-
-/* sarvy old function
-export async function GET(req: Request, { params }: any) {
-  await ConnectDB();
-  const { id } = params;
-
-  try {
-    const blog = await BlogModel.findById(id);
-    if (!blog) {
-      return NextResponse.json({ error: "Article not found" }, { status: 404 });
-    }
-    return NextResponse.json(blog);
-  } catch (error) {
-    return NextResponse.json({ error: "Failed to fetch article" }, { status: 500 });
-  }
-}
-*/
