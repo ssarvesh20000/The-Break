@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import "../Styles/write.css"; // Ensure this path is correct based on your project structure
+import "@styles/write.css"; // Ensure this path is correct based on your project structure
 
 function TextEditor({ value, onChange }) {
     const textAreaRef = useRef(null);

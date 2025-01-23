@@ -1,17 +1,20 @@
 import React from 'react';
 import '@styles/Footer.css';
-// import logoImage from '../../public/assets/logo.png';
-//////import Image from 'next/image';
-//import logopdf from '../../public/assets/logo.png';
 import Image from 'next/image';
-import Link from 'next/link';  
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <div className="footer-section logo">
-      <Image src="/assets/logo.png" alt="The Politic Logo" className="logo-image" width='120' height='40' />
-        {/*<Link href="../../../public/assets/logo.png"target="_blank" rel="noopener noreferrer"></Link>*/}
+      <div className="footer-section">
+        <Image 
+          className="logo" 
+          src="/assets/logo.png" 
+          alt="The Break Logo"
+          layout="responsive"
+          width={100}
+          height={50}
+        />
       </div>
       <div className="footer-section read-more">
         <h4>Read More</h4>

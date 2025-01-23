@@ -1,7 +1,7 @@
 //What we want is multimedia: an area for videos 
 //Videos not hyperlink but you watch them on the website 
 import React from 'react';
-import '../Styles/Video.css';
+import '@styles/Video.css';
 
 const Video: React.FC = () => {
 return (
