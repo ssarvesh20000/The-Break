@@ -1,10 +1,11 @@
+/* TODO delete this or replace with password verification when accessing admin pages, fix structure to match others
 'use server';
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
     message: string;
 }
-s
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     if (req.method === 'POST'){
         const { email, password } = req.body;
@@ -14,4 +15,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             res.status(401).json({message: "Login unsuccessful"});
         }
     }
-}
+} */

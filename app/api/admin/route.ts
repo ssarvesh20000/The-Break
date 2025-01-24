@@ -1,11 +1,11 @@
+// all endpoints for admin CRUD operations (creating, viewing all, updating, and deleting blogs)
 import BlogModel from "@/lib/models/BlogModels";
 import { ConnectDB } from "@/lib/mongo";
 import { NextResponse } from 'next/server';
 import { getBucket } from "@/lib/mongo";
 import { Readable } from "stream";
 
-// TODO modify so it gets the 7 recent ones for home page, also add other endpoints for getting blogs of categories, 
-// GET function to get all the blogs in db
+// GET function to get all the blogs in db, used in admin page to get all blogs
 export async function GET(request: Request) {
     await ConnectDB(); // TODO look into more if calling connect db everytime is best idea
     try {
@@ -17,7 +17,7 @@ export async function GET(request: Request) {
     }
 }
 
-//add to database
+//POST function to add to blog to database, used in write page to add blog from form
 export async function POST(request: Request) {
     await ConnectDB();
     const formData = await request.formData();
@@ -61,6 +61,7 @@ export async function POST(request: Request) {
             title: formData.get("title") || "",
             description: formData.get("description") || "",
             author: formData.get("author") || "",
+            category: formData.get("category") || "",
             image: imageId, // blog model has image id to trace back to image that is in bucket
             content: formData.get("content") || "",
         }
@@ -71,3 +72,9 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Invalid image format" }, { status: 400 });
     }
 }
+
+// DELETE function to delete a blog from database, used in admin page to delete blog
+export async function DELETE(request: Request) { }
+
+// PUT function to update a blog in database, used in admin page to update blog
+export async function PUT(request: Request) { }
