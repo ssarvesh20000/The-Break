@@ -6,7 +6,7 @@ import { getBucket } from "@/lib/mongo";
 import { Readable } from "stream";
 
 // GET function to get all the blogs in db, used in admin page to get all blogs
-export async function GET(request: Request) {
+export async function GET() {
     await ConnectDB(); // TODO look into more if calling connect db everytime is best idea
     try {
         const blogs = await BlogModel.find({});
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
 }
 
 // DELETE function to delete a blog from database, used in admin page to delete blog
-export async function DELETE(request: Request) { }
+export async function DELETE() { }
 
 // PUT function to update a blog in database, used in admin page to update blog
-export async function PUT(request: Request) { }
+export async function PUT() { }

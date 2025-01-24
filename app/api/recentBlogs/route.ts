@@ -3,7 +3,7 @@ import { ConnectDB } from "@/lib/mongo";
 import { NextResponse } from 'next/server';
 
 // GET function used to return 7 most recent blogs used in home page
-export async function GET(request: Request) {
+export async function GET() {
     await ConnectDB(); 
     try {
         const blogs = await BlogModel.find({})

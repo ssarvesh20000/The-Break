@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "@styles/Home.css";
 import "@styles/Video.css";
 import Image from "next/image";
-import galaxyimg from "../public/assets/galaxyimg.jpeg";
+// import galaxyimg from "../public/assets/galaxyimg.jpeg";
 import Video from "@components/Video";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";

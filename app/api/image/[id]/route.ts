@@ -1,12 +1,15 @@
 import { ConnectDB } from "@/lib/mongo";
-import { NextResponse, NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getBucket } from '@/lib/mongo'; 
 import { ObjectId } from 'mongodb';
 
+type idParam = Promise<{ id: string }>;
+
 // GET function to get an image given its id in the blog model
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, props: { params: idParam }) {
   await ConnectDB();
-  const { id } = await params;
+  console.log("Request:", request);
+  const { id } = await props.params;
 
   try {
     console.log("Fetching image with ID:", id);

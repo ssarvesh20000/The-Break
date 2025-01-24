@@ -3,7 +3,7 @@ import { ConnectDB } from "@/lib/mongo";
 import { NextResponse } from 'next/server';
 
 // GET function to get recent blog in every category used in home page
-export async function GET(request: Request) {
+export async function GET() {
     await ConnectDB(); 
     try {
         // Categories to filter by

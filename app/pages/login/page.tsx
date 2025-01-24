@@ -1,13 +1,12 @@
-'use client';
+'use client'
 import { useState, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import '@styles/login.css'; 
 
-const Login = () => {
+const Login: React.FC = () => {
     const router = useRouter();
     const [email, setEmail] = useState("");    
-    const [password, setPassword] = useState("");
-    const [message, setMessage] = useState("");    
+    const [password, setPassword] = useState("");   
 
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault();
@@ -59,7 +58,6 @@ const Login = () => {
                 />
                 <button className="login-button" type="submit">Login</button>
             </form>    
-            {message && <p className="message">{message}</p>} 
         </div>
     );
     

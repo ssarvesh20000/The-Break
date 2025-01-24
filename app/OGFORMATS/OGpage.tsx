@@ -5,7 +5,7 @@ import "@styles/Home.css";
 import "@styles/Video.css";
 import Image from "next/image";
 import galaxyimg from "../public/assets/galaxyimg.jpeg";
-import Video from "./components/video";
+// import Video from "./components/video";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 // import { Link } from 'react-router-dom';
@@ -146,7 +146,7 @@ const Fake: React.FC = () => {
 
         {/* Video Section */}
         <section className="video-section">
-          <Video />
+          {/* <Video /> */}
         </section>
       </div>
       <Footer></Footer>

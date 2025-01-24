@@ -43,10 +43,6 @@ const Write = () => {
     setDescription(e.target.value);
   };
 
-  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(e.target.value);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData();
@@ -137,7 +133,7 @@ const Write = () => {
             <div style={{ marginTop: "10px" }}>
               <h3>Preview:</h3>
               {media?.type.startsWith("image/") ? (
-                <img src={mediaPreview} alt="Selected Media" style={{ maxWidth: "100%", maxHeight: "300px" }} />
+                <Image src={mediaPreview} alt="Selected Media" style={{ maxWidth: "100%", maxHeight: "300px" }} />
               ) : media?.type.startsWith("video/") ? (
                 <video controls style={{ maxWidth: "100%", maxHeight: "300px" }}>
                   <source src={mediaPreview} type={media.type} />

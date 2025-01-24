@@ -11,7 +11,7 @@ const Admin = () => {
     if (!isAuthenticated) {
       router.push("/pages/login");
     }
-  }, []);
+  }, [router]);
 
   return (
     <div>

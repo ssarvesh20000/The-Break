@@ -3,10 +3,13 @@ import { NextResponse, NextRequest } from "next/server";
 import BlogModel from "@/lib/models/BlogModels";
 import { ObjectId } from 'mongodb';
 
+type idParam = Promise<{ id: string }>;
+
 // GET endpoint to get blog by id
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, props: { params: idParam }) {
+    console.log("Request:", request);
     await ConnectDB();
-    const { id } = await params;
+    const { id } = await props.params;
 
     try {
         if (!id) {
