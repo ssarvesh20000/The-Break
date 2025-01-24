@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("/api/blog");
+        const response = await fetch("/api/admin"); // TODO Update with api endpoint from recentBlogs
         const data = await response.json();
         if (data.success) {
           setBlogs(data.data);
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
   }
 
   const handleArticleClick = (id: string) => {
-    router.push(`/articleView/${id}`);
+    router.push(`pages/articleView/${id}`);
   };
 
   return (
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={`/api/blog/${blog.image}`}
+                  src={`/api/image/${blog.image}`}
                   alt={blog.title}
                   width={400}
                   height={300}
@@ -79,14 +79,14 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={`/api/blog/${blogs[0].image}`}
+                  src={`/api/image/${blogs[0].image}`}
                   alt={blogs[0].title}
                   className="main-image"
                   width={600}
                   height={400}
                 />
-                <h2>{blogs[0].title}</h2>
                 <p className="main-description">{blogs[0].description}</p>
+                <h2>{blogs[0].title}</h2>
                 <p className="main-author">
                   {blogs[0].author} -{" "}
                   {new Date(blogs[0].date).toLocaleDateString()}

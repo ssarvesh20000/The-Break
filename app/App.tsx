@@ -14,7 +14,6 @@ import Footer from './components/Footer';
 import HeaderNav from './components/HeaderNav';
 //import Darkmode from './components/Darkmode';
 import './App.css';
-import ArticleView from './pages/articleView/page';
 
 const App: React.FC = () => {
     return (
@@ -28,14 +27,6 @@ const App: React.FC = () => {
                 <Route path="/opinion" element={<Opinion />} />
                 <Route path="/multimedia" element={<Multimedia />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/article/id:102" element= {<ArticleView />} />
-                <Route path="/article/id:202" element= {<ArticleView />} />
-                <Route path="/article/id:302" element= {<ArticleView />} />
-                <Route path="/article/id:402" element= {<ArticleView />} />
-                <Route path="/article/id:502" element= {<ArticleView />} />
-                <Route path="/article/id:602" element= {<ArticleView />} />
-                <Route path="/article/id:702" element= {<ArticleView />} />
-
             </Routes>
             
             <Footer />

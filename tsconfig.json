@@ -103,8 +103,11 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "app/api/blog/route.ts", "app/components/TextEditor.jsx"  ],
+    "**/*.tsx", 
+    "app/api/",
+    "app/api/admin/route.ts", 
+    "app/components/TextEditor.jsx",
+  ],
   "exclude": [
     "node_modules"
   ]
