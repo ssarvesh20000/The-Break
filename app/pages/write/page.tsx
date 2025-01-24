@@ -15,6 +15,11 @@ const Write = () => {
   const [mediaPreview, setMediaPreview] = useState<string | null>(null);
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
+
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCategory(e.target.value);
+  };
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -47,13 +52,14 @@ const Write = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("author", author);
+    formData.append("category", category);
     if (media) {
       formData.append("image", media);
     }
     formData.append("description", description);
     formData.append("content", content);
 
-    const res = await fetch("/api/blog", {
+    const res = await fetch("/api/admin", {
       method: "POST",
       body: formData,
     });
@@ -84,6 +90,20 @@ const Write = () => {
           onChange={handleAuthorChange} 
           required 
         />
+
+        <h1>Select Article Category</h1>
+        <select value={category} onChange={handleCategoryChange} required>
+          <option value="" disabled>
+            Select a category
+          </option>
+          <option value="United States">United States</option>
+          <option value="San Diego">San Diego</option>
+          <option value="World">World</option>
+          <option value="Opinion">Opinion</option>
+          <option value="Multimedia">Multimedia</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+        </select>
+
         <div>
           <h1> Upload Image </h1>
           <button type="button" title="Add" onClick={() => setOpen(!open)}>
@@ -127,7 +147,7 @@ const Write = () => {
             </div>
           )}
 
-          <h1>Input a Description</h1>
+          <h1>Input Image Description</h1>
           <textarea 
             placeholder="Description" 
             value={description} 
