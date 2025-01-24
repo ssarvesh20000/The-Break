@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
-import galaxyimg from "../../../../public/assets/galaxyimg.jpeg";
 import "@styles/ArticleView.css";
-//the-break/app/Styles/ArticleView.css
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
@@ -14,7 +12,7 @@ const ArticleView = () => {
   const router = useParams();
   const id = router.id; // Use useParams to get the dynamic route parameter
   console.log("Article ID:", id);
-  const [article, setArticle] = useState<any>(null);
+  const [article, setArticle] = useState<Blog>();
 
   useEffect(() => {
     if (!id) return;

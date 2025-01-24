@@ -12,18 +12,29 @@ import { Blog } from "@interfaces/Blog";
 
 const Home: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [categoryBlogs, setCategoryBlogs] = useState<Blog[]>([]); // TODO, sarvesh use this variable when setting up the carousel for the blogs in each category
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("/api/admin"); // TODO Update with api endpoint from recentBlogs
-        const data = await response.json();
+        // Update with api endpoint from recentBlogs
+        const recentBlogs = await fetch("/api/recentBlogs");
+        let data;
+        data = await recentBlogs.json();
         if (data.success) {
           setBlogs(data.data);
         } else {
           console.error("Failed to fetch blogs:", data.error);
+        }
+        // get most recent blog in each category
+        const categoryBlogs = await fetch("/api/categoryBlogs");
+        data = await categoryBlogs.json();
+        if (data.success) {
+          setCategoryBlogs(data.data);
+        } else {
+          console.error("Failed to fetch category blogs:", data.error);
         }
       } catch (error) {
         console.error("Error fetching blogs:", error);
@@ -97,7 +108,7 @@ const Home: React.FC = () => {
 
           {/* Right Sidebar */}
           <aside className="sidebar">
-            {blogs.slice(2).map((blog: any) => (
+            {blogs.slice(2).map((blog: Blog) => (
               <div
                 className="sidebar-article"
                 key={blog._id}
@@ -105,7 +116,7 @@ const Home: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Image
-                  src={galaxyimg}
+                  src={`/api/image/${blog.image}`}
                   alt={blog.title}
                   className="sidebar-image"
                   width={300}
@@ -113,11 +124,39 @@ const Home: React.FC = () => {
                 />
                 <h3>{blog.title}</h3>
                 <p className="article-author">
-                  {blog.author} - {new Date(blog.createdAt).toLocaleDateString()}
+                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
                 </p>
               </div>
             ))}
             <footer className="read-more">Read More</footer>
+          </aside>
+        </div>
+
+        <div>
+          {/* TODO Fix/ format this section, this is placeholder to see where the data is coming from */}
+          <h1>Category Blogs</h1>
+          <aside className="sidebar">
+            {categoryBlogs.map((blog: Blog) => (
+              <div
+                className="sidebar-article"
+                key={blog._id}
+                onClick={() => handleArticleClick(blog._id)}
+                style={{ cursor: "pointer" }}
+              >
+                <p> {blog.category} </p>
+                <Image
+                  src={`/api/image/${blog.image}`}
+                  alt={blog.title}
+                  className="sidebar-image"
+                  width={300}
+                  height={200}
+                />
+                <h3>{blog.title}</h3>
+                <p className="article-author">
+                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
+                </p>
+              </div>
+            ))}
           </aside>
         </div>
 
