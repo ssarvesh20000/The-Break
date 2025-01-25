@@ -1,66 +1,68 @@
+'use client'
 import React from "react";
 import "@styles/Catergory.css";
-import galaxyimg from "../../../public/assets/galaxyimg.jpeg";
 import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
-// import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Blog } from "@interfaces/Blog";
+import { useRouter } from "next/navigation";
 
 const Multimedia: React.FC = () => {
+  const [blogs, setBlogs] = useState([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const blogs = await fetch(`/api/categoryBlogs/${encodeURIComponent("Multimedia")}`);
+        const data = await blogs.json();
+        if (data.success) {
+          setBlogs(data.data);
+          console.log(data.data);
+        } else {
+          console.error("Failed to fetch blogs:", data.error);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } 
+    };
+    fetchBlogs();
+  }, []);
+
+  const handleArticleClick = (id: string) => {
+    router.push(`/pages/articleView/${id}`);
+  };
+
   return (
     <div className="body">
       <HeaderNav></HeaderNav>
       <div className="san-diego-page">
         <h2 className="category-title">Category</h2>
         <h1 className="page-title">Multimedia</h1>
+
         <div className="articles">
-          <div className="article">
-            <Image
-              src={galaxyimg}
-              alt="Interview with Candidate"
-              className="article-image"
-            />
-            <div className="article-content">
-              <h3 className="article-title">
-                {/* <Link
-                  to="/article/id:102"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  An Interview with San Diego Candidate John
-                </Link> */}
-              </h3>
-              <p className="article-author">Jane Smith - Oct 29, 2024</p>
-              <p className="article-excerpt">
-                Can you tell me a little bit about your background? Where are
-                you from? What is your major? What are your primary activities
-                outside of class? I’m an E&EB major...
-              </p>
+          {blogs.map((blog: Blog) => (
+            <div 
+              className="article"
+              key={blog._id}
+              onClick={() => handleArticleClick(blog._id)}
+            >
+              <Image
+                src={`/api/image/${blog.image}`} 
+                alt="Article Image"
+                className="article-image"
+                width={300}
+                height={200}
+              />
+              <div className="article-content">
+                <h3 className="article-title">
+                  {blog.title}
+                </h3>
+                <p className="article-author">{blog.author} - {new Date(blog.date).toLocaleDateString()}</p>
+              </div>
             </div>
-          </div>
-          <div className="article">
-            <Image
-              src={galaxyimg}
-              alt="Interview with Team Members"
-              className="article-image"
-            />
-            <div className="article-content">
-              <h3 className="article-title">
-                {/* <Link
-                  to="/article/id:102"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  Interview with San Diego Council Members
-                </Link> */}
-              </h3>
-              <p className="article-author">Alex Johnson - Oct 29, 2024</p>
-              <p className="article-excerpt">
-                Council members shared insights about the upcoming election and
-                their plans for the city. They focused on community engagement
-                and sustainable development...
-              </p>
-            </div>
-          </div>
-          {/* Add more articles as needed */}
+          ))}
         </div>
       </div>
       <Footer></Footer>
