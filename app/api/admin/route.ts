@@ -17,41 +17,46 @@ export async function GET() {
     }
 }
 
+const uploadMedia = async (media: File) => {
+    const timeStamp = Date.now();
+    const buffer = Buffer.from(await media.arrayBuffer());
+    const bucket = getBucket();
+    const readable = Readable.from(buffer);
+
+    const uploadStream = bucket.openUploadStream(`${timeStamp}_${media.name}`,{
+        metadata: {
+            contentType: media.type,
+            fileName: media.name,
+            timestamp: timeStamp,
+        },
+    });
+    readable.pipe(uploadStream);
+
+    // Wait for the upload to complete
+    await new Promise((resolve, reject) => {
+        uploadStream.on('finish', resolve);
+        uploadStream.on('error', reject);
+        readable.pipe(uploadStream);
+    });
+
+    // Get the fileId of the uploaded image
+    return uploadStream.id;
+}
+
 //POST function to add to blog to database, used in write page to add blog from form
 export async function POST(request: Request) {
     await ConnectDB();
     const formData = await request.formData();
-    const timeStamp = Date.now();
 
     const image = formData.get("image"); // expect image to be a File object
     console.log(image);
     if (!image) {
         return NextResponse.json({ error: "Image is required" }, { status: 400 });
     }
+    // TODO add functionality if user uploads video
     if (image instanceof File) {
-        // save image to bucket
-        const buffer = Buffer.from(await image.arrayBuffer());
-        const bucket = getBucket();
-        const readable = Readable.from(buffer);
-
-        const uploadStream = bucket.openUploadStream(`${timeStamp}_${image.name}`,{
-            metadata: {
-                contentType: image.type,
-                fileName: image.name,
-                timestamp: timeStamp,
-            },
-        });
-        readable.pipe(uploadStream);
-
-        // Wait for the upload to complete
-        await new Promise((resolve, reject) => {
-            uploadStream.on('finish', resolve);
-            uploadStream.on('error', reject);
-            readable.pipe(uploadStream);
-        });
-
         // Get the fileId of the uploaded image
-        const imageId = uploadStream.id;
+        const imageId = await uploadMedia(image);
 
         const title = formData.get("title");
         if (!title) {
