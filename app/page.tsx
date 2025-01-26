@@ -59,6 +59,7 @@ const Home: React.FC = () => {
         <HeaderNav />
         <div className="content-wrapper">
           {/* Left Sidebar */}
+          {/* Left Sidebar */}
           <aside className="left-sidebar">
             {blogs.slice(1, 3).map((blog: Blog) => (
               <div
@@ -72,6 +73,7 @@ const Home: React.FC = () => {
                   alt={blog.title}
                   width={400}
                   height={300}
+                  className="left-sidebar-image"
                 />
                 <h2>{blog.title}</h2>
                 <p className="article-author">
@@ -80,6 +82,7 @@ const Home: React.FC = () => {
               </div>
             ))}
           </aside>
+
 
           {/* Main Content, shows first blog in returned json list */}
           <section className="main-content">

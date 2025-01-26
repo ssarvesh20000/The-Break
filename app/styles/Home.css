@@ -26,6 +26,7 @@
 /* Left Sidebar */
 .left-sidebar {
     font-family: 'Georgia', serif;
+    font-size: 15.5px;
     font-weight: bold;
     width: 20%; /* Adjusted to fit left of main content */
     padding-right: 15px; /* Add spacing between left sidebar and main content */
@@ -205,9 +206,10 @@
 }
 
 .left-sidebar-article img {
-    width: 100%;
-    height: 100%;
-    height: auto;
+    order: 1; /* Ensure the image appears on the right */
+    width: 225px;
+    height: 150px;
+    object-fit: cover;
     margin-bottom: 10px;
     flex-shrink: 0;
 }
