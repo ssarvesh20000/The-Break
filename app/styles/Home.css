@@ -1,3 +1,4 @@
+/*
 :root{
     ----background-color:#ffffff;
     --border:1px solid #cccccc;
@@ -8,15 +9,12 @@
     --underline-color: #000000;
 
 }
+*/
 
-.body{
-    background-color:var(--background-color);
-}
 /* Container to wrap all content in a three-column layout */
 
 .home-container {
 
-    background-color:var(--background-color);
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -49,9 +47,16 @@
 
 /* Home.css */
 .sidebar-article {
-    font-weight: bold;
-    text-decoration: none;
-    margin-bottom: 20px; /* Adjust this value to control the gap */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align content to the left */
+    background-color: var(--background-color);
+    overflow: hidden;
+    font-size: 20px;
+    margin-bottom: 20px; /* Space between articles */
+    padding: 10px; /* Optional: Add padding around content */
+    border: var(--border); /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
 }
 .sidebar-article:hover {
     text-decoration: underline;
@@ -60,10 +65,25 @@
 
 /* Optional: Add padding around the image for a cleaner layout */
 .sidebar-image {
-    padding: 15px; /* Optional, adjust as needed */
+    width: 100%; /* Full width for the image */
+    height: auto;
+    margin-bottom: 10px; /* Space below the image */
+    border-radius: 5px; /* Rounded corners for the image */
 }
 
+.sidebar-article h3 {
+    font-size: 1rem; /* Adjust title font size */
+    color: var(--text-color);
+    margin: 0 0 10px; /* Add space below the title */
+    text-align: left; /* Ensure title is left-aligned */
+}
 
+.sidebar-article .article-author {
+    font-size: 0.85rem; /* Smaller font for the author/date */
+    color: var(--aurthor); /* Use variable for author text color */
+    margin: 0; /* Remove unnecessary margins */
+    text-align: left; /* Align text to the left */
+}
 /* Main Article Styles */
 .main-article {
     color:var(--text-color);
@@ -87,7 +107,7 @@
 
 .main-title {
     font-family: 'Georgia', serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 15px 0;
     font-weight: bold;
 
@@ -126,7 +146,7 @@
 
 .article h3 {
     
-    font-size: 1.1rem;
+    font-size: 1rem;
     color:var(--text-color);
     margin: 0;
 }
@@ -170,11 +190,11 @@
 .left-sidebar-article {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    gap:-80px
 }
 .left-sidebar-article:hover{
     text-decoration: underline;
-    text-decoration-color:var(--text-color) ;
 }
 
 
@@ -193,6 +213,7 @@
 .left-sidebar-author {
     font-size: 0.75rem;
     color:var(--text-color);
+    
 }
 
 /* Read More Section */

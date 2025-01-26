@@ -8,6 +8,7 @@ import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useRouter } from "next/navigation";
 import { Blog } from "@interfaces/Blog";
+import Carousel from "@components/Carousel";
 
 const Home: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -59,7 +60,7 @@ const Home: React.FC = () => {
         <div className="content-wrapper">
           {/* Left Sidebar */}
           <aside className="left-sidebar">
-            {blogs.slice(0, 2).map((blog: Blog) => (
+            {blogs.slice(1, 3).map((blog: Blog) => (
               <div
                 className="left-sidebar-article"
                 key={blog._id}
@@ -107,57 +108,37 @@ const Home: React.FC = () => {
 
           {/* Right Sidebar */}
           <aside className="sidebar">
-            {blogs.slice(2).map((blog: Blog) => (
-              <div
-                className="sidebar-article"
-                key={blog._id}
-                onClick={() => handleArticleClick(blog._id)}
-                style={{ cursor: "pointer" }}
-              >
-                <Image
-                  src={`/api/image/${blog.image}`}
-                  alt={blog.title}
-                  className="sidebar-image"
-                  width={300}
-                  height={200}
-                />
-                <h3>{blog.title}</h3>
-                <p className="article-author">
-                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
-                </p>
-              </div>
-            ))}
-            <footer className="read-more">Read More</footer>
-          </aside>
+            {/*SLICE NEEDS TO BE 3*/}
+          {blogs.slice(0).map((blog: Blog) => (
+            <div
+              className="sidebar-article"
+              key={blog._id}
+              onClick={() => handleArticleClick(blog._id)}
+              style={{ cursor: "pointer" }}
+            >
+              <Image
+                src={`/api/image/${blog.image}`}
+                alt={blog.title}
+                className="sidebar-image"
+                width={300}
+                height={200}
+              />
+              <h3>{blog.title}</h3> {/* Title appears above */}
+              <p className="article-author">
+                {blog.author} - {new Date(blog.date).toLocaleDateString()}
+              </p> {/* Author and date below */}
+            </div>
+          ))}
+        </aside>
+
+
         </div>
 
-        <div>
-          {/* TODO Fix/ format this section, this is placeholder to see where the data is coming from */}
-          <h1>Category Blogs</h1>
-          <aside className="sidebar">
-            {categoryBlogs.map((blog: Blog) => (
-              <div
-                className="sidebar-article"
-                key={blog._id}
-                onClick={() => handleArticleClick(blog._id)}
-                style={{ cursor: "pointer" }}
-              >
-                <p> {blog.category} </p>
-                <Image
-                  src={`/api/image/${blog.image}`}
-                  alt={blog.title}
-                  className="sidebar-image"
-                  width={300}
-                  height={200}
-                />
-                <h3>{blog.title}</h3>
-                <p className="article-author">
-                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
-                </p>
-              </div>
-            ))}
-          </aside>
-        </div>
+          <Carousel 
+            blogs={categoryBlogs} 
+            title="Read More by Category"
+            //handleArticleClick={(id) => router.push(`/pages/articleView/${id}`)}
+          />
 
         <section className="video-section">
           <Video />
