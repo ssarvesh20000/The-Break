@@ -72,7 +72,6 @@ const Home: React.FC = () => {
                   alt={blog.title}
                   width={400}
                   height={300}
-                  className="left-sidebar-image"
                 />
                 <h2>{blog.title}</h2>
                 <p className="article-author">
@@ -96,6 +95,7 @@ const Home: React.FC = () => {
                   className="main-image"
                   width={600}
                   height={400}
+                  
                 />
                 <p className="main-description">{blogs[0].description}</p>
                 <h2>{blogs[0].title}</h2>
@@ -114,22 +114,37 @@ const Home: React.FC = () => {
                 className="sidebar-article"
                 key={blog._id}
                 onClick={() => handleArticleClick(blog._id)}
-                style={{ cursor: "pointer" }}
+                style={{
+                  display: "flex", // Enables flexbox
+                  flexDirection: "row", // Arranges children in a row
+                  cursor: "pointer",
+                  marginBottom: "20px", // Adds space between items
+                  alignItems: "flex-start" // Aligns items to the start of the flex container
+                }}
               >
+                <div style={{
+                  flex: "1",
+                  paddingRight: "20px" // Adds spacing between text and image
+                }}>
+                  <h3>{blog.title}</h3>
+                  <p className="article-author">
+                    {blog.author} - {new Date(blog.date).toLocaleDateString()}
+                  </p>
+                </div>
                 <Image
                   src={`/api/image/${blog.image}`}
                   alt={blog.title}
                   className="sidebar-image"
                   width={300}
                   height={200}
+                  style={{
+                    flex: "none", // The image doesn't grow or shrink
+                    alignSelf: "flex-start" // Aligns the image at the start of the flex container
+                  }}
                 />
-                <h3>{blog.title}</h3>
-                <p className="article-author">
-                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
-                </p>
               </div>
             ))}
-            <footer className="read-more">Read More</footer>
+            {/*<footer className="read-more">Read More</footer>*/}
           </aside>
         </div>
 
