@@ -72,6 +72,7 @@ const Home: React.FC = () => {
                   alt={blog.title}
                   width={400}
                   height={300}
+                  className="left-sidebar-image"
                 />
                 <h2>{blog.title}</h2>
                 <p className="article-author">

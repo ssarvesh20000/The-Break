@@ -16,14 +16,12 @@
     padding: 15px 20px;
     font-family: Arial, sans-serif;
     width: 100%; 
-    height: auto;  
-    border-top: var(--border-top);
-    border-bottom: var(--border-top);
+    height: auto;
     z-index: 1000 !important; /* Increased z-index to ensure it stays on top */
-    background-color: var(--background-color); /* Added to prevent content from showing through */
+    background-color: white; /* Added to prevent content from showing through */
     transition: top 0.3s; /* Smooth transition effect */
     border-bottom: 1px solid #000;
-    
+    border-top: 1px solid #000;
 }
 
 .nav-links {
@@ -99,11 +97,15 @@
     text-align: center;
     margin-top: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #000;
 }
 
 .header-content {
     display: inline-block; /* Centers the title and date together */
+}
+
+.moved-header-content {
+    display: inline-block;
+    margin-right: 3em;
 }
 
 .header-title {
