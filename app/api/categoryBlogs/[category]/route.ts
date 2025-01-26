@@ -5,8 +5,7 @@ import BlogModel from "@/lib/models/BlogModels";
 type categoryParam = Promise<{ category: string }>;
 
 // GET endpoint to get blog by id
-export async function GET(request: NextRequest, props: { params: categoryParam }) {
-    console.log("Request:", request);
+export async function GET(_: NextRequest, props: { params: categoryParam }) {
     await ConnectDB();
     const category = decodeURIComponent((await props.params).category);
 

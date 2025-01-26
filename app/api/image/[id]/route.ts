@@ -6,9 +6,8 @@ import { ObjectId } from 'mongodb';
 type idParam = Promise<{ id: string }>;
 
 // GET function to get an image given its id in the blog model
-export async function GET(request: NextRequest, props: { params: idParam }) {
+export async function GET(_: NextRequest, props: { params: idParam }) {
   await ConnectDB();
-  console.log("Request:", request);
   const { id } = await props.params;
 
   try {
