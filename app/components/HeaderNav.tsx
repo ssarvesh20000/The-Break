@@ -1,14 +1,24 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTwitter, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import '@styles/Header.css';
+//import '@styles/Header.css';
 import '@styles/NavBar.css';
 import Link from 'next/link';
 
 const HeaderNav: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -24,7 +34,12 @@ const HeaderNav: React.FC = () => {
                 </Link>
             </div>
             </header>
-            <nav className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
+            <nav className={`navbar ${menuOpen ? 'menu-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+            {isScrolled && (
+                    <Link href="/" className="navbar-title">
+                        The Break
+                    </Link>
+                )}
             <button className="menu-button" onClick={toggleMenu} aria-label="Toggle menu">
                 <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
             </button>
