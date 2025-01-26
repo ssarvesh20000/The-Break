@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import plus from "@assets/plusButton.png";
 import image from "@assets/image.png";
-import video from "@assets/video.png";
+// import video from "@assets/video.png";
 import TextEditor from "@components/TextEditor";
 import "@styles/write.css";
 import { useRouter } from "next/navigation";
@@ -139,6 +139,7 @@ const Write = () => {
                   onChange={handleMediaChange} 
                 />
               </label>
+              {/* TODO commented out upload video for this version
               <label htmlFor="uploadVideo" style={{ cursor: "pointer" }}>
                 <Image src={video} alt="Upload Video" width={20} height={20} />
                 <input 
@@ -148,7 +149,7 @@ const Write = () => {
                   style={{ display: "none" }} 
                   onChange={handleMediaChange} 
                 />
-              </label>
+              </label> */}
             </div>
           )}
           {mediaPreview && (

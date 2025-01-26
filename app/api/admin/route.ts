@@ -4,6 +4,7 @@ import { ConnectDB } from "@/lib/mongo";
 import { NextResponse } from 'next/server';
 import { getBucket } from "@/lib/mongo";
 import { Readable } from "stream";
+import { ObjectId } from 'mongodb';
 
 // GET function to get all the blogs in db, used in admin page to get all blogs
 export async function GET() {
@@ -81,8 +82,15 @@ export async function POST(request: Request) {
 // DELETE function to delete a blog from database, used in admin page to delete blog
 export async function DELETE(request: Request) { 
     await ConnectDB();
-    // TODO fix reading blogId from body
     const { id } = await request.json();
+    const blog = await BlogModel.findById(id);
+    if (!blog) {
+        return NextResponse.json({ success: false, error: "Blog not found" }, { status: 404 });
+    }
+
+    const imageId = ObjectId.createFromHexString(blog.image);
+    const bucket = getBucket();
+    await bucket.delete(imageId);
 
     try {
         await BlogModel.deleteOne({ _id: id });
