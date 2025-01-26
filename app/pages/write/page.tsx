@@ -133,7 +133,11 @@ const Write = () => {
             <div style={{ marginTop: "10px" }}>
               <h3>Preview:</h3>
               {media?.type.startsWith("image/") ? (
-                <Image src={mediaPreview} alt="Selected Media" style={{ maxWidth: "100%", maxHeight: "300px" }} />
+                <Image src={mediaPreview} alt="Selected Media" 
+                  width={0}
+                  height={0}
+                  style={{ width: '30%', height: 'auto' }} 
+                />
               ) : media?.type.startsWith("video/") ? (
                 <video controls style={{ maxWidth: "100%", maxHeight: "300px" }}>
                   <source src={mediaPreview} type={media.type} />
