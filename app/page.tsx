@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         <div className="content-wrapper">
           {/* Left Sidebar */}
           <aside className="left-sidebar">
-            {blogs.slice(0, 2).map((blog: Blog) => (
+            {blogs.slice(1, 3).map((blog: Blog) => (
               <div
                 className="left-sidebar-article"
                 key={blog._id}
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
 
           {/* Right Sidebar */}
           <aside className="sidebar">
-            {blogs.slice(2).map((blog: Blog) => (
+            {blogs.slice(3).map((blog: Blog) => (
               <div
                 className="sidebar-article"
                 key={blog._id}
