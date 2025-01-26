@@ -13,12 +13,14 @@ const HeaderNav: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            console.log(window.scrollY);  // Check the scroll position in the console
             setIsScrolled(window.scrollY > 50);
         };
-
+    
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+    
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);

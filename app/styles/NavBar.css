@@ -8,8 +8,8 @@
 */
 
 .navbar {
-    position: sticky;
-    top: 0; /* This is crucial - tells the browser to stick to the top of the viewport */
+    position: sticky !important; 
+    top: 0 !important; /* This is crucial - tells the browser to stick to the top of the viewport */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@
     height: auto;  
     border-top: var(--border-top);
     border-bottom: var(--border-top);
-    z-index: 1000; /* Increased z-index to ensure it stays on top */
+    z-index: 1000 !important; /* Increased z-index to ensure it stays on top */
     background-color: var(--background-color); /* Added to prevent content from showing through */
     transition: top 0.3s; /* Smooth transition effect */
     border-bottom: 1px solid #000;

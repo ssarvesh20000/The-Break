@@ -94,6 +94,11 @@ const Admin = () => {
           <button>Writers page</button>
         </Link>
       </div>
+      <div>
+        <Link href="/pages/delete">
+          <button>Delete page</button>
+        </Link>
+      </div>
       <div> {/* TODO Sarvy update formating */}
         {blogs.map((blog: Blog, index) => (
           <div key={blog._id}>
