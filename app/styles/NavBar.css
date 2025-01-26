@@ -1,22 +1,29 @@
+/*
 :root {
     --background-color: #ffffff;
     --border-top: 1px solid #ccc;
     --color: #000;
     --icon-hover: #4400ff;
 }
-
+*/
 
 .navbar {
+    position: sticky;
+    top: 0; /* This is crucial - tells the browser to stick to the top of the viewport */
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the entire navbar content */
+    justify-content: center;
     padding: 15px 20px;
-    background-color: var(--background-color);
     font-family: Arial, sans-serif;
+    width: 100%; 
+    height: auto;  
     border-top: var(--border-top);
     border-bottom: var(--border-top);
-    position: relative;
-    z-index: 1;
+    z-index: 1000; /* Increased z-index to ensure it stays on top */
+    background-color: var(--background-color); /* Added to prevent content from showing through */
+    transition: top 0.3s; /* Smooth transition effect */
+    border-bottom: 1px solid #000;
+    
 }
 
 .nav-links {
@@ -73,6 +80,52 @@
     position: absolute;
     left: 20px; /* Place menu button on the left */
 }
+
+.scrolled .navbar {
+    top: 0;
+}
+
+/* HEADER SECTION */
+
+.scrolled .header {
+    margin-top: -100px; /* Adjust based on your header's height */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.header-content {
+    display: inline-block; /* Centers the title and date together */
+}
+
+.header-title {
+    color:var(--text-color);
+    font-size: 2.5rem;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+}
+
+.header-title-link {
+    text-decoration: none; /* Remove underline for the link */
+    color: inherit; /* Inherit the color from the parent */
+}
+
+.header-title-link:hover {
+    opacity: 0.8; /* Add hover effect if needed */
+}
+
+
+
 
 /* Responsive styles */
 @media (max-width: 768px) {

@@ -8,6 +8,7 @@ import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useRouter } from "next/navigation";
 import { Blog } from "@interfaces/Blog";
+import Carousel from "@components/Carousel";
 
 const Home: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -158,6 +159,12 @@ const Home: React.FC = () => {
             ))}
           </aside>
         </div>
+
+          <Carousel 
+            blogs={categoryBlogs} 
+            title="Read More by Category"
+            //handleArticleClick={(id) => router.push(`/pages/articleView/${id}`)}
+          />
 
         <section className="video-section">
           <Video />
