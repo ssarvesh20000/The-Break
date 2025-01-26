@@ -59,7 +59,7 @@ const Admin = () => {
       });
 
       alert("Article deleted");
-      setBlogs((prevBlogs) => prevBlogs.filter((blog, i) => i !== index));
+      setBlogs((prevBlogs) => prevBlogs.filter((_, i) => i !== index));
     } catch (error) {
       console.error("Error deleting article:", error);
       alert("Error deleting article:");
