@@ -79,7 +79,19 @@ export async function POST(request: Request) {
 }
 
 // DELETE function to delete a blog from database, used in admin page to delete blog
-export async function DELETE() { }
+export async function DELETE(request: Request) { 
+    await ConnectDB();
+    // TODO fix reading blogId from body
+    const { id } = await request.json();
+
+    try {
+        await BlogModel.deleteOne({ _id: id });
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error("Error deleting blog:", error);
+        return NextResponse.json({ success: false, error: "Failed to delete blog" }, { status: 500 });
+    }
+}
 
 // PUT function to update a blog in database, used in admin page to update blog
 export async function PUT() { }
