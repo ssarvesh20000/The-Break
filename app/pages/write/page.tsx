@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import plus from "@assets/plusButton.png";
 import image from "@assets/image.png";
 import video from "@assets/video.png";
 import TextEditor from "@components/TextEditor";
 import "@styles/write.css";
+import { useRouter } from "next/navigation";
 
 const Write = () => {
   const [open, setOpen] = useState(false);
@@ -16,6 +17,27 @@ const Write = () => {
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        const res = await fetch("/api/login", {
+          method: "GET",
+          credentials: "include", // Include cookies in the request
+        });
+
+        if (!res.ok) { // if cookie is not present, redirect to login page
+          router.push("/pages/login");
+        }
+      } catch (error) {
+        console.error("Error checking authentication:", error);
+        router.push("/pages/login");
+      }
+    };
+
+    checkAuthentication();
+  }, [router]);
 
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(e.target.value);
