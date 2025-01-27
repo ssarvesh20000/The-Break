@@ -55,7 +55,7 @@ const Admin = () => {
         </div>
         <div className="tile">
           <Link href="/pages/delete">
-            <button>Delete page</button>
+            <button>Modify page</button>
           </Link>
         </div>
       </div>

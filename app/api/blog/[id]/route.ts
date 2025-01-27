@@ -6,8 +6,7 @@ import { ObjectId } from 'mongodb';
 type idParam = Promise<{ id: string }>;
 
 // GET endpoint to get blog by id
-export async function GET(request: NextRequest, props: { params: idParam }) {
-    console.log("Request:", request);
+export async function GET(_: NextRequest, props: { params: idParam }) {
     await ConnectDB();
     const { id } = await props.params;
 
