@@ -20,7 +20,7 @@ const Login: React.FC = () => {
             if (res.status === 200){
                 router.push("/pages/admin"); 
             } else {
-                alert("Password Incorrect. SWAT OTW.");
+                alert("Password Incorrect. Try Again.");
             }
         } catch (error) {
             console.error("Error logging in: ", error);
@@ -34,7 +34,6 @@ const Login: React.FC = () => {
     return (
         <div className="login-container">
             <h3>Attempting to Access Restricted Content. Enter Admin Password.</h3>
-            <h4>1 Attempt Remaining, SWAT Team will be sent if password incorrect.</h4>
             <form className="login-form" action="submit" onSubmit={handleLogin}>
                 <label className="label" htmlFor="password">Password:</label>
                 <input 
