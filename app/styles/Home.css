@@ -295,6 +295,10 @@
     margin-top: 20px; /* Space above the video section */
 }
 
+body, html{
+    overflow-x: hidden;
+}
+
 @media screen and (max-width: 1200px) {
     .content-wrapper {
         flex-direction: column;

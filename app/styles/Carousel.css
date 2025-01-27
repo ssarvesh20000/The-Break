@@ -173,3 +173,15 @@ button:last-child {
   border-radius: 4px;
   background-color: #555;
 }
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    width: 300px; /* Matches the width of a single article */
+    overflow: hidden;
+  }
+
+  .carousel-article {
+    flex: 0 0 100%; /* Ensure only one article is visible */
+    margin-inline: 0; /* Remove spacing for mobile */
+  }
+}
