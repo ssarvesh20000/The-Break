@@ -16,11 +16,6 @@
     padding-right: 15px; /* Add spacing between left sidebar and main content */
 }
 
-/* Main Content */
-.main-content {
-    width: 55%; /* Main article area centered in the layout */
-}
-
 /* Right Sidebar */
 .sidebar {
     font-family: 'Playfair Display', serif;
@@ -84,14 +79,22 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hover-title:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.main-image {
+    width: 100%;
+    max-height: 50%;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
-.main-image {
-    width: 650px;
-    height: 325px;
+/* Main Content */
+.main-content {
+    width: 55%; /* Main article area centered in the layout */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-title {

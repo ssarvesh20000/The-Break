@@ -12,7 +12,7 @@ import Carousel from "@components/Carousel";
 
 const Home: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [categoryBlogs, setCategoryBlogs] = useState<Blog[][]>([]); // TODO, sarvesh use this variable when setting up the carousel for the blogs in each category
+  const [categoryBlogs, setCategoryBlogs] = useState<Blog[][]>([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
@@ -93,9 +93,8 @@ const Home: React.FC = () => {
                   src={`/api/image/${blogs[0].image}`}
                   alt={blogs[0].title}
                   className="main-image"
-                  width={600}
-                  height={400}
-                  
+                  width={400}
+                  height={300}
                 />
                 <h2 className="hover-title">{blogs[0].title}</h2>
                 <p className="main-author">

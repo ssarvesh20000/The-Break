@@ -25,6 +25,7 @@ const Admin = () => {
     };
 
     checkAuthentication();
+    window.location.reload();
   }, [router]);
 
   const handleLogout = async () => {
