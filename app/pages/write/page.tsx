@@ -16,6 +16,7 @@ const Write = () => {
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -34,8 +35,20 @@ const Write = () => {
     checkAuthentication();
   }, [router]);
 
+  const clearForm = () => {
+    setTitle("");
+    setAuthor("");
+    setMedia(null);
+    setMediaPreview(null);
+    setDescription("");
+    setContent("");
+    setCategory("");
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     const formData = new FormData();
     formData.append("title", title);
     formData.append("author", author);
@@ -52,6 +65,7 @@ const Write = () => {
 
       if (res.ok) {
         alert("Blog created successfully");
+        clearForm();
         router.push("/pages/admin");
       } else {
         alert("Failed to create blog");
@@ -59,6 +73,8 @@ const Write = () => {
     } catch (error) {
       console.error("Error creating blog:", error);
       alert("Error creating blog");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -161,7 +177,13 @@ const Write = () => {
           />
         </div>
 
-        <button type="submit" className="submit-button">Submit</button>
+        <button 
+          type="submit" 
+          className="submit-button" 
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </button>
       </form>
     </div>
   );

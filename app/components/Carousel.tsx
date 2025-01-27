@@ -73,6 +73,14 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ blogs, title }) => {
             </div>
             <button onClick={() => handleNext(idx)}> → </button>
           </aside>
+          <div className="carousel-indicators">
+            {Array(Math.ceil(categoryBlogs.length / 3)).fill(null).map((_, index) => (
+              <div
+                key={index}
+                className={`indicator ${currentIndices[idx] === index ? 'active' : ''}`}
+              />
+            ))}
+          </div>
         </div>
       ))}
     </div>

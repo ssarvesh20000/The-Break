@@ -39,14 +39,16 @@
     gap: 15px;
     position: absolute;
     right: 20px;
+    color: #1a4789
 }
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
-    color: var(--text-color);
+    color: rgb(115, 117, 117);
+    
 }
 .icon-social:hover {
-    color: var(--icon-hover);
+    color: #1a4789
 }
 .menu-button {
     display: none;
