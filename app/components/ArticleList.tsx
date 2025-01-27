@@ -1,4 +1,5 @@
 //article ID?
+//Delete file?
 import React from 'react';
 
 interface ArticleListProps {

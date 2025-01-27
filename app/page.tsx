@@ -106,7 +106,7 @@ const Home: React.FC = () => {
                   <div
                       dangerouslySetInnerHTML={{ __html: blogs[0].content }}
                       style={{
-                        maxHeight: "6rem",
+                        maxHeight: "5.75rem",
                         overflow: "hidden",
                       }}
                   ></div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Blog } from "@interfaces/Blog";
+import "@styles/Delete.css";
 
 const Delete = () => {
   const router = useRouter();
@@ -63,31 +64,37 @@ const Delete = () => {
     }
   }
 
-  return(
-    <div>
-      <h1>Modify Blogs</h1>
-      <h3>Select a Blog below to modify it, or select delete to remove it.</h3>
-      <div> {/* TODO Sarvy update formating */}
+  return (
+    <div className="container">
+      <div className="header">
+        <h1>Modify Blogs</h1>
+        <h3>Select a Blog below to modify it, or select delete to remove it.</h3>
+      </div>
+      
+      <div className="blog-grid">
         {blogs.map((blog: Blog, index) => (
-          <div key={blog._id}>
-            <div
-              onClick={() => handleArticleClick(blog._id)}
-              style={{ cursor: "pointer" }}
-            >
-              <h3>{blog.title}</h3>
-              <p className="">
-                {blog.author} - {new Date(blog.date).toLocaleDateString()}
-              </p>
+          <div key={blog._id} className="blog-card">
+            <div onClick={() => handleArticleClick(blog._id)}>
               <Image
                 src={`/api/image/${blog.image}`}
                 alt={blog.title}
-                className=""
+                className="blog-image"
                 width={300}
                 height={200}
-              />  
+              />
+              <div className="blog-content">
+                <h3 className="blog-title">{blog.title}</h3>
+                <p className="blog-meta">
+                  {blog.author} - {new Date(blog.date).toLocaleDateString()}
+                </p>
+              </div>
             </div>
-            <button onClick={() => handleDelete(index)}>Delete</button>
-            <p> ----------------- </p>
+            <button 
+              className="delete-button"
+              onClick={() => handleDelete(index)}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>

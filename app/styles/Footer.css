@@ -21,7 +21,7 @@
 }
 
 .logo {
-    max-width: 250px; /* Increased logo size */
+    max-width: 250%;
     height: auto;
     filter: brightness(0) invert(1);
     margin-bottom: 1rem;

@@ -37,31 +37,36 @@ const ArticleView = () => {
 
   return (
     <div className="body">
-      <HeaderNav />
-      <div className="article-page">
+    <HeaderNav />
+    <div className="article-page">
         <div className="article-container">
-          <h3 className="article-title">{article.title}</h3>
-          <p className="article-author">
-            {article.author} - {new Date(article.date).toLocaleDateString()}
-          </p>
-          <Image
-            src={`/api/image/${article.image}`}
-            alt={article.title}
-            className="article-image"
-            width={800}
-            height={600}
-          />
-          <p className="article-content">{article.description}</p>
-          <div
+            <h3 className="article-title">{article.title}</h3>
+            <p className="article-author">
+                {article.author} - {new Date(article.date).toLocaleDateString()}
+            </p>
+            <div className="image-description-wrapper">
+                <Image
+                    src={`/api/image/${article.image}`}
+                    alt={article.title}
+                    className="article-image"
+                    width={800}
+                    height={600}
+                />
+                <p className="article-description">{article.description}</p>
+            </div>
+            <div
                 className="article-content"
                 dangerouslySetInnerHTML={{ __html: article.content }}
-            >  
-          </div>
+            />
         </div>
-      </div>
-      <Footer />
     </div>
-  );
+    <Footer />
+</div>
+
+
+);
+
+
 }; 
 
 export default ArticleView;

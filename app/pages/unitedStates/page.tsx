@@ -65,7 +65,7 @@ const UnitedStates: React.FC = () => {
                   <div
                       dangerouslySetInnerHTML={{ __html: blog.content }}
                       style={{
-                        maxHeight: "4rem",
+                        maxHeight: "9rem",
                         overflow: "hidden",
                       }}
                   ></div>
