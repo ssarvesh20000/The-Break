@@ -64,6 +64,7 @@ const Write = () => {
 
   return (
     <div className="container">
+      <button onClick={() => { router.push("/pages/admin") }} className="return-button"> ← Return to Dashboard </button>
       <form onSubmit={handleSubmit}>
         <h1>Input a Title</h1>
         <input 

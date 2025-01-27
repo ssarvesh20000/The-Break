@@ -14,7 +14,7 @@ export async function GET(_: NextRequest, props: { params: categoryParam }) {
             return NextResponse.json({ success: false, error: "Category is required" }, { status: 400 });
         }
         console.log("Category:", category);
-        const blog = await BlogModel.find({ category: category });
+        const blog = await BlogModel.find({ category: category}).sort({ date: -1 });
         return NextResponse.json({ success: true, data: blog });
     }
     catch (error) {

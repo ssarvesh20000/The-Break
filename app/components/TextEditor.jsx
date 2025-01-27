@@ -27,6 +27,22 @@ function TextEditor({ value, onChange }) {
         <div className="textEditorContainer">
             <div id="editor">
                 <h1>Text Editor</h1>
+                
+                <h3>Select Font</h3>
+                <select id="font" onChange={(e) => applyStyle('fontName', e.target.value)}>
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                </select>
+
+                <h3>Select Font Size</h3>
+                <select id="fontSize" onChange={(e) => applyStyle('fontSize', e.target.value)}>
+                    {fontSizes.map(size => (
+                        <option key={size} value={size}>{size}</option>
+                    ))}
+                </select>
+
                 <button id="bold" onClick={() => applyStyle('bold')}><i className="fas fa-bold"></i></button>
                 <button id="italic" onClick={() => applyStyle('italic')}><i className="fas fa-italic"></i></button>
                 <button id="underline" onClick={() => applyStyle('underline')}><i className="fas fa-underline"></i></button>
@@ -34,17 +50,7 @@ function TextEditor({ value, onChange }) {
                 <button id="superscript" onClick={() => applyStyle('superscript')}><i className="fas fa-superscript"></i></button>
                 <button id="subscript" onClick={() => applyStyle('subscript')}><i className="fas fa-subscript"></i></button>
                 <button id="code" onClick={() => applyStyle('formatBlock', 'pre')}><i className="fas fa-code"></i></button>
-                <select id="font" onChange={(e) => applyStyle('fontName', e.target.value)}>
-                    <option value="Arial">Arial</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Courier New">Courier New</option>
-                </select>
-                <select id="fontSize" onChange={(e) => applyStyle('fontSize', e.target.value)}>
-                    {fontSizes.map(size => (
-                        <option key={size} value={size}>{size}</option>
-                    ))}
-                </select>
+
                 <button id="textColor" onClick={() => document.getElementById('textColorPicker').click()}><i className="fas fa-font"></i></button>
                 <button id="bgColor" onClick={() => document.getElementById('bgColorPicker').click()}><i className="fas fa-fill-drip"></i></button>
 

@@ -78,6 +78,18 @@
   transition: background 0.3s ease;
 }
 
+.return-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 22%;
+}
+
 .delete-button:hover {
   background: #c0392b;
 }

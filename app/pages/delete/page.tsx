@@ -66,6 +66,7 @@ const Delete = () => {
 
   return (
     <div className="container">
+      <button onClick={() => { router.push("/pages/admin") }} className="return-button"> ← Return to Dashboard </button>
       <div className="header">
         <h1>Modify Blogs</h1>
         <h3>Select a Blog below to modify it, or select delete to remove it.</h3>

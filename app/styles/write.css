@@ -94,6 +94,18 @@ textarea {
   width: 100%;
 }
 
+.return-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 22%;
+}
+
 .submit-button:hover {
   background: #27ae60;
   transform: translateY(-2px);
@@ -128,7 +140,6 @@ textarea {
 
 /* TextEditor specific styles */
 .editor-container {
-  border: 2px solid #e0e0e0;
   border-radius: 8px;
   margin: 1.5rem 0;
   overflow: hidden;
