@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import plus from "@assets/plusButton.png";
 import image from "@assets/image.png";
-// import video from "@assets/video.png";
 import TextEditor from "@components/TextEditor";
 import "@styles/write.css";
 import { useRouter } from "next/navigation";
@@ -24,46 +23,16 @@ const Write = () => {
       try {
         const res = await fetch("/api/login", {
           method: "GET",
-          credentials: "include", // Include cookies in the request
+          credentials: "include",
         });
-
-        if (!res.ok) { // if cookie is not present, redirect to login page
-          router.push("/pages/login");
-        }
+        if (!res.ok) router.push("/pages/login");
       } catch (error) {
         console.error("Error checking authentication:", error);
         router.push("/pages/login");
       }
     };
-
     checkAuthentication();
   }, [router]);
-
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategory(e.target.value);
-  };
-
-  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAuthor(e.target.value);
-  };
-
-  const handleMediaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null; // Get the selected file
-    setMedia(file);
-    if (file) {
-      const reader = new FileReader(); // Create a FileReader to read the file
-      reader.onloadend = () => setMediaPreview(reader.result as string); // Update preview when file is read
-      reader.readAsDataURL(file); // Read the file as a data URL
-    }
-  };
-
-  const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setDescription(e.target.value);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,49 +40,56 @@ const Write = () => {
     formData.append("title", title);
     formData.append("author", author);
     formData.append("category", category);
-    if (media) {
-      formData.append("image", media);
-    }
+    if (media) formData.append("image", media);
     formData.append("description", description);
     formData.append("content", content);
 
-    const res = await fetch("/api/admin", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const res = await fetch("/api/admin", {
+        method: "POST",
+        body: formData,
+      });
 
-    if (res.status === 200) {
-      alert("Blog created successfully");
-    } else {
-      alert("Failed to create blog");
+      if (res.ok) {
+        alert("Blog created successfully");
+        router.push("/pages/admin");
+      } else {
+        alert("Failed to create blog");
+      }
+    } catch (error) {
+      console.error("Error creating blog:", error);
+      alert("Error creating blog");
     }
   };
 
   return (
-    <div>
-      <form action="submit" onSubmit={handleSubmit}>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
         <h1>Input a Title</h1>
         <input 
-          type="text" 
-          placeholder="Title" 
-          value={title} 
-          onChange={handleTitleChange} 
-          required 
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
         />
+        
         <h1>Input an Author</h1>
         <input 
-          type="text" 
-          placeholder="Author" 
-          value={author} 
-          onChange={handleAuthorChange} 
-          required 
+          type="text"
+          placeholder="Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          required
         />
 
         <h1>Select Article Category</h1>
-        <select value={category} onChange={handleCategoryChange} required>
-          <option value="" disabled>
-            Select a category
-          </option>
+        <select 
+          value={category} 
+          onChange={(e) => setCategory(e.target.value)} 
+          required
+        >
+          <option value="" disabled>Select a category</option>
           <option value="United States">United States</option>
           <option value="San Diego">San Diego</option>
           <option value="World">World</option>
@@ -122,68 +98,69 @@ const Write = () => {
           <option value="Other">Other</option>
         </select>
 
-        <div>
-          <h1> Upload Image </h1>
-          <button type="button" title="Add" onClick={() => setOpen(!open)}>
+        <div className="media-upload">
+          <h1>Upload Image</h1>
+          <button 
+            type="button" 
+            className="upload-button"
+            onClick={() => setOpen(!open)}
+          >
             <Image src={plus} alt="add" width={20} height={20} />
           </button>
+          
           {open && (
-            <div>
+            <div className="upload-options">
               <label htmlFor="uploadImage" style={{ cursor: "pointer" }}>
                 <Image src={image} alt="Upload Image" width={20} height={20} />
                 <input 
-                  type="file" 
-                  id="uploadImage" 
-                  accept="image/*" 
-                  style={{ display: "none" }} 
-                  onChange={handleMediaChange} 
+                  type="file"
+                  id="uploadImage"
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      setMedia(file);
+                      const reader = new FileReader();
+                      reader.onloadend = () => setMediaPreview(reader.result as string);
+                      reader.readAsDataURL(file);
+                    }
+                  }}
                 />
               </label>
-              {/* TODO commented out upload video for this version
-              <label htmlFor="uploadVideo" style={{ cursor: "pointer" }}>
-                <Image src={video} alt="Upload Video" width={20} height={20} />
-                <input 
-                  type="file" 
-                  id="uploadVideo" 
-                  accept="video/*" 
-                  style={{ display: "none" }} 
-                  onChange={handleMediaChange} 
-                />
-              </label> */}
             </div>
           )}
+          
           {mediaPreview && (
-            <div style={{ marginTop: "10px" }}>
+            <div className="media-preview">
               <h3>Preview:</h3>
-              {media?.type.startsWith("image/") ? (
-                <Image src={mediaPreview} alt="Selected Media" 
-                  width={0}
-                  height={0}
-                  style={{ width: '30%', height: 'auto' }} 
-                />
-              ) : media?.type.startsWith("video/") ? (
-                <video controls style={{ maxWidth: "100%", maxHeight: "300px" }}>
-                  <source src={mediaPreview} type={media.type} />
-                  Your browser does not support the video tag.
-                </video>
-              ) : null}
+              <Image 
+                src={mediaPreview} 
+                alt="Selected Media"
+                width={0}
+                height={0}
+                style={{ width: '30%', height: 'auto' }}
+              />
             </div>
           )}
+        </div>
 
-          <h1>Input Image Description</h1>
-          <textarea 
-            placeholder="Description" 
-            value={description} 
-            onChange={handleDescriptionChange} 
-            required
-          />
+        <h1>Input Image Description</h1>
+        <textarea 
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
 
+        <div className="editor-container">
           <TextEditor 
-            value={content} 
-            onChange={(updatedContent: string) => setContent(updatedContent)} 
+            value={content}
+            onChange={(updatedContent: string) => setContent(updatedContent)}
           />
         </div>
-        <button type="submit">Submit</button>
+
+        <button type="submit" className="submit-button">Submit</button>
       </form>
     </div>
   );

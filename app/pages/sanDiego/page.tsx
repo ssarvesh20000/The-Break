@@ -36,7 +36,13 @@ const SanDiego: React.FC = () => {
 
   return (
     <div className="body">
-      <HeaderNav></HeaderNav>
+      {/*<HeaderNav></HeaderNav>
+      NAVBAR IS NOT WORKING PROPERLY IN TERMS OF SIZING
+      */}
+      <div style={{ margin: '0 auto', maxWidth: '1410px', marginLeft: '20px'}}>
+  <HeaderNav />
+</div>
+
       <div className="san-diego-page">
         <h2 className="category-title">Category</h2>
         <h1 className="page-title">San Diego</h1>

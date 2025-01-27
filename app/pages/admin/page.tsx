@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import "@styles/Admin.css";
 
 const Admin = () => {
   const router = useRouter();
@@ -44,20 +45,22 @@ const Admin = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Welcome, Admin!</h1>
-      <div>
-        <button onClick={handleLogout}>Log out</button>
+      <div className="tiles-container">
+        <div className="tile">
+          <Link href="/pages/write">
+            <button>Writers page</button>
+          </Link>
+        </div>
+        <div className="tile">
+          <Link href="/pages/delete">
+            <button>Delete page</button>
+          </Link>
+        </div>
       </div>
-      <div>
-        <Link href="/pages/write">
-          <button>Writers page</button>
-        </Link>
-      </div>
-      <div>
-        <Link href="/pages/delete">
-          <button>Delete page</button>
-        </Link>
+      <div className="logout-container">
+        <button className="logout-btn" onClick={handleLogout}>Log out</button>
       </div>
     </div>
   );
