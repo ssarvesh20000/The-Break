@@ -73,7 +73,6 @@ const Home: React.FC = () => {
                   alt={blog.title}
                   width={400}
                   height={300}
-                  className="left-sidebar-image"
                 />
                 <h2>{blog.title}</h2>
                 <p className="article-author">
@@ -90,7 +89,6 @@ const Home: React.FC = () => {
               <div
                 className="main-article"
                 onClick={() => handleArticleClick(blogs[0]._id)}
-                style={{ cursor: "pointer" }}
               >
                 <Image
                   src={`/api/image/${blogs[0].image}`}
@@ -100,12 +98,30 @@ const Home: React.FC = () => {
                   height={400}
                   
                 />
-                <p className="main-description">{blogs[0].description}</p>
-                <h2>{blogs[0].title}</h2>
+                <h2 className="hover-title">{blogs[0].title}</h2>
                 <p className="main-author">
                   {blogs[0].author} -{" "}
                   {new Date(blogs[0].date).toLocaleDateString()}
                 </p>
+                <div style={{ position: "relative" }}>
+                  <div
+                      dangerouslySetInnerHTML={{ __html: blogs[0].content }}
+                      style={{
+                        maxHeight: "6rem",
+                        overflow: "hidden",
+                      }}
+                  ></div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: "50px", // Adjust height of fade
+                      background: "linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)",
+                    }}
+                  > </div>
+                </div>
               </div>
             )}
           </section>

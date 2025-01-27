@@ -60,6 +60,25 @@ const UnitedStates: React.FC = () => {
                   {blog.title}
                 </h3>
                 <p className="article-author">{blog.author} - {new Date(blog.date).toLocaleDateString()}</p>
+                <div style={{ position: "relative", paddingTop: "1.5rem" }}>
+                  <div
+                      dangerouslySetInnerHTML={{ __html: blog.content }}
+                      style={{
+                        maxHeight: "4rem",
+                        overflow: "hidden",
+                      }}
+                  ></div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: "50px", // Adjust height of fade
+                      background: "linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)",
+                    }}
+                  > </div>
+                </div>
               </div>
             </div>
           ))}

@@ -95,9 +95,11 @@
     text-align: center; /* Align text to left */
     margin-bottom: 25px;
 }
-.main-article:hover{
+
+.hover-title:hover {
     text-decoration: underline;
-    text-decoration-color: var(--text-color);
+    text-decoration-color: var(--underline-color);
+    cursor: pointer;
 }
 
 
@@ -210,6 +212,7 @@
     width: 225px;
     height: 150px;
     object-fit: cover;
+    border-radius: 5px;
     margin-bottom: 10px;
     flex-shrink: 0;
 }
@@ -218,16 +221,6 @@
     font-size: 1rem;
     color:var(--text-color);
     margin: 0;
-    
-}
-
-.left-sidebar-image {
-    order: 1; /* Ensure the image appears on the right */
-    width: 200px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
-    flex-shrink: 0;
 }
 
 .left-sidebar-article:hover{
