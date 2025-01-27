@@ -1,0 +1,101 @@
+/* Main page container */
+.article-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--background-color);
+}
+
+/* Article content container */
+.article-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: #2D3748;
+}
+
+/* Article title styling */
+.article-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1A202C;
+}
+
+/* Author styling */
+.article-author {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.125rem;
+    color: #4A5568;  
+    margin-bottom: 16px;
+}
+
+/* Image and description wrapper */
+.image-description-wrapper {
+    float: left; /* Float the block to allow content wrapping */
+    margin-right: 16px; /* Add spacing to the right */
+    margin-bottom: 16px; /* Add spacing below the block */
+    width: 450px; /* Fixed width for the block */
+    max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
+}
+
+/* Image styling */
+.article-image {
+    width: 100%; /* Scale image to fit the wrapper */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure proper content fit */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* Description styling */
+.article-description {
+    margin-top: 8px; /* Add spacing between image and description */
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #4A5568;
+    text-align: justify;
+}
+
+/* Content styling */
+.article-content {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    text-align: justify; /* Clean, justified text */
+    color: #4A5568;
+}
+
+/* Clearfix for wrapping behavior */
+.article-container::after {
+    content: "";
+    display: table;
+    clear: both; /* Ensures no float-related issues at the end of the container */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-description-wrapper {
+        float: none; /* Disable float for smaller screens */
+        display: block;
+        margin: 0 auto 16px; /* Center the wrapper */
+        width: 100%; /* Full width on smaller screens */
+        max-width: 450px; /* Restrict to original max width */
+    }
+
+    .article-image {
+        width: 100%; /* Scale image to fit wrapper */
+    }
+
+    .article-description {
+        text-align: justify; /* Ensure text remains justified */
+    }
+
+    .article-content {
+        clear: both; /* Content flows fully below on smaller screens */
+    }
+}

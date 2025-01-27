@@ -1,0 +1,415 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px; /* Adds space between columns */
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    font-family: 'Playfair Display', serif;
+    font-size: 13.5px;
+    width: 20%; /* Adjusted to fit left of main content */
+    margin: 0px;
+    padding-right: 15px; /* Add spacing between left sidebar and main content */
+}
+
+/* Main Content */
+.main-content {
+    width: 55%; /* Main article area centered in the layout */
+}
+
+/* Right Sidebar */
+.sidebar {
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    width: 25%; /* Right sidebar width to match available space */
+    padding-left: 5px; /* Add spacing between right sidebar and main content */
+    border-left: var(--border)
+}
+
+/* Home.css */
+.sidebar-article {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align content to the left */
+    background-color: var(--background-color);
+    overflow: hidden;
+    font-size: 20px;
+    margin-bottom: 20px; /* Space between articles */
+    padding: 10px; /* Optional: Add padding around content */
+    border: var(--border); /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transition for hover effects */
+}
+.sidebar-article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add padding around the image for a cleaner layout */
+.sidebar-image {
+    width: 100%; /* Full width for the image */
+    height: auto;
+    margin-bottom: 10px; /* Space below the image */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+.sidebar-article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; /* Adjust title font size */
+    color: var(--text-color);
+    margin: 0 0 10px; /* Add space below the title */
+    text-align: left; /* Ensure title is left-aligned */
+}
+
+.sidebar-article .article-author {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.85rem; /* Smaller font for the author/date */
+    color: var(--aurthor); /* Use variable for author text color */
+    margin: 0; /* Remove unnecessary margins */
+    text-align: left; /* Align text to the left */
+}
+/* Main Article Styles */
+.main-article {
+    color:var(--text-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center; /* Align text to left */
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-title:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-image {
+    width: 650px;
+    height: 325px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.main-description {
+    font-size: 0.8rem;
+    color:var(--text-color);
+}
+
+.main-author {
+    font-size: 0.85rem;
+    color:var(--text-color)
+}
+
+/* Secondary Articles in Main Content */
+.secondary-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    width: 35%;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color:var(--text-color);
+    margin: 0;
+}
+
+/* Right Sidebar Articles */
+.sidebar-article {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: var(----background-color);
+    overflow: hidden;
+    font-size: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar-image {
+    flex: none;
+    order: 1; /* Ensure the image appears on the right */
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+.sidebar-article > div:first-child {
+    flex: 1;
+    padding-right: 20px;
+    flex-direction: column;
+}
+
+.sidebar-article div {
+    flex: 1;
+    display: flex;
+    flex-direction: space-between;
+    justify-content: flex-start;
+    color: var(--text-color);
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.sidebar-author {
+    font-family: 'Source Sans Pro', sans-serif;
+    color:var(--aurthor);
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+/* Left Sidebar Articles */
+.left-sidebar-article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.left-sidebar-article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-sidebar-article div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: var(--text-color);
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.left-sidebar-article img {
+    order: 1; /* Ensure the image appears on the right */
+    width: 245px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.left-sidebar-article div {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color:var(--text-color);
+    margin: 0;
+}
+
+.left-sidebar-author {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.75rem;
+    color:var(--text-color);
+}
+
+/* Read More Section */
+.read-more {
+    text-align: center;
+    font-size: 1rem;
+    color:var(--text-color);
+    margin-top: 20px;
+    font-style: italic;
+}
+.article-author {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px; /* Smaller font for author/date */
+    color:var(--text-color);
+    margin-top: 0px; /* Space between title and author/date */
+    margin-bottom: 30px;
+}
+
+/* Container to wrap all content in a three-column layout */
+.home-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+/* Wrapper to group sidebar and main content in a row */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    width: 20%; /* Adjusted to fit left of main content */
+    padding-right: 15px; /* Add spacing between left sidebar and main content */
+}
+
+/* Main Content */
+.main-content {
+    width: 55%; /* Main article area centered in the layout */
+}
+
+/* Right Sidebar */
+.sidebar {
+    width: 25%; /* Right sidebar width to match available space */
+    padding-left: 15px; /* Add spacing between right sidebar and main content */
+    border-left: var(--border);
+}
+
+/* Video Section */
+.video-section {
+    width: 100%; /* Full width below other sections */
+    margin-top: 20px; /* Space above the video section */
+}
+
+@media screen and (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+
+    .main-article {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 428px) { /* iPhone 14 Pro Max */
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+
+    .main-article {
+        font-size: 1.1rem;
+    }
+
+    .video-section video {
+        width: 100%;
+        max-width: 100%; /* Full width for smaller screens */
+    }
+
+    .read-more {
+        font-size: 0.9rem;
+    }
+
+    .main-image {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 390px) { /* iPhone 14 Pro */
+    .main-content {
+        width: 100%;
+        order: 1; /* Main article comes first */
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 0;
+        order: 2; /* Left sidebar below main article */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border-left: none;
+        order: 3; /* Right sidebar below left sidebar */
+    }
+
+    .main-article {
+        font-size: 1rem;
+    }
+
+    .video-section video {
+        width: 100%;
+    }
+
+    .read-more {
+        font-size: 0.8rem;
+    }
+}

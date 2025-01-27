@@ -1,0 +1,112 @@
+.blog-carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.carousel-sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1200px; /* Increased to accommodate buttons */
+  position: relative;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  justify-content: center;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 1100px;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth easing for transitions */
+}
+
+.carousel-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-article {
+  text-align: center;
+  margin: 0;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-inline: 0.8em;
+  flex: 0 0 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.carousel-article:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-image {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.article-category {
+  font-size: 14px;
+  color: #555;
+}
+
+.article-author {
+  font-size: 12px;
+  color: #888;
+}
+
+.empty {
+  background-color: #f0f0f0;
+}
+
+.placeholder {
+  background-color: #ccc;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+button:first-child {
+  position: relative;
+  left: 0;
+}
+
+button:last-child {
+  position: relative;
+  right: 0;
+}
