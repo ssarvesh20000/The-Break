@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "@styles/Home.css";
 import "@styles/Video.css";
 import Image from "next/image";
-import Video from "@components/Video";
+import Video from "@components/video";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useRouter } from "next/navigation";
