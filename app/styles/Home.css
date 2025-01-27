@@ -41,6 +41,7 @@
 .sidebar-article:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #1a4789
 }
 
 /* Optional: Add padding around the image for a cleaner layout */
@@ -94,6 +95,7 @@
 .main-content:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #1a4789
 }
 
 .main-title {
@@ -180,6 +182,7 @@
     flex-direction: space-between;
     justify-content: flex-start;
     color: var(--text-color);
+    font-size: 0.75rem;
     margin: 0;
     margin-bottom: 5px;
 }
@@ -199,6 +202,7 @@
 .left-sidebar-article:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #1a4789
 }
 
 .left-sidebar-article div {
@@ -289,6 +293,10 @@
 .video-section {
     width: 100%; /* Full width below other sections */
     margin-top: 20px; /* Space above the video section */
+}
+
+body, html{
+    overflow-x: hidden;
 }
 
 @media screen and (max-width: 1200px) {

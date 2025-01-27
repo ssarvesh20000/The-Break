@@ -64,7 +64,7 @@
 
 .article-title {
   color: var(--category-title);
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: bold;
   margin: 0 0 10px 0;
 }
@@ -74,7 +74,7 @@
 }
 
 .article-author {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: var(--text-color);
   margin: 5px 0;
 }
@@ -88,20 +88,75 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .articles {
-    padding: 0 10px; /* Adjust for small screens */
+    display: flex;
+    flex-direction: column; /* Ensure articles stack vertically */
+    padding: 0 15px; /* Add padding to avoid cutoff on smaller screens */
+    gap: 20px; /* Maintain spacing between articles */
   }
 
   .article {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align content */
+    padding: 15px; /* Add padding inside the article div */
+    border: 1px solid #ccc; /* Optional: Add a border for better visual separation */
+    border-radius: 5px; /* Optional: Rounded corners for a cleaner look */
+    background-color: #fff; /* Optional: Background color to emphasize content */
+    margin: 0 auto; /* Center-align the article */
+    width: 100%; /* Ensure the article fits fully within the parent container */
+    box-sizing: border-box; /* Include padding in width calculations */
   }
 
   .article-image {
-    width: 100%;
-    margin: 0 0 15px 0;
+    width: 100%; /* Use full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Add spacing below the image */
+    border-radius: 5px; /* Keep rounded corners */
   }
 
   .article-content {
-    align-items: flex-start;
+    width: 100%; /* Ensure the content fits within the article container */
+    text-align: left; /* Align text to the left */
+  }
+
+  .article-title {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    margin-bottom: 10px; /* Add spacing below the title */
+  }
+
+  .article-author {
+    font-size: 0.8rem; /* Adjust text size for author */
+    margin-bottom: 10px; /* Add spacing below the author */
+  }
+
+  .article-excerpt {
+    font-size: 1rem; /* Adjust font size for excerpt */
+    line-height: 1.5; /* Maintain readability */
   }
 }
-  
+
+@media (max-width: 480px) {
+  .articles {
+    padding: 0 10px; /* Further reduce padding for smaller screens */
+    gap: 15px; /* Reduce gap between articles */
+  }
+
+  .article {
+    padding: 10px; /* Compact padding for small screens */
+    margin: 0 auto; /* Center-align articles */
+    width: calc(100% - 20px); /* Ensure the article fits, accounting for padding */
+  }
+
+  .article-title {
+    font-size: 1rem; /* Further adjust font size for smaller screens */
+  }
+
+  .article-author {
+    font-size: 0.7rem; /* Adjust author font size */
+  }
+
+  .article-image {
+    width: 100%; /* Fully responsive for smaller devices */
+    height: auto; /* Ensure proportional scaling */
+  }
+}

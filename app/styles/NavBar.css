@@ -39,14 +39,16 @@
     gap: 15px;
     position: absolute;
     right: 20px;
+    color: #1a4789
 }
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
-    color: var(--text-color);
+    color: rgb(115, 117, 117);
+    
 }
 .icon-social:hover {
-    color: var(--icon-hover);
+    color: #1a4789
 }
 .menu-button {
     display: none;
@@ -99,27 +101,52 @@
     color: #1a4789;  /* Added sophisticated dark blue hover color */
 }
 @media (max-width: 768px) {
+    .navbar {
+        justify-content: flex-end;
+    }
+    
     .menu-button {
         display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
     }
+    
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 70px;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
-        background-color: var(--background-color);
+        bottom: 0;
+        background-color: white;
         align-items: center;
+        justify-content: center;
         padding: 20px 0;
-        border-top: var(--border-top);
-        z-index: 1;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        gap: 30px;
     }
+    
     .nav-links.visible {
         display: flex;
     }
+    
     .nav-icons {
         display: none;
+    }
+    
+    .scrolled .moved-header-content {
+        display: block;
+        left: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .scrolled .header-title {
+        font-size: 1.5rem;
     }
 }
