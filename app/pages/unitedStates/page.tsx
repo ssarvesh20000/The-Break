@@ -35,6 +35,7 @@ const UnitedStates: React.FC = () => {
   };
 
   return (
+    <>
     <div className="body">
       <HeaderNav></HeaderNav>
       <div className="san-diego-page">
@@ -84,8 +85,9 @@ const UnitedStates: React.FC = () => {
           ))}
         </div>
       </div>
+      </div>
       <Footer></Footer>
-    </div>
+    </>
   );
 };
 

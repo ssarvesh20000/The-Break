@@ -6,7 +6,7 @@ import '@styles/Video.css';
 const Video: React.FC = () => {
 return (
   <div className="video-container">
-      <h2>Multimedia</h2>
+      <h2>Multimedia (Coming Soon!)</h2>
           <p>Watch our latest video content right here on our website.</p>
 
       {/* Video Section */}

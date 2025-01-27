@@ -14,7 +14,6 @@
 /* Container to wrap all content in a three-column layout */
 
 .home-container {
-
     display: flex;
     justify-content: space-between;
     padding: 20px;

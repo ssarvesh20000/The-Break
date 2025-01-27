@@ -11,23 +11,19 @@ export async function GET() {
 
         // Aggregation pipeline
         const blogs = await BlogModel.aggregate([
-            { 
-                $match: { category: { $in: categories } } // Match blogs in the specified categories
-            },
-            { 
-                $sort: { category: 1, date: -1 } // Sort by category (for grouping) and then by timestamp descending
-            },
-            { 
-                $group: {
-                    _id: "$category", // Group by the category field
-                    mostRecentBlog: { $first: "$$ROOT" } // Take the most recent blog for each category
-                }
-            },
-            { 
-                $replaceRoot: { newRoot: "$mostRecentBlog" } // Replace root with the blog object for cleaner output
+            {
+                $facet: categories.reduce((facetStages: { [key: string]: any[] }, category) => {
+                    facetStages[category] = [
+                        { $match: { category } }, // Match blogs in the current category
+                        { $sort: { date: -1 } }, // Sort by date descending
+                        { $limit: 10 } // Take the top 10 most recent blogs
+                    ];
+                    return facetStages;
+                }, {})
             }
         ]);
-        return NextResponse.json({ success: true, data: blogs });
+        const listBlogs = Object.values(blogs[0]);
+        return NextResponse.json({ success: true, data: listBlogs });
     } catch (error) {
         console.error("Error retrieving blogs:", error);
         return NextResponse.json({ success: false, error: "Failed to fetch blogs" }, { status: 500 });

@@ -5,7 +5,8 @@ import Footer from "@components/Footer";
 
 const About: React.FC = () => {
   return (
-    <div className="body3">
+    <>
+    <div className="body">
       <HeaderNav></HeaderNav>
       <div className="about-container">
         <div className="about-columns">
@@ -77,8 +78,9 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+      </div>
       <Footer></Footer>
-    </div>
+    </>
   );
 };
 

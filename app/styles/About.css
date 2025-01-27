@@ -1,6 +1,12 @@
 /* About.css */
-.body3 {
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background-color);
+  width: 98%;
+  margin: auto;
 }
 
 .about-container {
