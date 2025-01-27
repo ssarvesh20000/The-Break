@@ -1,6 +1,11 @@
 /*carousel css*/
 .blog-carousel-container {
-  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the children (like your carousels) horizontally */
+  justify-content: center; /* Centers the children vertically if needed */
+  width: 100%; /* Takes the full width to center content properly */
+  margin: 20px auto; /* Adds vertical margin and auto for horizontal centering */
 }
 
 .carousel-sidebar {
@@ -16,22 +21,23 @@
 .carousel-inner {
   display: flex;
   flex-direction: row;
-  width: max-content;
-  animation: scroll-loop 30s linear infinite; /* Adjust timing as needed */
+  justify-content: center;
+  width: 920px; /* Adjust width as needed */
+  align-items: center;
+  
+  /*animation: scroll-loop 30s linear infinite;  Adjust timing as needed */
 }
-
-@keyframes scroll-loop {
-  0% {
-    transform: translateX(0); /* Start position */
+/*
+  @keyframes scroll-loop {
+    0% {
+      transform: translateX(0); 
+    }
+    100% {
+      transform: translateX(-50%); 
+    }
   }
-  100% {
-    transform: translateX(-50%); /* Move the content completely out */
-  }
-}
+*/
 
-.carousel-sidebar:hover .carousel-inner {
-  animation-play-state: paused;
-}
 
 .carousel-title {
   font-size: 24px;
@@ -47,11 +53,13 @@
 
 .carousel-article {
   text-align: center;
+  margin: 0;
   background: #f9f9f9;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-inline: 0.8em;
+  flex: 0 0 300px; 
 }
 
 .carousel-article:hover {
@@ -72,4 +80,33 @@
   font-size: 12px;
   color: #888;
 }
+
+.empty {
+  background-color: #f0f0f0; /* Light gray background for empty slots */
+}
+
+.placeholder {
+  background-color: #ccc; /* Slightly darker gray for the image placeholder */
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+}
   
+/* Styles for navigation buttons */
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button:first-child {
+  left: 10px;
+}
+
+button:last-child {
+  right: 10px;
+}
