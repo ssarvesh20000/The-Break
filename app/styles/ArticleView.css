@@ -1,9 +1,16 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+}
+
 /* Main page container */
 .article-page {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 16px;
     background-color: var(--background-color);
 }
 

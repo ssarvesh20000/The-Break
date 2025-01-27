@@ -1,11 +1,9 @@
 .body {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color);
-  width: 98%;
-  margin: auto;
+  flex-direction: column;
+  max-width: 100%;
 }
 
 .san-diego-page {

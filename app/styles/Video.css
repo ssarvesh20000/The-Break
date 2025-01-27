@@ -2,7 +2,6 @@
 
 .video-container {
     width: 100%; /* Full width to span across home-container */
-    padding: 20px;
     font-family: Arial, sans-serif;
     background-color: var(--background-color); /* Optional: adds a background color to distinguish the section */
 }

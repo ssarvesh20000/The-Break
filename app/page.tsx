@@ -57,6 +57,7 @@ const Home: React.FC = () => {
     <>
       <div className="home-container">
         <HeaderNav />
+        <div className="recent-blogs">
         <div className="content-wrapper">
           {/* Left Sidebar */}
           <aside className="left-sidebar">
@@ -163,6 +164,7 @@ const Home: React.FC = () => {
             ))}
             {/*<footer className="read-more">Read More</footer>*/}
           </aside>
+        </div>
         </div>
 
         <Carousel 

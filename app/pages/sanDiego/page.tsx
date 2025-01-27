@@ -37,7 +37,7 @@ const SanDiego: React.FC = () => {
   return (
     <>
     <div className="body">
-      <HeaderNav></HeaderNav>
+      <HeaderNav />
       <div className="san-diego-page">
         <h2 className="category-title">Category</h2>
         <h1 className="page-title">San Diego</h1>
@@ -83,8 +83,8 @@ const SanDiego: React.FC = () => {
               </div>
             </div>
           ))}
+          </div>
         </div>
-      </div>
       </div>
       <Footer></Footer>
     </>

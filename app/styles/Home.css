@@ -1,6 +1,7 @@
 .home-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
@@ -12,8 +13,6 @@
     font-family: 'Playfair Display', serif;
     font-size: 13.5px;
     width: 20%; /* Adjusted to fit left of main content */
-    margin: 0px;
-    padding-right: 15px; /* Add spacing between left sidebar and main content */
 }
 
 /* Right Sidebar */

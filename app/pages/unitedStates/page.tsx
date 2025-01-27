@@ -37,7 +37,7 @@ const UnitedStates: React.FC = () => {
   return (
     <>
     <div className="body">
-      <HeaderNav></HeaderNav>
+      <HeaderNav />
       <div className="san-diego-page">
         <h2 className="category-title">Category</h2>
         <h1 className="page-title">United States</h1>

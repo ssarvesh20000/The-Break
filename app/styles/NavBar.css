@@ -6,8 +6,8 @@
     justify-content: center;
     padding: 15px 20px;
     font-family: 'Playfair Display', 'Times New Roman', serif;  /* Changed to more news-appropriate font */
-    width: 100%;
     height: auto;
+    width: 98%;
     z-index: 1000 !important;
     background-color: white;
     transition: top 0.3s;
