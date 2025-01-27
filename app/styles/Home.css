@@ -1,18 +1,3 @@
-/*
-:root{
-    ----background-color:#ffffff;
-    --border:1px solid #cccccc;
-    --descrption: #555;
-    --aurthor:gray;
-    --article:#333;
-    --theme: #000;
-    --underline-color: #000000;
-
-}
-*/
-
-/* Container to wrap all content in a three-column layout */
-
 .home-container {
     display: flex;
     justify-content: space-between;
@@ -24,9 +9,8 @@
 
 /* Left Sidebar */
 .left-sidebar {
-    font-family: 'Georgia', serif;
-    font-size: 15.5px;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    font-size: 13.5px;
     width: 20%; /* Adjusted to fit left of main content */
     margin: 0px;
     padding-right: 15px; /* Add spacing between left sidebar and main content */
@@ -39,7 +23,7 @@
 
 /* Right Sidebar */
 .sidebar {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 10px;
     width: 25%; /* Right sidebar width to match available space */
     padding-left: 5px; /* Add spacing between right sidebar and main content */
@@ -58,10 +42,11 @@
     padding: 10px; /* Optional: Add padding around content */
     border: var(--border); /* Optional: Add a border */
     border-radius: 8px; /* Optional: Add rounded corners */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transition for hover effects */
 }
 .sidebar-article:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Optional: Add padding around the image for a cleaner layout */
@@ -73,6 +58,7 @@
 }
 
 .sidebar-article h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 1rem; /* Adjust title font size */
     color: var(--text-color);
     margin: 0 0 10px; /* Add space below the title */
@@ -80,6 +66,7 @@
 }
 
 .sidebar-article .article-author {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.85rem; /* Smaller font for the author/date */
     color: var(--aurthor); /* Use variable for author text color */
     margin: 0; /* Remove unnecessary margins */
@@ -88,20 +75,19 @@
 /* Main Article Styles */
 .main-article {
     color:var(--text-color);
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 25px;
     text-decoration: none;
     font-weight: bold;
     text-align: center; /* Align text to left */
     margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hover-title:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--underline-color);
-    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .main-image {
     width: 650px;
@@ -109,11 +95,10 @@
 }
 
 .main-title {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     margin: 15px 0;
     font-weight: bold;
-
 }
 
 .main-description {
@@ -138,6 +123,12 @@
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .article-image {
@@ -148,7 +139,7 @@
 }
 
 .article h3 {
-    
+    font-family: 'Playfair Display', serif;
     font-size: 1rem;
     color:var(--text-color);
     margin: 0;
@@ -162,7 +153,7 @@
     background-color: var(----background-color);
     overflow: hidden;
     font-size: 20px;
-
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .sidebar-image {
@@ -179,7 +170,7 @@
     flex: 1;
     padding-right: 20px;
     flex-direction: column;
-  }
+}
 
 .sidebar-article div {
     flex: 1;
@@ -192,12 +183,22 @@
 }
 
 .sidebar-author {
+    font-family: 'Source Sans Pro', sans-serif;
     color:var(--aurthor);
     margin-top: auto;
     margin-bottom: 0px;
 }
 
 /* Left Sidebar Articles */
+.left-sidebar-article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.left-sidebar-article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .left-sidebar-article div {
     flex: 1;
     display: flex;
@@ -219,19 +220,16 @@
 }
 
 .left-sidebar-article div {
+    font-family: 'Playfair Display', serif;
     font-size: 1rem;
     color:var(--text-color);
     margin: 0;
 }
 
-.left-sidebar-article:hover{
-    text-decoration: underline;
-}
-
 .left-sidebar-author {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.75rem;
     color:var(--text-color);
-    
 }
 
 /* Read More Section */
@@ -243,12 +241,12 @@
     font-style: italic;
 }
 .article-author {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px; /* Smaller font for author/date */
     color:var(--text-color);
     margin-top: 0px; /* Space between title and author/date */
     margin-bottom: 30px;
 }
-
 
 /* Container to wrap all content in a three-column layout */
 .home-container {
@@ -262,7 +260,6 @@
 
 /* Wrapper to group sidebar and main content in a row */
 .content-wrapper {
-    
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -270,22 +267,17 @@
 
 /* Left Sidebar */
 .left-sidebar {
-
     width: 20%; /* Adjusted to fit left of main content */
     padding-right: 15px; /* Add spacing between left sidebar and main content */
 }
 
-
-
 /* Main Content */
 .main-content {
-
     width: 55%; /* Main article area centered in the layout */
 }
 
 /* Right Sidebar */
 .sidebar {
-
     width: 25%; /* Right sidebar width to match available space */
     padding-left: 15px; /* Add spacing between right sidebar and main content */
     border-left: var(--border);
@@ -293,7 +285,6 @@
 
 /* Video Section */
 .video-section {
-
     width: 100%; /* Full width below other sections */
     margin-top: 20px; /* Space above the video section */
 }

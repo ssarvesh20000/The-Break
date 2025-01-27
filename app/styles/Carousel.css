@@ -1,43 +1,32 @@
-/*carousel css*/
 .blog-carousel-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the children (like your carousels) horizontally */
-  justify-content: center; /* Centers the children vertically if needed */
-  width: 100%; /* Takes the full width to center content properly */
-  margin: 20px auto; /* Adds vertical margin and auto for horizontal centering */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto;
 }
 
 .carousel-sidebar {
   display: flex;
   flex-direction: row;
-  overflow: hidden;
-  width: 100%;
+  align-items: center;
+  width: 1200px; /* Increased to accommodate buttons */
   position: relative;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
+  justify-content: center;
 }
 
 .carousel-inner {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 920px; /* Adjust width as needed */
+  width: 1100px;
   align-items: center;
-  
-  /*animation: scroll-loop 30s linear infinite;  Adjust timing as needed */
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth easing for transitions */
 }
-/*
-  @keyframes scroll-loop {
-    0% {
-      transform: translateX(0); 
-    }
-    100% {
-      transform: translateX(-50%); 
-    }
-  }
-*/
-
 
 .carousel-title {
   font-size: 24px;
@@ -59,11 +48,15 @@
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-inline: 0.8em;
-  flex: 0 0 300px; 
+  flex: 0 0 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .carousel-article:hover {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-image {
@@ -82,31 +75,38 @@
 }
 
 .empty {
-  background-color: #f0f0f0; /* Light gray background for empty slots */
+  background-color: #f0f0f0;
 }
 
 .placeholder {
-  background-color: #ccc; /* Slightly darker gray for the image placeholder */
+  background-color: #ccc;
   width: 300px;
   height: 200px;
   border-radius: 8px;
 }
-  
-/* Styles for navigation buttons */
+
 button {
   border: none;
   background-color: transparent;
   cursor: pointer;
   font-size: 24px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 button:first-child {
-  left: 10px;
+  position: relative;
+  left: 0;
 }
 
 button:last-child {
-  right: 10px;
+  position: relative;
+  right: 0;
 }
