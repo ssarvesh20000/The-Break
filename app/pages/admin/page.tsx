@@ -46,26 +46,26 @@ const Admin = () => {
 
   return (
     <div className="admin-container">
-      <h1>Welcome, Admin!</h1>
-      <div className="tiles-container">
+      <h1 className="admin-header">Welcome, Admin!</h1>
+      <div className="admin-tiles-container">
         <Link style={{ textDecoration: 'none' }} href="/pages/write">
-          <div className="tile">
-              <button>Writers page</button>
+          <div className="admin-tile">
+              <button className="admin-button">Writers page</button>
           </div>
         </Link>
         <Link style={{ textDecoration: 'none' }} href="/pages/delete">
-          <div className="tile">  
+          <div className="admin-tile">  
             <button>Modify page</button>
           </div>
         </Link>
         <Link style={{ textDecoration: 'none' }} href="/">
-          <div className="tile">  
+          <div className="admin-tile">  
             <button>User View</button>
           </div>
         </Link>
       </div>
-      <div className="logout-container">
-        <button className="logout-btn" onClick={handleLogout}>Log out</button>
+      <div className="admin-logout-container">
+        <button className="admin-logout-btn" onClick={handleLogout}>Log out</button>
       </div>
     </div>
   );

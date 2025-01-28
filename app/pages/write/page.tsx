@@ -17,6 +17,7 @@ const Write = () => {
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormDirty, setIsFormDirty] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -32,8 +33,27 @@ const Write = () => {
         router.push("/pages/login");
       }
     };
+
     checkAuthentication();
-  }, [router]);
+  }, [isFormDirty, router]);
+
+  /* Track unsaved changes
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (isFormDirty && !isSubmitting) {
+        e.preventDefault();
+        if (!confirm("Form changes will not be saved. Are you sure you want to leave?")) {
+          return false;
+        }
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [isFormDirty, isSubmitting]); */
 
   const clearForm = () => {
     setTitle("");
@@ -43,6 +63,7 @@ const Write = () => {
     setDescription("");
     setContent("");
     setCategory("");
+    setIsFormDirty(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,11 +104,12 @@ const Write = () => {
       <button onClick={() => { router.push("/pages/admin") }} className="return-button"> ← Return to Dashboard </button>
       <form onSubmit={handleSubmit}>
         <h1>Input a Title</h1>
+        {/* TODO double check if this is good */}
         <input 
           type="text"
           placeholder="Title"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={(e) => { setTitle(e.target.value); setIsFormDirty(true); }} 
           required
         />
         
@@ -96,14 +118,14 @@ const Write = () => {
           type="text"
           placeholder="Author"
           value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          onChange={(e) => { setAuthor(e.target.value); setIsFormDirty(true); }}
           required
         />
 
         <h1>Select Article Category</h1>
         <select 
           value={category} 
-          onChange={(e) => setCategory(e.target.value)} 
+          onChange={(e) => { setCategory(e.target.value); setIsFormDirty(true); }} 
           required
         >
           <option value="" disabled>Select a category</option>
@@ -165,14 +187,14 @@ const Write = () => {
         <textarea 
           placeholder="Description"
           value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => { setDescription(e.target.value); setIsFormDirty(true); }}
           required
         />
 
         <div className="editor-container">
           <TextEditor 
             value={content}
-            onChange={(updatedContent: string) => setContent(updatedContent)}
+            onChange={(updatedContent: string) => { setContent(updatedContent); setIsFormDirty(true); }}
           />
         </div>
 

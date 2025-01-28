@@ -43,7 +43,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ blogs, title }) => {
         <div className="carousel" key={idx}>
           <h3>{['San Diego', 'United States', 'World', 'Opinion', 'Multimedia'][idx]}</h3>
           <aside className="carousel-sidebar">
-            <button onClick={() => handlePrev(idx)}> ← </button>
+            <button className="carousel-button" onClick={() => handlePrev(idx)}> ← </button>
             <div className="carousel-inner">
               {categoryBlogs.slice(currentIndices[idx] * 3, currentIndices[idx] * 3 + 3).map((blog: Blog) => (
                 <div
@@ -74,7 +74,7 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ blogs, title }) => {
                 </div>
               ))}
             </div>
-            <button onClick={() => handleNext(idx)}> → </button>
+            <button className="carousel-button" onClick={() => handleNext(idx)}> → </button>
           </aside>
           <div className="carousel-indicators">
             {Array(Math.ceil(categoryBlogs.length / 3)).fill(null).map((_, index) => (

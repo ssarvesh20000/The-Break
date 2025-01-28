@@ -7,7 +7,7 @@ function TextEditor({ value, onChange }) {
     const fontSizes = Array.from({ length: 100 }, (_, i) => i + 1);
 
     const applyStyle = (command, value = null) => {
-        document.execCommand(command, false, value);
+        document.execCommand(command, false, value); // TODO fix deprecation warning
     };
 
     useEffect(() => {

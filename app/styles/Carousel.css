@@ -114,7 +114,7 @@
   border-radius: 8px;
 }
 
-button {
+.carousel-button {
   border: none;
   background-color: rgba(245, 245, 245, 0.9);
   cursor: pointer;
@@ -131,24 +131,24 @@ button {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+.carousel-button:hover {
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
   color: #000;
 }
 
-button:active {
+.carousel-button:active {
   transform: translateY(0px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button:first-child {
+.carousel-button:first-child {
   position: relative;
   left: 0;
 }
 
-button:last-child {
+.carousel-button:last-child {
   position: relative;
   right: 0;
 }

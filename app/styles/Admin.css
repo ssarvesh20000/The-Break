@@ -7,13 +7,13 @@
   background: #f5f5f5;
 }
 
-h1 {
+.admin-header {
   color: #2c3e50;
   margin-bottom: 3rem;
   font-size: 2.5rem;
 }
 
-.tiles-container {
+.admin-tiles-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -22,7 +22,7 @@ h1 {
   margin-bottom: 3rem;
 }
 
-.tile {
+.admin-tile {
   background: white;
   padding: 2rem;
   border-radius: 12px;
@@ -36,12 +36,12 @@ h1 {
   justify-content: center;
 }
 
-.tile:hover {
+.admin-tile:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-.tile button {
+.admin-tile button {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -52,17 +52,17 @@ h1 {
   transition: color 0.3s ease;
 }
 
-.tile button:hover {
+.admin-tile button:hover {
   color: #2980b9;
 }
 
-.logout-container {
+.admin-logout-container {
   width: 100%;
   max-width: 800px;
   text-align: center;
 }
 
-.logout-btn {
+.admin-logout-btn {
   background: #e74c3c;
   color: white;
   border: none;
@@ -73,12 +73,12 @@ h1 {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.logout-btn:hover {
+.admin-logout-btn:hover {
   background: #c0392b;
   transform: scale(1.05);
 }
 
-.logout-btn:active {
+.admin-logout-btn:active {
   transform: scale(0.95);
 }
 
@@ -93,18 +93,18 @@ h1 {
   }
 }
 
-.container > * {
+.admin-container > * {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-.tiles-container > *:nth-child(1) {
+.admin-tiles-container > *:nth-child(1) {
   animation-delay: 0.2s;
 }
 
-.tiles-container > *:nth-child(2) {
+.admin-tiles-container > *:nth-child(2) {
   animation-delay: 0.4s;
 }
 
-.logout-container {
+.admin-logout-container {
   animation-delay: 0.6s;
 }
