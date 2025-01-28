@@ -4,10 +4,12 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Blog } from "@interfaces/Blog";
 import "@styles/Delete.css";
+import Loading from "@components/Loading";
 
 const Delete = () => {
   const router = useRouter();
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const checkAuthentication = async () => {
@@ -54,6 +56,7 @@ const Delete = () => {
       if (!confirm("Are you sure you want to permanently delete this article?")) {
         return;
       }
+      setLoading(true);
       const blogId = blogs[index]._id;
       await fetch("/api/admin", {
           method: "DELETE",
@@ -65,7 +68,13 @@ const Delete = () => {
     } catch (error) {
       console.error("Error deleting article:", error);
       alert("Error deleting article:");
+    } finally {
+      setLoading(false);
     }
+  }
+
+  if (loading) {  
+    return <Loading />;
   }
 
   return (

@@ -7,9 +7,11 @@ import Footer from "@components/Footer";
 import { useEffect, useState } from "react";
 import { Blog } from "@interfaces/Blog";
 import { useRouter } from "next/navigation";
+import Loading from "@components/Loading";
 
 const UnitedStates: React.FC = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -27,12 +29,16 @@ const UnitedStates: React.FC = () => {
         console.error("Error fetching blogs:", error);
       } 
     };
-    fetchBlogs();
+    fetchBlogs().then(() => setLoading(false));
   }, []);
 
   const handleArticleClick = (id: string) => {
     router.push(`/pages/articleView/${id}`);
   };
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <>

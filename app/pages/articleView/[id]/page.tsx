@@ -6,6 +6,7 @@ import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useParams } from "next/navigation";
 import { Blog } from "@interfaces/Blog";
+import Loading from "@components/Loading";
 
 const ArticleView = () => {
   console.log("ArticleView");
@@ -32,7 +33,7 @@ const ArticleView = () => {
   }, [id]); 
 
   if (!article) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
