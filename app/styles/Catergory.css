@@ -45,6 +45,12 @@
   padding-top: 20px;
 }
 
+.article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #1a4789
+}
+
 .article-image {
   width: 475px !important; /* Emphasize width for horizontal rectangle */
   height: 260px !important; /* Force the height to 150px */
