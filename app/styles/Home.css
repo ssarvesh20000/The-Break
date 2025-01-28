@@ -33,7 +33,7 @@
     overflow: hidden;
     font-size: 20px;
     margin-bottom: 20px; /* Space between articles */
-    padding: 10px; /* Optional: Add padding around content */
+    padding-left: 5px; /* Optional: Add padding around content */
     border: var(--border); /* Optional: Add a border */
     border-radius: 8px; /* Optional: Add rounded corners */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transition for hover effects */
@@ -285,7 +285,6 @@
 /* Right Sidebar */
 .sidebar {
     width: 25%; /* Right sidebar width to match available space */
-    padding-left: 15px; /* Add spacing between right sidebar and main content */
     border-left: var(--border);
 }
 
