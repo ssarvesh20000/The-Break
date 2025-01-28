@@ -19,6 +19,7 @@ import { Analytics } from "@vercel/analytics/react"
 const App: React.FC = () => {
     return (
         <Router>
+            <Analytics />
             <HeaderNav />
             <Routes>
                 <Route path="/" element={<Home />} />
