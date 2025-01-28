@@ -1,3 +1,7 @@
+.article-view-outer-container {
+    flex-direction: column;
+}
+
 .article-view-body {
     display: flex;
     justify-content: center;
@@ -7,7 +11,7 @@
 }
 
 /* Main page container */
-.article-page {
+.article-view-page {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -15,7 +19,7 @@
 }
 
 /* Article content container */
-.article-container {
+.article-view-container {
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -27,7 +31,7 @@
 }
 
 /* Article title styling */
-.article-title {
+.article-view-title {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 2rem;
     font-weight: bold;
@@ -36,7 +40,7 @@
 }
 
 /* Author styling */
-.article-author {
+.article-view-author {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.125rem;
     color: #4A5568;  
@@ -44,7 +48,7 @@
 }
 
 /* Image and description wrapper */
-.image-description-wrapper {
+.view-image-description-wrapper {
     float: left; /* Float the block to allow content wrapping */
     margin-right: 16px; /* Add spacing to the right */
     margin-bottom: 16px; /* Add spacing below the block */
@@ -53,7 +57,7 @@
 }
 
 /* Image styling */
-.article-image {
+.article-view-image {
     width: 100%; /* Scale image to fit the wrapper */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure proper content fit */
@@ -61,7 +65,7 @@
 }
 
 /* Description styling */
-.article-description {
+.article-view-description {
     margin-top: 8px; /* Add spacing between image and description */
     font-size: 0.75rem;
     line-height: 1.6;
@@ -70,7 +74,7 @@
 }
 
 /* Content styling */
-.article-content {
+.article-view-content {
     font-size: 1.125rem;
     line-height: 1.6;
     text-align: justify; /* Clean, justified text */
@@ -78,7 +82,7 @@
 }
 
 /* Clearfix for wrapping behavior */
-.article-container::after {
+.article-view-container::after {
     content: "";
     display: table;
     clear: both; /* Ensures no float-related issues at the end of the container */
@@ -86,7 +90,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .image-description-wrapper {
+    .view-image-description-wrapper {
         float: none; /* Disable float for smaller screens */
         display: block;
         margin: 0 auto 16px; /* Center the wrapper */
@@ -94,15 +98,15 @@
         max-width: 450px; /* Restrict to original max width */
     }
 
-    .article-image {
+    .article-view-image {
         width: 100%; /* Scale image to fit wrapper */
     }
 
-    .article-description {
+    .article-view-description {
         text-align: justify; /* Ensure text remains justified */
     }
 
-    .article-content {
+    .article-view-content {
         clear: both; /* Content flows fully below on smaller screens */
     }
 }

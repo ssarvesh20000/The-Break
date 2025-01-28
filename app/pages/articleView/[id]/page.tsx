@@ -36,34 +36,34 @@ const ArticleView = () => {
   }
 
   return (
-    <>
+    <div className="article-view-outer-container">
       <div className="article-view-body">
         <HeaderNav />
-        <div className="article-page">
-            <div className="article-container">
-                <h3 className="article-title">{article.title}</h3>
-                <p className="article-author">
+        <div className="article-view-page">
+            <div className="article-view-container">
+                <h3 className="article-view-title">{article.title}</h3>
+                <p className="article-view-author">
                     {article.author} - {new Date(article.date).toLocaleDateString()}
                 </p>
-                <div className="image-description-wrapper">
+                <div className="view-image-description-wrapper">
                     <Image
                         src={`/api/image/${article.image}`}
                         alt={article.title}
-                        className="article-image"
+                        className="article-view-image"
                         width={800}
                         height={600}
                     />
-                    <p className="article-description">{article.description}</p>
+                    <p className="article-view-description">{article.description}</p>
                 </div>
                 <div
-                    className="article-content"
+                    className="article-view-content"
                     dangerouslySetInnerHTML={{ __html: article.content }}
                 />
             </div>
         </div>
       </div>
       <Footer />
-    </>
+    </div>
 );
 
 
