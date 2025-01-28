@@ -97,7 +97,7 @@ const Home: React.FC = () => {
                   height={300}
                 />
                 <h2>{blog.title}</h2>
-                <p className="article-author">
+                <p className="article-card-author">
                   {blog.author} - {new Date(blog.date).toLocaleDateString()}
                 </p>
               </div>
@@ -167,7 +167,7 @@ const Home: React.FC = () => {
                   paddingRight: "20px" // Adds spacing between text and image
                 }}>
                   <h3>{blog.title}</h3>
-                  <p className="article-author">
+                  <p className="article-card-author">
                     {blog.author} - {new Date(blog.date).toLocaleDateString()}
                   </p>
                 </div>

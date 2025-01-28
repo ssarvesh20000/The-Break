@@ -247,12 +247,11 @@
     margin-top: 20px;
     font-style: italic;
 }
-.article-author {
+.article-card-author {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px; /* Smaller font for author/date */
-    color:var(--text-color);
-    margin-top: 0px; /* Space between title and author/date */
+    font-size: 12px; /* Smaller font for author/date */
     margin-bottom: 30px;
+    color: #888;
 }
 
 /* Container to wrap all content in a three-column layout */
