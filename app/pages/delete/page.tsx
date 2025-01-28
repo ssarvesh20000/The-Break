@@ -50,14 +50,18 @@ const Delete = () => {
 
   const handleDelete = async (index: number) => {
     try {
-    const blogId = blogs[index]._id;
-    await fetch("/api/admin", {
-        method: "DELETE",
-        body: JSON.stringify({ id: blogId }), // Send blog ID in the body
-    });
+      // give alert to confirm deletion, if user agrees continue with deletion, if not exit
+      if (!confirm("Are you sure you want to permanently delete this article?")) {
+        return;
+      }
+      const blogId = blogs[index]._id;
+      await fetch("/api/admin", {
+          method: "DELETE",
+          body: JSON.stringify({ id: blogId }), // Send blog ID in the body
+      });
 
-    alert("Article deleted");
-    setBlogs((prevBlogs) => prevBlogs.filter((_, i) => i !== index));
+      alert("Article deleted");
+      setBlogs((prevBlogs) => prevBlogs.filter((_, i) => i !== index));
     } catch (error) {
       console.error("Error deleting article:", error);
       alert("Error deleting article:");
