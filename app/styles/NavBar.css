@@ -112,7 +112,13 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1002;
+        -webkit-tap-highlight-color: transparent;
+        padding: 0;
     }
+    .menu-button:focus {
+        outline: none;
+    }
+    
     
     .nav-links {
         display: none;

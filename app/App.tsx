@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import HeaderNav from './components/HeaderNav';
 //import Darkmode from './components/Darkmode';
 import './App.css';
+import { Analytics } from "@vercel/analytics/react"
 
 const App: React.FC = () => {
     return (
