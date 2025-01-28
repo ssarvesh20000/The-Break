@@ -112,7 +112,6 @@ const Write = () => {
           <option value="World">World</option>
           <option value="Opinion">Opinion</option>
           <option value="Multimedia">Multimedia</option>
-          <option value="Other">Other</option>
         </select>
 
         <div className="media-upload">
