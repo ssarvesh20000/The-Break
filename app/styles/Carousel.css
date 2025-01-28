@@ -52,7 +52,7 @@
 /* Add subtle separator between carousels */
 .carousel:not(:last-child)::after {
   content: '';
-  position: absolute;
+  
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);

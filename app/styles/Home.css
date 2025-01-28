@@ -319,6 +319,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    
     .content-wrapper {
         flex-direction: column;
     }
@@ -347,12 +352,13 @@
 }
 
 @media screen and (max-width: 428px) { /* iPhone 14 Pro Max */
+    
     .content-wrapper {
         flex-direction: column;
     }
 
     .main-content {
-        width: 100%;
+        max-width: 100%;
         order: 1; /* Main article comes first */
     }
 
@@ -383,11 +389,15 @@
     }
 
     .main-image {
-        width: 100%;
+        max-width: 100%;
     }
 }
 
 @media screen and (max-width: 390px) { /* iPhone 14 Pro */
+    body {
+        overflow-x: hidden;
+    }
+    
     .main-content {
         width: 100%;
         order: 1; /* Main article comes first */

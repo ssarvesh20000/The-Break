@@ -32,5 +32,6 @@
   .App {
     padding: 0;
     min-width: 320px;
+    max-width: 100%;
   }
 }

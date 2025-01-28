@@ -43,6 +43,7 @@ footer {
   body {
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    max-width: 100%;
   }
   
   .main-story {

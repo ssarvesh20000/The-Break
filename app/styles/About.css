@@ -13,13 +13,13 @@
   width: 80%;
   margin: auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .about-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px; /* Adjust spacing between columns */
+  gap: 20px;
 }
 
 .left-column,
@@ -33,14 +33,16 @@
 }
 
 .about-section h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
   color: var(--text-color);
+  letter-spacing: -0.02em;
 }
 
 .about-section p {
-  font-size: 1em;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.7;
   color: var(--text-color);
 }
 
@@ -58,32 +60,34 @@
   padding: 15px;
   border-top: var(--border-bottom);
 }
+
 /* Masthead Section Styling */
 .masthead-row {
-  margin-bottom: 40px; /* Spacing between rows */
+  margin-bottom: 40px;
 }
 
 .role-title {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text-color);
-  margin-bottom: 15px;
+  margin-bottom: 1.2rem;
   text-align: center;
+  letter-spacing: -0.01em;
 }
 
 /* Default Masthead Grid */
 .masthead-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Default column width */
-  gap: 20px; /* Default gap between items */
-  justify-items: center; /* Centers items horizontally */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
 
 /* Masthead Grid for Two Items */
 .masthead-grid.two-items {
-  grid-template-columns: repeat(2, 120px); /* Fixed 2 columns for rows with only two items */
-  justify-content: center; /* Center-align two-item rows */
-  gap: 10px; /* Reduced gap for two-item rows */
+  grid-template-columns: repeat(2, 120px);
+  justify-content: center;
+  gap: 10px;
 }
 
 /* Headshot Container */
@@ -98,26 +102,34 @@
 .headshot-placeholder {
   width: 120px;
   height: 120px;
-  background-color: #d3d3d3; /* Light grey placeholder */
-  border: 1px solid #ccc; /* Optional border for better visibility */
+  background-color: #d3d3d3;
+  border: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9em;
-  color: #666; /* Placeholder text color */
+  font-size: 0.9rem;
+  color: #666;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Name Style */
 .headshot-name {
   margin-top: 10px;
-  font-size: 1em;
+  font-size: 1.125rem;
   color: var(--text-color);
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .about-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+
   .masthead-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
@@ -128,13 +140,9 @@
   }
 
   .headshot-name {
-    font-size: 0.9em;
+    font-size: 1rem;
   }
-}
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
   .about-columns {
     grid-template-columns: 1fr;
   }

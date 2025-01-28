@@ -32,7 +32,7 @@
 
 /* Article title styling */
 .article-view-title {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 8px;
@@ -41,7 +41,7 @@
 
 /* Author styling */
 .article-view-author {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 1.125rem;
     color: #4A5568;  
     margin-bottom: 16px;
@@ -99,8 +99,26 @@
     }
 
     .article-view-image {
-        width: 100%; /* Scale image to fit wrapper */
+        padding: 16px;
+        overflow-x: hidden;
+        
     }
+    .article-view-container {
+        width: calc(100% - 32px); /* Add breathing space for padding */
+        margin: 0 auto; /* Center the content */
+    }
+    
+        .article-view-outer-container {
+            padding: 16px; /* Add padding to prevent content cutoffs */
+            margin: 0 auto; /* Center align for smaller screens */
+            width: 100%; /* Ensure it adapts to smaller screens */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .article-view-page {
+            padding: 16px; /* Add padding to prevent cutoff */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
 
     .article-view-description {
         text-align: justify; /* Ensure text remains justified */
