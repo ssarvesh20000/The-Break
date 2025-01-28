@@ -37,7 +37,7 @@ const ArticleView = () => {
 
   return (
     <>
-      <div className="body">
+      <div className="article-view-body">
         <HeaderNav />
         <div className="article-page">
             <div className="article-container">

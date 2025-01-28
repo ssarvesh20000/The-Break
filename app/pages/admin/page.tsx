@@ -45,7 +45,7 @@ const Admin = () => {
   };
 
   return (
-    <div className="container">
+    <div className="admin-container">
       <h1>Welcome, Admin!</h1>
       <div className="tiles-container">
         <Link style={{ textDecoration: 'none' }} href="/pages/write">

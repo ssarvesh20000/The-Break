@@ -1,4 +1,4 @@
-.navbar {
+.navbar-items {
     position: sticky !important; 
     top: 0 !important;
     display: flex;
@@ -68,7 +68,7 @@
 .scrolled .header {
     margin-top: -100px;
 }
-.header {
+.text-header {
     position: relative;
     width: 100%;
     justify-content: center;

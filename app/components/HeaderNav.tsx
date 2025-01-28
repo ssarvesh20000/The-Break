@@ -28,7 +28,7 @@ const HeaderNav: React.FC = () => {
 
     return (
         <>
-            <header className="header">
+            <header className="text-header">
             <div className="header-content">
                 {/* Make "The Break" a homepage link */}
                 <Link href="/" className="header-title-link">
@@ -36,7 +36,7 @@ const HeaderNav: React.FC = () => {
                 </Link>
             </div>
             </header>
-            <nav className={`navbar ${menuOpen ? 'menu-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+            <nav className={`navbar-items ${menuOpen ? 'menu-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
                 {isScrolled && (
                     <div className="moved-header-content">
                         <Link href="/" className="header-title-link">

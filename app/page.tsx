@@ -58,10 +58,11 @@ const Home: React.FC = () => {
           backgroundColor: "#f8f9fa", // Optional background color
         }}
       >
-        <img
+        <Image
           src="/assets/logo.png" // Ensure this path is correct for your Next.js project
           alt="Loading..."
-          style={{ width: "500px", height: "250px" }} // Adjust size as needed
+          width={500}
+          height={250}
         />
         <p style={{ marginTop: "16px", fontSize: "20px", color: "#555" }}>
           Loading...

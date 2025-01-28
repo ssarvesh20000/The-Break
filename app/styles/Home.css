@@ -77,6 +77,7 @@
     text-align: center; /* Align text to left */
     margin-bottom: 25px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
 .main-image {
@@ -293,10 +294,6 @@
 .video-section {
     width: 100%; /* Full width below other sections */
     margin-top: 20px; /* Space above the video section */
-}
-
-body, html{
-    overflow-x: hidden;
 }
 
 @media screen and (max-width: 1200px) {
