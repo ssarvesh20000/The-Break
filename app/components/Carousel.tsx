@@ -22,6 +22,9 @@ const BlogCarousel: React.FC<BlogCarouselProps> = ({ blogs, title }) => {
     if (newIndices[index] < Math.ceil(blogs[index].length / 3) - 1) {
       newIndices[index] += 1;
       setCurrentIndices(newIndices);
+    } else {
+      newIndices[index] = 0;
+      setCurrentIndices(newIndices);
     }
   };
 
