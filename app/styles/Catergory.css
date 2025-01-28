@@ -43,6 +43,7 @@
   align-items: flex-start;
   border-top: 1px solid #000000;
   padding-top: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transition for hover effects */
 }
 
 .article:hover {
