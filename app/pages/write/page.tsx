@@ -35,25 +35,21 @@ const Write = () => {
     };
 
     checkAuthentication();
-  }, [isFormDirty, router]);
 
-  /* Track unsaved changes
-  useEffect(() => {
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (isFormDirty && !isSubmitting) {
+    // handle reload and tab exit protection
+    function beforeUnload(e: BeforeUnloadEvent) {
+      if (isFormDirty) {
         e.preventDefault();
-        if (!confirm("Form changes will not be saved. Are you sure you want to leave?")) {
-          return false;
-        }
+        confirm("Are you sure you want to leave? Your changes will not be saved.")
       }
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
+    }
+  
+    window.addEventListener('beforeunload', beforeUnload);
+  
     return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener('beforeunload', beforeUnload);
     };
-  }, [isFormDirty, isSubmitting]); */
+  }, [isFormDirty, router]);
 
   const clearForm = () => {
     setTitle("");
@@ -99,9 +95,23 @@ const Write = () => {
     }
   };
 
+  const handleNavigation = () => {
+    if (isFormDirty) {
+      // Show confirmation dialog
+      const confirmed = window.confirm("You have unsaved changes. Are you sure you want to leave?");
+      if (confirmed) {
+        // Navigate to the target page
+        router.push("/pages/admin");
+      }
+    } else {
+      // No unsaved changes, just navigate
+      router.push("/pages/admin");
+    }
+  };
+
   return (
     <div className="container">
-      <button onClick={() => { router.push("/pages/admin") }} className="return-button"> ← Return to Dashboard </button>
+      <button onClick={handleNavigation} className="return-button"> ← Return to Dashboard </button>
       <form onSubmit={handleSubmit}>
         <h1>Input a Title</h1>
         {/* TODO double check if this is good */}
