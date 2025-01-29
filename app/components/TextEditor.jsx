@@ -7,8 +7,8 @@ function TextEditor({ value, onChange }) {
     const fontSizes = Array.from({ length: 100 }, (_, i) => i + 1);
 
     const applyStyle = (command, value = null) => {
-        document.execCommand(command, false, value); // TODO fix deprecation warning
-    };
+        document.execCommand(command, false, value);
+    };    
 
     useEffect(() => {
         // Only set the initial content or reset content if the editor is empty
@@ -21,7 +21,7 @@ function TextEditor({ value, onChange }) {
         if (textAreaRef.current) {
             onChange(textAreaRef.current.innerHTML); // Propagate changes to the parent
         }
-    };
+    };  
 
     return (
         <div className="textEditorContainer">
@@ -43,27 +43,27 @@ function TextEditor({ value, onChange }) {
                     ))}
                 </select>
 
-                <button id="bold" onClick={() => applyStyle('bold')}><i className="fas fa-bold"></i></button>
-                <button id="italic" onClick={() => applyStyle('italic')}><i className="fas fa-italic"></i></button>
-                <button id="underline" onClick={() => applyStyle('underline')}><i className="fas fa-underline"></i></button>
-                <button id="strikethrough" onClick={() => applyStyle('strikethrough')}><i className="fas fa-strikethrough"></i></button>
-                <button id="superscript" onClick={() => applyStyle('superscript')}><i className="fas fa-superscript"></i></button>
-                <button id="subscript" onClick={() => applyStyle('subscript')}><i className="fas fa-subscript"></i></button>
-                <button id="code" onClick={() => applyStyle('formatBlock', 'pre')}><i className="fas fa-code"></i></button>
+                <button type="button" id="bold" onClick={() => applyStyle('bold')}><i className="fas fa-bold"></i></button>
+                <button type="button" id="italic" onClick={() => applyStyle('italic')}><i className="fas fa-italic"></i></button>
+                <button type="button" id="underline" onClick={() => applyStyle('underline')}><i className="fas fa-underline"></i></button>
+                <button type="button" id="strikethrough" onClick={() => applyStyle('strikethrough')}><i className="fas fa-strikethrough"></i></button>
+                <button type="button" id="superscript" onClick={() => applyStyle('superscript')}><i className="fas fa-superscript"></i></button>
+                <button type="button" id="subscript" onClick={() => applyStyle('subscript')}><i className="fas fa-subscript"></i></button>
+                <button type="button" id="code" onClick={() => applyStyle('formatBlock', 'pre')}><i className="fas fa-code"></i></button>
 
-                <button id="textColor" onClick={() => document.getElementById('textColorPicker').click()}><i className="fas fa-font"></i></button>
-                <button id="bgColor" onClick={() => document.getElementById('bgColorPicker').click()}><i className="fas fa-fill-drip"></i></button>
+                <button type="button" id="textColor" onClick={() => document.getElementById('textColorPicker').click()}><i className="fas fa-font"></i></button>
+                <button type="button" id="bgColor" onClick={() => document.getElementById('bgColorPicker').click()}><i className="fas fa-fill-drip"></i></button>
 
-                <button id="alignLeft" onClick={() => applyStyle('justifyLeft')}><i className="fas fa-align-left"></i></button>
-                <button id="alignCenter" onClick={() => applyStyle('justifyCenter')}><i className="fas fa-align-center"></i></button>
-                <button id="alignRight" onClick={() => applyStyle('justifyRight')}><i className="fas fa-align-right"></i></button>
-                <button id="alignJustify" onClick={() => applyStyle('justifyFull')}><i className="fas fa-align-justify"></i></button>
+                <button type="button" id="alignLeft" onClick={() => applyStyle('justifyLeft')}><i className="fas fa-align-left"></i></button>
+                <button type="button" id="alignCenter" onClick={() => applyStyle('justifyCenter')}><i className="fas fa-align-center"></i></button>
+                <button type="button" id="alignRight" onClick={() => applyStyle('justifyRight')}><i className="fas fa-align-right"></i></button>
+                <button type="button" id="alignJustify" onClick={() => applyStyle('justifyFull')}><i className="fas fa-align-justify"></i></button>
 
-                <button id="indent" onClick={() => applyStyle('indent')}><i className="fas fa-indent"></i></button>
-                <button id="outdent" onClick={() => applyStyle('outdent')}><i className="fas fa-outdent"></i></button>
+                <button type="button" id="indent" onClick={() => applyStyle('indent')}><i className="fas fa-indent"></i></button>
+                <button type="button" id="outdent" onClick={() => applyStyle('outdent')}><i className="fas fa-outdent"></i></button>
 
-                <button id="orderedList" onClick={() => applyStyle('insertOrderedList')}><i className="fas fa-list-ol"></i></button>
-                <button id="unorderedList" onClick={() => applyStyle('insertUnorderedList')}><i className="fas fa-list-ul"></i></button>
+                <button type="button" id="orderedList" onClick={() => applyStyle('insertOrderedList')}><i className="fas fa-list-ol"></i></button>
+                <button type="button" id="unorderedList" onClick={() => applyStyle('insertUnorderedList')}><i className="fas fa-list-ul"></i></button>
 
                 <div
                     contentEditable="true"
