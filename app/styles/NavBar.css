@@ -30,6 +30,7 @@
 .nav-links li a {
     color: black;
     text-decoration: none;
+    font-weight: bold;
 }
 .nav-links li a:hover {
     color: blue;
@@ -44,7 +45,7 @@
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
-    color: rgb(115, 117, 117);
+    color: rgb(2, 2, 2);
     
 }
 .icon-social:hover {
