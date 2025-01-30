@@ -49,11 +49,11 @@ const HeaderNav: React.FC = () => {
                 </button>
                 <ul className={`nav-links ${menuOpen ? 'visible' : ''}`}>
                     {/* Removed "Home" button */}
-                    <li><Link href="/pages/sanDiego">San Diego</Link></li>
-                    <li><Link href="/pages/unitedStates">United States</Link></li>
-                    <li><Link href="/pages/world">World</Link></li>
-                    <li><Link href="/pages/opinion">Opinion</Link></li>
-                    <li><Link href="/pages/multimedia">Multimedia</Link></li>
+                    <li><Link href="/pages/sanDiego">San Diego</Link></li> •
+                    <li><Link href="/pages/unitedStates">United States</Link></li> •
+                    <li><Link href="/pages/world">World</Link></li> •
+                    <li><Link href="/pages/opinion">Opinion</Link></li> •
+                    <li><Link href="/pages/multimedia">Multimedia</Link></li> •
                     <li><Link href="/pages/about">About</Link></li>
                 </ul>
                 <div className="nav-icons">
