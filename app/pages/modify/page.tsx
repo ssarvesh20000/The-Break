@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Blog } from "@interfaces/Blog";
-import "@styles/Delete.css";
+import "@styles/Modify.css";
 import Loading from "@components/Loading";
 
 const Delete = () => {
@@ -47,7 +47,7 @@ const Delete = () => {
     }, [router]);
 
   const handleArticleClick = (id: string) => {
-    router.push(`/pages/articleView/${id}`);
+    router.push(`/pages/blogChange/${id}`);
   };
 
   const handleDelete = async (index: number) => {

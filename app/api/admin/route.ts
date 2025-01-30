@@ -1,7 +1,7 @@
 // all endpoints for admin CRUD operations (creating, viewing all, updating, and deleting blogs)
 import BlogModel from "@/lib/models/BlogModels";
 import { ConnectDB } from "@/lib/mongo";
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getBucket } from "@/lib/mongo";
 import { Readable } from "stream";
 import { ObjectId } from 'mongodb';
@@ -42,6 +42,12 @@ const uploadMedia = async (media: File) => {
 
     // Get the fileId of the uploaded image
     return uploadStream.id;
+}
+
+const deleteMedia = async (imageId: string) => {
+    const image = ObjectId.createFromHexString(imageId);
+    const bucket = getBucket();
+    await bucket.delete(image);
 }
 
 //POST function to add to blog to database, used in write page to add blog from form
@@ -88,9 +94,7 @@ export async function DELETE(request: Request) {
         return NextResponse.json({ success: false, error: "Blog not found" }, { status: 404 });
     }
 
-    const imageId = ObjectId.createFromHexString(blog.image);
-    const bucket = getBucket();
-    await bucket.delete(imageId);
+    await deleteMedia(blog.image);
 
     try {
         await BlogModel.deleteOne({ _id: id });
@@ -102,4 +106,47 @@ export async function DELETE(request: Request) {
 }
 
 // PUT function to update a blog in database, used in admin page to update blog
-export async function PUT() { }
+export async function PUT(request: NextRequest) {
+    await ConnectDB();
+    try {
+        const formData = await request.formData();
+        const id = formData.get("id");
+        const blog = await BlogModel.findById(id);
+        if (!blog) {
+            return NextResponse.json({ success: false, error: "Blog not found" }, { status: 404 });
+        }
+        
+        // Extract other form fields
+        const title = formData.get("title") as string;
+        const author = formData.get("author") as string;
+        const category = formData.get("category") as string;
+        const description = formData.get("description") as string;
+        const content = formData.get("content") as string;
+        const imageFile = formData.get("image"); // expect image to be a File object
+        console.log(imageFile);
+        if (!imageFile) {
+            return NextResponse.json({ error: "Image is required" }, { status: 400 });
+        }
+        let image: ObjectId | string = blog.image;
+
+        if (imageFile instanceof File) {
+            await deleteMedia(blog.image); // remove old image from bucket
+            image = await uploadMedia(imageFile);
+        }
+
+        const updateFields: any = { title, author, category, description, content, image};
+
+        // Update the blog in MongoDB
+        await BlogModel.updateOne(
+            { _id: id }, 
+            { 
+                $set: updateFields, 
+                $currentDate: { date: true } // Automatically updates `updatedAt`
+            }
+        );
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error("Error updating blog:", error);
+        return NextResponse.json({ success: false, error: "Failed to update blog" }, { status: 500 });
+    }
+}
