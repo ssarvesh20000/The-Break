@@ -10,14 +10,14 @@
 
 /* Left Sidebar */
 .left-sidebar {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Georgia';
     font-size: 13.5px;
     width: 20%; /* Adjusted to fit left of main content */
 }
 
 /* Right Sidebar */
 .sidebar {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Georgia';
     font-size: 10px;
     width: 25%; /* Right sidebar width to match available space */
     padding-left: 5px; /* Add spacing between right sidebar and main content */
@@ -53,7 +53,7 @@
 }
 
 .sidebar-article h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Georgia'; /* Use Georgia font for titles */
     font-size: 1rem; /* Adjust title font size */
     color: var(--text-color);
     margin: 0 0 10px; /* Add space below the title */
@@ -61,7 +61,7 @@
 }
 
 .sidebar-article .article-author {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'math';
     font-size: 0.85rem; /* Smaller font for the author/date */
     color: var(--aurthor); /* Use variable for author text color */
     margin: 0; /* Remove unnecessary margins */
@@ -69,11 +69,7 @@
 }
 /* Main Article Styles */
 .main-article {
-    color:var(--text-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
     text-decoration: none;
-    font-weight: bold;
     text-align: center; /* Align text to left */
     margin-bottom: 25px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -100,9 +96,9 @@
 }
 
 .main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin: 15px 0;
+    font-family: 'Georgia';
+    font-size: 2rem;
+    margin: 20px 20px 25px 0;
     font-weight: bold;
 }
 
@@ -112,8 +108,10 @@
 }
 
 .main-author {
-    font-size: 0.85rem;
-    color:var(--text-color)
+    font-size: 1rem;
+    padding-bottom: 10px;
+    color: var(--text-color);
+    font-family: 'math';
 }
 
 /* Secondary Articles in Main Content */
@@ -248,20 +246,19 @@
     font-style: italic;
 }
 .article-card-author {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12px; /* Smaller font for author/date */
+    font-family: 'math';
+    font-size: 13px; /* Smaller font for author/date */
     margin-bottom: 30px;
     color: #888;
+    letter-spacing: 0.03em;
 }
 
 /* Container to wrap all content in a three-column layout */
 .home-container {
     display: flex;
     flex-direction: column; /* Stack content vertically */
-    padding: 20px;
     max-width: 1200px;
     margin: auto;
-    gap: 20px;
 }
 
 /* Wrapper to group sidebar and main content in a row */

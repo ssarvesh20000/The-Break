@@ -99,7 +99,7 @@ const Home: React.FC = () => {
                   width={400}
                   height={300}
                 />
-                <h2 className="hover-title">{blogs[0].title}</h2>
+                <p className="main-title">{blogs[0].title}</p>
                 <p className="main-author">
                   {blogs[0].author} -{" "}
                   {new Date(blogs[0].date).toLocaleDateString()}
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      height: "50px", // Adjust height of fade
+                      height: "5em", // Adjust height of fade
                       background: "linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)",
                     }}
                   > </div>

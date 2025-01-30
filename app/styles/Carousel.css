@@ -2,10 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
-  margin: 20px auto;
-  gap: 3rem; /* Space between carousels */
 }
 
 .carousel-sidebar {
@@ -27,12 +25,14 @@
   align-items: center;
   overflow: hidden;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 0; /* Default padding for carousels */
 }
 
 .carousel-title {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
+  font-family: 'Georgia';
 }
 
 .carousel {
@@ -40,33 +40,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0; /* Default padding for carousels */
+  padding: 0.5rem 0; /* Default padding for carousels */
   position: relative;
 }
 
-/* Remove top padding from first carousel */
-.carousel:first-child {
-  padding-top: 0;
-}
-
-/* Add subtle separator between carousels */
-.carousel:not(:last-child)::after {
-  content: '';
-  
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, #e0e0e0, transparent);
-}
-
-/* Make category titles more prominent */
-.carousel h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #666464;
-  font-weight: 600;
+.carousel-label {
+  font-size: 1.35rem;
+  color: #3b3b3b;
+  font-family: 'Georgia';
 }
 
 .carousel-article {
@@ -98,9 +79,16 @@
   color: #555;
 }
 
+.carousel-article-title {
+  font-size: 18px;
+  font-family: 'Georgia';
+}
+
 .article-author {
-  font-size: 12px;
-  color: #888;
+  font-size: 14px;
+  color: #4f4f4f;
+  font-family: 'math';
+  letter-spacing: 0.03em;
 }
 
 .empty {
