@@ -123,15 +123,16 @@ export async function PUT(request: NextRequest) {
         const description = formData.get("description") as string;
         const content = formData.get("content") as string;
         const imageFile = formData.get("image"); // expect image to be a File object
-        console.log(imageFile);
+        let image: ObjectId | string = blog.image; // Default to existing image
         if (!imageFile) {
-            return NextResponse.json({ error: "Image is required" }, { status: 400 });
+            console.log("image not changed");
         }
-        let image: ObjectId | string = blog.image;
-
-        if (imageFile instanceof File) {
+        else if (imageFile instanceof File) {
             await deleteMedia(blog.image); // remove old image from bucket
             image = await uploadMedia(imageFile);
+        }
+        else {
+            return NextResponse.json({ error: "Something went wrong" }, { status: 400 });
         }
 
         const updateFields: any = { title, author, category, description, content, image};

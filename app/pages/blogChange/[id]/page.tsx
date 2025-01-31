@@ -121,7 +121,7 @@ const Write = () => {
     try {
       const res = await fetch("/api/admin", {
         method: "PUT",
-        body: formData, // add id of blog blog._id
+        body: formData,
       });
 
       if (res.ok) {
@@ -145,17 +145,17 @@ const Write = () => {
       const confirmed = window.confirm("Your changes will be discarded. Are you sure you want to leave?");
       if (confirmed) {
         // Navigate to the target page
-        router.push("/pages/admin");
+        router.push("/pages/modify");
       }
     } else {
       // No unsaved changes, just navigate
-      router.push("/pages/admin");
+      router.push("/pages/modify");
     }
   };
 
   return (
     <div className="container">
-      <button onClick={handleNavigation} className="return-button"> ← Return to Dashboard </button>
+      <button onClick={handleNavigation} className="return-button"> ← Return to Modify Page </button>
       <div className="update-blog-header">
         <h1>Update Blog</h1>
         <h3>Change fields below to update the blog. Leave this page to discard changes.</h3>
