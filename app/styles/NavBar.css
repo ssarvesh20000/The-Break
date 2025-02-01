@@ -33,7 +33,7 @@
     font-weight: bold;
 }
 .nav-links li a:hover {
-    color: blue;
+    color: #1a4789;
 }
 .nav-icons {
     display: flex;
