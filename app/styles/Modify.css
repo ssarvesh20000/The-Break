@@ -34,6 +34,7 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   animation: slideUp 0.5s ease-out;
+  align-items: flex-end;
 }
 
 .blog-card:hover {
@@ -42,6 +43,7 @@
 
 .blog-content {
   padding: 1.5rem;
+  cursor: pointer;
 }
 
 .blog-title {

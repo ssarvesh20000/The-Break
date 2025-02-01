@@ -53,7 +53,7 @@ const Admin = () => {
               <button className="admin-button">Writers page</button>
           </div>
         </Link>
-        <Link style={{ textDecoration: 'none' }} href="/pages/delete">
+        <Link style={{ textDecoration: 'none' }} href="/pages/modify">
           <div className="admin-tile">  
             <button>Modify page</button>
           </div>

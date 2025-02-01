@@ -23,16 +23,17 @@
 }
 .nav-links li {
     font-size: 0.9rem;
-    font-weight: bold;
+    letter-spacing: 0.075em;
     text-transform: uppercase;
     cursor: pointer;
 }
 .nav-links li a {
     color: black;
     text-decoration: none;
+    font-weight: bold;
 }
 .nav-links li a:hover {
-    color: blue;
+    color: #1a4789;
 }
 .nav-icons {
     display: flex;
@@ -44,7 +45,7 @@
 .icon-social {
     font-size: 1rem;
     cursor: pointer;
-    color: rgb(115, 117, 117);
+    color: rgb(2, 2, 2);
     
 }
 .icon-social:hover {
@@ -88,7 +89,7 @@
 .header-title {
     color: var(--text-color);
     font-size: 2.5rem;
-    font-family: 'Playfair Display', 'Georgia', serif;  /* Changed to more news-appropriate font */
+    font-family: 'Georgia';
     font-style: italic;
     font-weight: 400;
     margin: 0;
