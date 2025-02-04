@@ -71,7 +71,7 @@ const Write = () => {
         you wanna make a new folder called api/media and follow the same idea as the POST method in api/admin
         once u r able to add a media thing to the db (u check the website and see it) go to mediaView.tsx, see comment on line 24 
        */
-      const res = await fetch("/api/admin", {
+      const res = await fetch("/api/media", {
         method: "POST",
         body: formData,
       });

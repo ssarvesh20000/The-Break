@@ -60,29 +60,26 @@ export async function POST(request: Request) {
     await ConnectDB();
     const formData = await request.formData();
 
-    const youtubeLink = formData.get("youtubeLink") as string;
-    console.log(youtubeLink);
+    const youtubeLink = formData.get("media") as string;
+    console.log("youtube link received in backend: " + youtubeLink);
     if (youtubeLink) {
         if (!isValidYouTubeLink(youtubeLink)) {
             return NextResponse.json({ error: "Invalid YouTube URL" }, { status: 400 });
         }
 
-    const mediaData = {
-        title: formData.get("title") || "Untitled Video",
-        author: formData.get("author") || "Unknown Author",
-        description: formData.get("description") || "",
-        mediaType: "youtube",
-        mediaLink: youtubeLink,
-        date: new Date(),
+        const mediaData = {
+            title: formData.get("title") || "Untitled Video",
+            author: formData.get("author") || "Unknown Author",
+            description: formData.get("description") || "",
+            youtubeLink: youtubeLink,
+        }
+
+        await MediaModel.create(mediaData);
+        console.log("Media Saved");
+        return NextResponse.json({model: mediaData});
     }
 
-    await MediaModel.create(mediaData);
-    console.log("Media Saved");
-    return NextResponse.json({model: mediaData});
-
-    }
-
-    return NextResponse.json({ error: "Invalid media format" }, { status: 400 });
+    return NextResponse.json({ error: "No youtube link provided" }, { status: 400 });
 
     /*
     if (image instanceof File) {
