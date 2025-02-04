@@ -53,6 +53,11 @@ const Admin = () => {
               <button className="admin-button">Writers page</button>
           </div>
         </Link>
+        <Link style={{ textDecoration: 'none' }} href="/pages/media">
+          <div className="admin-tile">
+              <button className="admin-button">Media page</button>
+          </div>
+        </Link>
         <Link style={{ textDecoration: 'none' }} href="/pages/modify">
           <div className="admin-tile">  
             <button>Modify page</button>

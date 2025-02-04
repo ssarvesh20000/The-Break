@@ -5,22 +5,22 @@ import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useEffect, useState } from "react";
-import { Blog } from "@interfaces/Blog";
+import { Media } from "@interfaces/Media";
 import { useRouter } from "next/navigation";
 import Loading from "@components/Loading";
 
 const Multimedia: React.FC = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchMedia = async () => {
       try {
-        const blogs = await fetch(`/api/categoryBlogs/${encodeURIComponent("Multimedia")}`);
-        const data = await blogs.json();
+        const Media = await fetch(`/api/Media/${encodeURIComponent("Multimedia")}`);
+        const data = await Media.json();
         if (data.success) {
-          setBlogs(data.data);
+          setMedia(data.data);
           console.log(data.data);
         } else {
           console.error("Failed to fetch blogs:", data.error);
@@ -29,7 +29,7 @@ const Multimedia: React.FC = () => {
         console.error("Error fetching blogs:", error);
       } 
     };
-    fetchBlogs().then(() => setLoading(false));
+    fetchMedia().then(() => setLoading(false));
   }, []);
 
   const handleArticleClick = (id: string) => {
@@ -49,14 +49,14 @@ const Multimedia: React.FC = () => {
         <h1 className="page-title">Multimedia</h1>
 
         <div className="articles">
-          {blogs.map((blog: Blog) => (
+          {media.map((Media: Media) => (
             <div 
               className="article"
-              key={blog._id}
-              onClick={() => handleArticleClick(blog._id)}
+              key={Media._id}
+              onClick={() => handleArticleClick(Media._id)}
             >
               <Image
-                src={`/api/image/${blog.image}`} 
+                src={`/api/image/${Media.youtubeLink}`} 
                 alt="Article Image"
                 className="article-image"
                 width={300}
@@ -64,12 +64,12 @@ const Multimedia: React.FC = () => {
               />
               <div className="article-content">
                 <h3 className="article-title">
-                  {blog.title}
+                  {Media.title}
                 </h3>
-                <p className="article-author">{blog.author} - {new Date(blog.date).toLocaleDateString()}</p>
+                <p className="article-author">{Media.author} - {new Date(Media.date).toLocaleDateString()}</p>
                 <div style={{ position: "relative", paddingTop: "1.5rem" }}>
                   <div
-                      dangerouslySetInnerHTML={{ __html: blog.content }}
+                      dangerouslySetInnerHTML={{ __html: Media.description }}
                       style={{
                         maxHeight: "9rem",
                         overflow: "hidden",
