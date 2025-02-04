@@ -158,6 +158,27 @@ const Write = () => {
     }
   };
 
+  const handleDelete = async () => {
+    if (!confirm("Are you sure you want to permanently delete this article?")) {
+      return;
+    }
+    try {
+      const res = await fetch("/api/admin", {
+        method: "DELETE",
+        body: JSON.stringify({ id: blog?._id }),
+      });
+      if (res.ok) {
+        alert("Article deleted");
+        router.push("/");
+      } else {
+        alert("Failed to delete article");
+      }
+    } catch (error) {
+      console.error("Error deleting article:", error);
+      alert("Error deleting article");
+    }
+  };
+  
   return (
     <div className="container">
       <button onClick={handleNavigation} className="return-button"> ← Return to Modify Page </button>
@@ -267,6 +288,10 @@ const Write = () => {
           disabled={isSubmitting}
         >
           {isSubmitting ? "Saving Changes..." : "Save Changes"}
+        </button>
+        <button type="button" 
+        className="delete-button" 
+        onClick={handleDelete}>Delete Article
         </button>
       </form>
     </div>

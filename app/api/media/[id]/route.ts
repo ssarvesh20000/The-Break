@@ -1,6 +1,6 @@
 import { ConnectDB } from "@/lib/mongo";
 import { NextResponse, NextRequest } from "next/server";
-import BlogModel from "@/lib/models/BlogModels";
+import MediaModel from "@/lib/models/MediaModel";
 import { ObjectId } from 'mongodb';
 
 type idParam = Promise<{ id: string }>;
@@ -17,11 +17,11 @@ export async function GET(_: NextRequest, props: { params: idParam }) {
         }
 
         const objectId = new ObjectId(id);
-        const blog = await BlogModel.findById(objectId);
-        return NextResponse.json({ success: true, data: blog });
+        const media = await MediaModel.findById(objectId);
+        return NextResponse.json({ success: true, data: media });
     }
     catch (error) {
-        console.error("Error retrieving blog:", error);
-        return NextResponse.json({ success: false, error: "Failed to fetch blog" }, { status: 500 });
+        console.error("Error retrieving media:", error);
+        return NextResponse.json({ success: false, error: "Failed to fetch media" }, { status: 500 });
     }
 }
