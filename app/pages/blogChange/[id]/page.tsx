@@ -8,6 +8,11 @@ import "@styles/write.css";
 import { useRouter, useParams } from "next/navigation";
 import { Blog } from "@interfaces/Blog";
 
+
+// TODO add delete button when user clicks blog and enters edit page
+// see modify/page.tsx line 53 & 106 for how delete is done 
+// yours will be simpler because in that it removes the blog from the list of blogs that currnetly show on screen, but u just have to remove the blog from db if that makes sense
+// no frontend update other than navigate user back to home page if delete successful
 const Write = () => {
   // add image window toggle
   const [open, setOpen] = useState(true);
