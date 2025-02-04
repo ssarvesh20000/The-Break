@@ -1,4 +1,4 @@
-//UPLADING MEDIA PAGE
+//UPLOADING MEDIA PAGE
 'use client';
 import React, { useState, useEffect } from "react";
 //import TextEditor from "@components/TextEditor";
