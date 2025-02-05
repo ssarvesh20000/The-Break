@@ -61,6 +61,15 @@
   display: block; /* Ensures it behaves as a block element */
 }
 
+.article-video {
+  width: 475px !important; /* Emphasize width for horizontal rectangle */
+  height: 260px !important; /* Force the height to 150px */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 20px;
+  object-fit: cover; /* Ensures the image scales and maintains the correct proportions */
+  display: block; /* Ensures it behaves as a block element */
+}
+
 
 .article-content {
   flex: 1;
