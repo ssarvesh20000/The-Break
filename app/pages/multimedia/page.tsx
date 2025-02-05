@@ -22,8 +22,12 @@ const Multimedia: React.FC = () => {
 
         const data = await response.json();
         if (data.success) {
-          setMedia(data.data);
-          console.log("Fetched media:", data.data);
+          // Sort media by date (newest first)
+          const sortedMedia = data.data.sort(
+            (a: Media, b: Media) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          );
+          setMedia(sortedMedia);
+          console.log("Fetched and sorted media:", sortedMedia);
         } else {
           console.error("Failed to fetch media:", data.error);
         }
