@@ -2,7 +2,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import "@styles/ArticleView.css"; // TODO changing style file if needed
-import Image from "next/image";
+//import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useParams } from "next/navigation";

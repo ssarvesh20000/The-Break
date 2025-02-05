@@ -65,7 +65,7 @@ const Modify = () => {
     fetchBlogs();
     fetchMedia();
   }, [router]);
-
+/*
   const handleArticleClick = (id: string) => {
     router.push(`/pages/blogChange/${id}`);
   };
@@ -73,7 +73,7 @@ const Modify = () => {
   const handleMediaClick = (id: string) => {
     router.push(`/pages/mediaChange/${id}`);
   }
-
+*/
   const handleDelete = async (id: string, type: "blog" | "media") => {
     const confirmDelete = window.confirm(
       `Are you sure you want to delete this ${type}? This action cannot be undone.`

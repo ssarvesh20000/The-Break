@@ -4,7 +4,7 @@ import { ConnectDB } from "@/lib/mongo";
 import { NextRequest, NextResponse } from 'next/server';
 //import { getBucket } from "@/lib/mongo";
 //import { Readable } from "stream";
-import { ObjectId } from 'mongodb';
+//import { ObjectId } from 'mongodb';
 
 // GET function to get all the blogs in db, used in admin page to get all blogs
 export async function GET() {

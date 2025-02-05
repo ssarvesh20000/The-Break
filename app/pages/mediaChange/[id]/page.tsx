@@ -95,7 +95,7 @@ const MediaEdit = () => {
     formData.append("description", description);
 
     try {
-      const res = await fetch("/api/admin", {
+      const res = await fetch("/api/media", {
         method: "PUT",
         body: formData,
       });
@@ -103,7 +103,7 @@ const MediaEdit = () => {
       if (res.ok) {
         alert("Media updated successfully");
         clearForm();
-        router.push("/pages/admin");
+        router.push("/pages/modify");
       } else {
         alert("Failed to update media");
       }
@@ -134,13 +134,13 @@ const MediaEdit = () => {
       return;
     }
     try {
-      const res = await fetch("/api/admin", {
+      const res = await fetch("/api/media", {
         method: "DELETE",
         body: JSON.stringify({ id: media?._id }),
       });
       if (res.ok) {
         alert("Article deleted");
-        router.push("/");
+        router.push("/pages/modify");
       } else {
         alert("Failed to delete article");
       }
