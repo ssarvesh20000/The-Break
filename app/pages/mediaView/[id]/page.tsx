@@ -55,7 +55,7 @@ const MediaView = () => {
                 <p className="article-view-author">
                     {media.author} - {new Date(media.date).toLocaleDateString()}
                 </p>
-                <div className="view-image-description-wrapper">
+                <div className="article-view-image">
                     <iframe
                         width="800"
                         height="450"
@@ -66,7 +66,7 @@ const MediaView = () => {
                         allowFullScreen
                         className="article-view-video"
                     ></iframe>
-                <p className="article-view-description">{media.description}</p>
+                <p className="article-view-content">{media.description}</p>
                 </div>
             </div>
         </div>

@@ -46,14 +46,14 @@ const Multimedia: React.FC = () => {
   }
 
   return (
-    <>
-      <div className="body">
-        <HeaderNav />
+    <div className="page-container">
+      <HeaderNav />
+      <main className="main-content">
         <div className="san-diego-page">
           <h2 className="category-title">Category</h2>
           <h1 className="page-title">Multimedia</h1>
 
-          <div className="articles">
+          <div className="content">
             {media.length > 0 ? (
               media.map((mediaItem: Media) => (
                 <div
@@ -61,16 +61,13 @@ const Multimedia: React.FC = () => {
                   key={mediaItem._id}
                   onClick={() => handleMediaClick(mediaItem._id)}
                 >
-                  {/* Embedded YouTube Video */}
-                  <div className="article-video">
+                  <div className="article-image">
                     <iframe
                       width="300"
                       height="200"
                       src={`https://www.youtube.com/embed/${new URL(mediaItem.youtubeLink).searchParams.get("v")}`}
                       title={mediaItem.title}
                       frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
                       className="article-image"
                     ></iframe>
                   </div>
@@ -94,7 +91,7 @@ const Multimedia: React.FC = () => {
                           bottom: 0,
                           left: 0,
                           right: 0,
-                          height: "50px", // Adjust height of fade
+                          height: "50px",
                           background:
                             "linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%)",
                         }}
@@ -108,9 +105,9 @@ const Multimedia: React.FC = () => {
             )}
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
