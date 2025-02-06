@@ -4,30 +4,75 @@
     width: 100%; /* Full width to span across home-container */
     font-family: Arial, sans-serif;
     background-color: var(--background-color); /* Optional: adds a background color to distinguish the section */
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px; /* Optional: max width to keep videos centered on larger screens */
+    margin: auto; /* Center the grid within the container */
+}
+
+.video-item {
+    background-color:var(--background-color);
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    margin-top: 10px;
+
+}
+
+.video-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #1a4789
+}
+/*
 .video-container h2 {
     background-color:var(--background-color);
     font-size: 2em;
     margin-bottom: 10px;
     color: var(--text-color);
-    text-align: center; /* Center the heading */
+    text-align: center; /* Center the heading 
+}
+*/
+.video-title {
+    font-family: 'Georgia';
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
+.video-meta {
+    font-family: 'math';
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #888;
+}
+/*
 .video-container p {
     background-color:var(--background-color);
     font-size: 1em;
     margin-bottom: 20px;
     color: var(--text-color);
-    text-align: center; /* Center the description */
+    text-align: center; /* Center the description 
 }
+*/
 .video-description-container {
+    font-family: 'Georgia';
     position: relative;
-    max-height: 4.5rem; /* Adjust for ~3 lines of text */
+    max-height: 5.75rem; /* Adjust for ~3 lines of text */
     overflow: hidden;
   }
   
   .video-description {
+    font-family: 'Georgia';
     font-size: 14px;
     color: #444;
     line-height: 1.5;
@@ -46,20 +91,11 @@
   }
   
 
-.video-grid {
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px; /* Optional: max width to keep videos centered on larger screens */
-    margin: auto; /* Center the grid within the container */
-}
 
-.video-item {
-    background-color:var(--background-color);
-    text-align: center;
-}
 
+
+/*
 .video-item video {
     background-color:var(--background-color);
     width: 100%;
@@ -79,3 +115,4 @@
     font-size: 0.9em;
     color: var(--text-color);
 }
+*/

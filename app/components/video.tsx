@@ -18,7 +18,7 @@ const Video: React.FC<VideoProps> = ({ media }) => {
   return (
     <div className="video-container">
       <h2>Multimedia</h2>
-      <p>Watch our latest video content right here on our website.</p>
+      <p>Watch our latest video form content right here on our website.</p>
 
       {/* Video Grid Section */}
       <div className="video-grid">
@@ -36,14 +36,15 @@ const Video: React.FC<VideoProps> = ({ media }) => {
                 height="350"
                 src={`https://www.youtube.com/embed/${new URL(mediaItem.youtubeLink).searchParams.get("v")}`}
                 title={mediaItem.title}
-                frameBorder="0"
+                //frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
 
               {/* Title */}
-              <h4>{mediaItem.title}</h4>
-
+              <p className = "video-title">
+              {mediaItem.title}
+              </p>
               {/* Author & Date */}
               <p className="video-meta">
                 {mediaItem.author} - {new Date(mediaItem.date).toLocaleDateString()}
