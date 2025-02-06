@@ -59,9 +59,12 @@ const MediaEdit = () => {
 
     checkAuthentication();
     fetchArticle();
+  }, [router]);
 
-    // handle reload and tab exit protection
-    function beforeUnload(e: BeforeUnloadEvent) {
+  useEffect(() => {
+     // handle reload and tab exit protection
+     function beforeUnload(e: BeforeUnloadEvent) {
+      console.log("beforeUnload called");
       if (isFormDirty) {
         e.preventDefault();
         confirm("Are you sure you want to leave? Your changes will be discarded.")
@@ -73,7 +76,7 @@ const MediaEdit = () => {
     return () => {
       window.removeEventListener('beforeunload', beforeUnload);
     };
-  }, [router]);
+  }, [isFormDirty]);
 
   const clearForm = () => {
     setTitle("");
