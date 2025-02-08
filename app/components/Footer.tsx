@@ -2,6 +2,8 @@ import React from 'react';
 import '@styles/Footer.css';
 import Image from 'next/image';
 import Link from 'next/link';
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const Footer: React.FC = () => {
   return (
@@ -35,10 +37,16 @@ const Footer: React.FC = () => {
           <li><a href="mailto:contact@yourwebsite.com">Contact Us</a></li>
         </ul>
         <div className="social-icons">
-          <i className="fab fa-facebook-square"></i>
-          <i className="fab fa-instagram"></i>
-          <i className="fab fa-twitter"></i>
-        </div>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-youtube"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-instagram"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-twitter"></i>
+    </a>
+</div>
       </div>
     </footer>
   );

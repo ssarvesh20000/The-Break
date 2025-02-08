@@ -31,6 +31,7 @@ const Video: React.FC<VideoProps> = ({ media }) => {
               style={{ cursor: "pointer" }}
             >
               {/* YouTube Embedded Video */}
+              <div className="video-wrapper">
               <iframe
                 width="550"
                 height="350"
@@ -40,7 +41,7 @@ const Video: React.FC<VideoProps> = ({ media }) => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-
+              </div>
               {/* Title */}
               <p className = "video-title">
               {mediaItem.title}

@@ -25,6 +25,11 @@
     height: auto;
     filter: brightness(0) invert(1);
     margin-bottom: 1rem;
+    margin-top: 3rem;  /* Changed from 3rem to 1rem */
+    margin-right: 2rem;
+}
+.read-more {
+    margin-top: 0.0rem;  /* This will move it up by 2rem */
 }
 
 .footer-section h4 {
@@ -52,6 +57,7 @@
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 300;
+    margin-bottom: 0.5rem;
 }
 
 .footer-section ul li a:hover {
@@ -66,11 +72,11 @@
 
 .social-icons i {
     font-size: 1.5rem;
-    color: #8f9ba8;
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
-.social-icons i:hover {
+.social-icons a i:hover {
     color: #4a90e2;
 }
 
