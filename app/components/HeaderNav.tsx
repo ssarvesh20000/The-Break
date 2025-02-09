@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTwitter, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
+//, faTwitter
 import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 //import '@styles/Header.css';
 import '@styles/NavBar.css';
@@ -57,14 +58,16 @@ const HeaderNav: React.FC = () => {
                     <li><Link href="/pages/about">About</Link></li>
                 </ul>
                 <div className="nav-icons">
+                    {/* Add social media links 
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
                     <FontAwesomeIcon icon={faTwitter} className="icon-social" />
                     </a>
-                    <a href="https://www.spotify.com" target="_blank" rel="noopener noreferrer" title="Spotify">
-                    <FontAwesomeIcon icon={faSpotify} className="icon-social" />
-                    </a>
+                    */}
                     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
                     <FontAwesomeIcon icon={faInstagram} className="icon-social" />
+                    </a>
+                    <a href="https://www.spotify.com" target="_blank" rel="noopener noreferrer" title="Spotify">
+                    <FontAwesomeIcon icon={faSpotify} className="icon-social" />
                     </a>
                     <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube">
                     <FontAwesomeIcon icon={faYoutube} className="icon-social" />

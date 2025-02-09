@@ -101,63 +101,129 @@
 .header-title-link:hover {
     color: #1a4789;  /* Added sophisticated dark blue hover color */
 }
+
+
+/* Rest of your regular styles... */
+
 @media (max-width: 768px) {
-    .navbar {
-        justify-content: flex-end;
+    .text-header {
+        margin-bottom: 0;
+        background-color: white;
+        position: relative;
+        z-index: 1003;
+        padding-bottom: 20px;
     }
-    
+
+    .navbar-items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 10px 20px;
+        background-color: white;
+        z-index: 1002;
+        border: none;
+
+        margin-top: 20px;
+    }
+
     .menu-button {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1002;
+        position: fixed;
+        right: 30px;
+        top: 120px;
+        transform: translateY(0%);
+        transform: translateX(50%);
+        z-index: 1003;
         -webkit-tap-highlight-color: transparent;
-        padding: 0;
+
     }
-    .menu-button:focus {
-        outline: none;
-    }
-    
-    
+
     .nav-links {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 0;
+        top: 120px;
         left: 0;
         right: 0;
         bottom: 0;
         width: 100%;
-        max-width: 100vw;
-        height: 100vh;
-        overflow-x: hidden;
+        height: calc(100vh - 60px);
         background-color: white;
         align-items: center;
-        justify-content: center;
-        padding: 20px 0;
+        justify-content: flex-start;
+        padding-top: 20px;
         z-index: 1001;
         gap: 30px;
+        overflow-y: auto;
     }
-    
+
     .nav-links.visible {
         display: flex;
     }
-    
+
     .nav-icons {
         display: none;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 20px 0;
+        width: 100%;
     }
-    
-    .scrolled .moved-header-content {
-        display: block;
+
+    .menu-open .nav-icons {
+        display: flex;
+    }
+
+    .moved-header-content {
+        position: fixed;
         left: 20px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 15px;
+        z-index: 1003;
     }
-    
+
     .scrolled .header-title {
         font-size: 1.5rem;
+    }
+
+    .scrolled .moved-header-content {
+        display: block;
+    }
+
+    .scrolled .menu-button {
+        top: 20px;
+    }
+
+    .scrolled .navbar-items {
+        background-color: white !important;  /* Ensures full white background */
+        border-bottom: 1px solid #ccc;  /* Adds a soft line for separation */
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: slight shadow */
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    
+    .scrolled .text-header {
+        background-color: white !important;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .scrolled .navbar-items, .scrolled .text-header {
+        z-index: 1005 !important;
+        position: fixed; /* Ensures it's stuck to the top */
+        top: 0;
+        width: 100%;
+        background-color: white;
+    }
+    
+    
+
+    .icon-social {
+        font-size: 1.5rem;
+    }
+    .scrolled .nav-links {
+        top: 60px;
+        height: calc(100vh - 60px);
+
     }
 }
