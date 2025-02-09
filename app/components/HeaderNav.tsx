@@ -2,26 +2,37 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
-//, faTwitter
 import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-//import '@styles/Header.css';
 import '@styles/NavBar.css';
 import Link from 'next/link';
 
 const HeaderNav: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
         const handleScroll = () => {
-            console.log(window.scrollY);  // Check the scroll position in the console
             setIsScrolled(window.scrollY > 50);
         };
-    
+
+        // Initial checks
+        handleResize();
+        handleScroll();
+
+        // Add event listeners
+        window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
-    
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -30,18 +41,17 @@ const HeaderNav: React.FC = () => {
     return (
         <>
             <header className="text-header">
-            <div className="header-content">
-                {/* Make "The Break" a homepage link */}
-                <Link href="/" className="header-title-link">
-                <h1 className="header-title">The Break</h1>
-                </Link>
-            </div>
+                <div className="header-content">
+                    <Link href="/" className="header-title-link">
+                        <h1 className="header-title">The Break</h1>
+                    </Link>
+                </div>
             </header>
             <nav className={`navbar-items ${menuOpen ? 'menu-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
-                {isScrolled && (
+                {(isScrolled || isMobile) && (
                     <div className="moved-header-content">
                         <Link href="/" className="header-title-link">
-                        <h1 className="header-title">The Break</h1>
+                            <h1 className="header-title">The Break</h1>
                         </Link>
                     </div>
                 )}
@@ -49,7 +59,6 @@ const HeaderNav: React.FC = () => {
                     <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
                 </button>
                 <ul className={`nav-links ${menuOpen ? 'visible' : ''}`}>
-                    {/* Removed "Home" button */}
                     <li><Link href="/pages/sanDiego">San Diego</Link></li> •
                     <li><Link href="/pages/unitedStates">United States</Link></li> •
                     <li><Link href="/pages/world">World</Link></li> •
@@ -58,22 +67,17 @@ const HeaderNav: React.FC = () => {
                     <li><Link href="/pages/about">About</Link></li>
                 </ul>
                 <div className="nav-icons">
-                    {/* Add social media links 
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
-                    <FontAwesomeIcon icon={faTwitter} className="icon-social" />
-                    </a>
-                    */}
                     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-                    <FontAwesomeIcon icon={faInstagram} className="icon-social" />
+                        <FontAwesomeIcon icon={faInstagram} className="icon-social" />
                     </a>
                     <a href="https://www.spotify.com" target="_blank" rel="noopener noreferrer" title="Spotify">
-                    <FontAwesomeIcon icon={faSpotify} className="icon-social" />
+                        <FontAwesomeIcon icon={faSpotify} className="icon-social" />
                     </a>
                     <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube">
-                    <FontAwesomeIcon icon={faYoutube} className="icon-social" />
+                        <FontAwesomeIcon icon={faYoutube} className="icon-social" />
                     </a>
                     <a href="mailto:contact@yourwebsite.com" title="Email">
-                    <FontAwesomeIcon icon={faEnvelope} className="icon-social" />
+                        <FontAwesomeIcon icon={faEnvelope} className="icon-social" />
                     </a>
                 </div>
             </nav>
