@@ -46,16 +46,16 @@ const MediaView = () => {
       };
 
   return (
-    <div className="article-view-outer-container">
-      <div className="article-view-body">
+    <div className="media-view-outer-container">
+      <div className="media-view-body">
         <HeaderNav />
-        <div className="article-view-page">
-            <div className="article-view-container">
-                <h3 className="article-view-title">{media.title}</h3>
-                <p className="article-view-author">
+        <div className="media-view-page">
+            <div className="media-view-container">
+                <h3 className="media-view-title">{media.title}</h3>
+                <p className="media-view-author">
                     {media.author} - {new Date(media.date).toLocaleDateString()}
                 </p>
-                <div className="article-view-image">
+                <div className="media-view-image">
                     <iframe
                         width="800"
                         height="450"
@@ -64,9 +64,9 @@ const MediaView = () => {
                         //frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        className="article-view-video"
+                        className="media-view-video"
                     ></iframe>
-                <p className="article-view-content">{media.description}</p>
+                <p className="media-view-content">{media.description}</p>
                 </div>
             </div>
         </div>

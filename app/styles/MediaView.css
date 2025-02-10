@@ -1,11 +1,11 @@
-.article-view-outer-container {
+.media-view-outer-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     overflow-x: hidden;
 }
 
-.article-view-body {
+.media-view-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.article-view-page {
+.media-view-page {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 
-.article-view-container {
+.media-view-container {
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -33,7 +33,7 @@
     box-sizing: border-box;
 }
 
-.article-view-title {
+.media-view-title {
     font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 2rem;
     font-weight: bold;
@@ -41,21 +41,21 @@
     color: #1A202C;
 }
 
-.article-view-author {
+.media-view-author {
     font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 1.125rem;
     color: #4A5568;  
     margin-bottom: 16px;
 }
 
-.article-view-image {
+.media-view-image {
     width: 100%;
     position: relative;
     padding-top: 16px;
     padding-bottom: 16px;
 }
 
-.article-view-video {
+.media-view-video {
     width: 100%;
     max-width: 800px;
     aspect-ratio: 16/9;
@@ -63,7 +63,7 @@
     border-radius: 8px;
 }
 
-.article-view-content {
+.media-view-content {
     font-size: 1.125rem;
     line-height: 1.6;
     text-align: justify;
@@ -72,25 +72,25 @@
 }
 
 @media (max-width: 768px) {
-    .article-view-container {
+    .media-view-container {
         padding: 0 16px;
         width: 100%;
     }
     
-    .article-view-video {
+    .media-view-video {
         width: 100%;
         height: auto;
     }
     
-    .article-view-title {
+    .media-view-title {
         font-size: 1.5rem;
     }
     
-    .article-view-author {
+    .media-view-author {
         font-size: 1rem;
     }
     
-    .article-view-content {
+    .media-view-content {
         font-size: 1rem;
     }
 }
