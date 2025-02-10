@@ -111,14 +111,14 @@ const Modify = () => {
     <div className="delete-container">
       <button onClick={() => { router.push("/pages/admin") }} className="return-button"> ← Return to Dashboard </button>
       <div className="header">
-        <h1>Modify {showMedia ? "Media" : "Blogs"}</h1>
+        <h1>Modify {showMedia ? "Media" : "Articles"}</h1>
         <h3>Select an item below to modify it, or select delete to remove it.</h3>
       </div>
 
       {/* Toggle Switch for Blogs/Media */}
       <div className="toggle-container">
         <label className="toggle-label">
-          <span>Show Blogs</span>
+          <span>Show Articles</span>
           <input
             type="checkbox"
             className="toggle-checkbox"
@@ -126,7 +126,7 @@ const Modify = () => {
             onChange={() => setShowMedia(!showMedia)}
           />
           <span className="toggle-slider"></span>
-          <span>Show Media Uploads</span>
+          <span>Show Media </span>
         </label>
       </div>
 

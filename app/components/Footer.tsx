@@ -43,8 +43,8 @@ const Footer: React.FC = () => {
     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-instagram"></i>
     </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-        <i className="fab fa-twitter"></i>
+    <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-spotify"></i>
     </a>
 </div>
       </div>
