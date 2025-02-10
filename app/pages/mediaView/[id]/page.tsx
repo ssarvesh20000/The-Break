@@ -1,7 +1,7 @@
 //FRONTEND FOR HOW TO VIEW MEDIA UPLOADS 
 'use client';
 import { useEffect, useState } from "react";
-import "@styles/ArticleView.css"; // TODO changing style file if needed
+import "@styles/MediaView.css"; // TODO changing style file if needed
 //import Image from "next/image";
 import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
