@@ -88,8 +88,8 @@ export async function PUT(request: NextRequest) {
             return NextResponse.json({ error: "Invalid YouTube URL" }, { status: 400 });
         }
 
-        const updateFields: any = { title, author, description};
-        if (youtubeLink) updateFields.mediaLink = youtubeLink;
+        const updateFields: any = { title, author, description, youtubeLink };
+        //if (youtubeLink) updateFields.mediaLink = youtubeLink;
 
 
         // Update the blog in MongoDB
