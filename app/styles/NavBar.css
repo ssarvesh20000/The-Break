@@ -132,7 +132,7 @@
         flex-direction: column;
         z-index: 1020;
         border: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
     }
 
     .moved-header-content {
@@ -140,7 +140,7 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 50px;
+        height: 90px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -149,7 +149,7 @@
     }
 
     .header-title {
-        font-size: 1.2rem;
+        font-size: 2.2rem;
         margin: 0;
     }
 
@@ -157,7 +157,7 @@
         display: block;
         position: fixed;
         right: 15px;
-        top: 12px;
+        top: 28px;
         z-index: 1030;
         color: black;
         padding: 5px;
