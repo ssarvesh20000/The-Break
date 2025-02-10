@@ -292,6 +292,11 @@
 }
 
 @media screen and (max-width: 1200px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+      }
     .content-wrapper {
         flex-direction: column;
     }
@@ -316,6 +321,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+      }
     body {
         overflow-x: hidden;
     }
@@ -336,6 +346,11 @@
         order: 2; /* Left sidebar below main article */
     }
 
+    .left-sidebar-article img {
+        width: 100%;
+        max-height: 100%; /* Full width for smaller screens */
+    }
+
     .sidebar {
         width: 100%;
         padding: 0;
@@ -349,7 +364,12 @@
 }
 
 @media screen and (max-width: 428px) { /* iPhone 14 Pro Max */
-    
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+      }
+
     .content-wrapper {
         flex-direction: column;
     }
@@ -391,6 +411,11 @@
 }
 
 @media screen and (max-width: 390px) { /* iPhone 14 Pro */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+      }
     body {
         overflow-x: hidden;
     }

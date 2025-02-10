@@ -7,7 +7,7 @@ export async function GET() {
     await ConnectDB(); 
     try {
         // Categories to filter by
-        const categories = ["San Diego", "United States", "World", "Opinion", "Multimedia"];
+        const categories = ["San Diego", "United States", "World", "Opinion"];
 
         // Aggregation pipeline
         const blogs = await BlogModel.aggregate([

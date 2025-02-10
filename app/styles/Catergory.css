@@ -5,7 +5,16 @@
   flex-direction: column;
   max-width: 100%;
 }
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.main-content {
+  flex: 1;
+  width: 100%;
+}
 .san-diego-page {
   background-color: var(--background-color);
   /* width: 100%; Extend to full page width */
@@ -61,6 +70,16 @@
   display: block; /* Ensures it behaves as a block element */
 }
 
+.article-video {
+  width: 475px !important; /* Emphasize width for horizontal rectangle */
+  height: 260px !important; /* Force the height to 150px */
+  border-radius: 5px; /* Rounded corners */
+  margin-left: 0px;
+  margin-right: 20px;
+  object-fit: cover; /* Ensures the image scales and maintains the correct proportions */
+  display: block; /* Ensures it behaves as a block element */
+}
+
 
 .article-content {
   flex: 1;
@@ -94,76 +113,72 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+    padding: 0 16px;
+  }
+
   .articles {
-    display: flex;
-    flex-direction: column; /* Ensure articles stack vertically */
-    padding: 0 15px; /* Add padding to avoid cutoff on smaller screens */
-    gap: 20px; /* Maintain spacing between articles */
+    padding: 0 16px;
+    gap: 20px;
   }
 
   .article {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center-align content */
-    padding: 15px; /* Add padding inside the article div */
-    border: 1px solid #ccc; /* Optional: Add a border for better visual separation */
-    border-radius: 5px; /* Optional: Rounded corners for a cleaner look */
-    background-color: #fff; /* Optional: Background color to emphasize content */
-    margin: 0 auto; /* Center-align the article */
-    width: 100%; /* Ensure the article fits fully within the parent container */
-    box-sizing: border-box; /* Include padding in width calculations */
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 100%;
   }
 
-  .article-image {
-    width: 100%; /* Use full width of the container */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 15px; /* Add spacing below the image */
-    border-radius: 5px; /* Keep rounded corners */
+  .article-image, .article-video {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
+    margin: 0 0 16px 0;
   }
 
   .article-content {
-    width: 100%; /* Ensure the content fits within the article container */
-    text-align: left; /* Align text to the left */
+    width: 100%;
+    padding: 0;
   }
 
   .article-title {
-    font-size: 1.2rem; /* Adjust font size for smaller screens */
-    margin-bottom: 10px; /* Add spacing below the title */
-  }
-
-  .article-author {
-    font-size: 0.8rem; /* Adjust text size for author */
-    margin-bottom: 10px; /* Add spacing below the author */
+    font-size: 1.2rem;
   }
 
   .article-excerpt {
-    font-size: 1rem; /* Adjust font size for excerpt */
-    line-height: 1.5; /* Maintain readability */
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
+  .san-diego-page {
+    padding: 16px 0;
+    max-width: 95%;
+  }
+
   .articles {
-    padding: 0 10px; /* Further reduce padding for smaller screens */
-    gap: 15px; /* Reduce gap between articles */
+    padding: 0 12px;
+    gap: 16px;
   }
 
   .article {
-    padding: 10px; /* Compact padding for small screens */
-    margin: 0 auto; /* Center-align articles */
-    width: calc(100% - 20px); /* Ensure the article fits, accounting for padding */
+    padding: 12px;
+    margin: 0;
+    width: 100%;
   }
 
   .article-title {
-    font-size: 1rem; /* Further adjust font size for smaller screens */
+    font-size: 1.1rem;
+  }
+
+  .article-excerpt {
+    font-size: 0.875rem;
   }
 
   .article-author {
-    font-size: 0.7rem; /* Adjust author font size */
-  }
-
-  .article-image {
-    width: 100%; /* Fully responsive for smaller devices */
-    height: auto; /* Ensure proportional scaling */
+    font-size: 0.7rem;
   }
 }

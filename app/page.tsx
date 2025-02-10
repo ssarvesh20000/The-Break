@@ -8,6 +8,7 @@ import HeaderNav from "@components/HeaderNav";
 import Footer from "@components/Footer";
 import { useRouter } from "next/navigation";
 import { Blog } from "@interfaces/Blog";
+import { Media } from "@interfaces/Media";
 import Carousel from "@components/Carousel";
 import Loading from "@components/Loading";
 //import logo from "@public/logo.png";
@@ -15,36 +16,48 @@ import Loading from "@components/Loading";
 const Home: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [categoryBlogs, setCategoryBlogs] = useState<Blog[][]>([]);
+  //const [media, setMedia] = useState<Media[]>([]);
+  const [recentMedia, setRecentMedia] = useState<Media[]>([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchContent = async () => {
       try {
-        // Update with api endpoint from recentBlogs
-        const recentBlogs = await fetch("/api/recentBlogs");
-        let data;
-        data = await recentBlogs.json();
-        if (data.success) {
-          setBlogs(data.data);
+        // Fetch recent blogs
+        const recentBlogsRes = await fetch("/api/recentBlogs");
+        const recentBlogsData = await recentBlogsRes.json();
+        if (recentBlogsData.success) {
+          setBlogs(recentBlogsData.data);
         } else {
-          console.error("Failed to fetch blogs:", data.error);
+          console.error("Failed to fetch blogs:", recentBlogsData.error);
         }
-        // get most recent blog in each category
-        const categoryBlogs = await fetch("/api/categoryBlogs");
-        data = await categoryBlogs.json();
-        if (data.success) {
-          setCategoryBlogs(data.data);
+
+        // Fetch category blogs
+        const categoryBlogsRes = await fetch("/api/categoryBlogs");
+        const categoryBlogsData = await categoryBlogsRes.json();
+        if (categoryBlogsData.success) {
+          setCategoryBlogs(categoryBlogsData.data);
         } else {
-          console.error("Failed to fetch category blogs:", data.error);
+          console.error("Failed to fetch category blogs:", categoryBlogsData.error);
+        }
+
+        // Fetch recent media (latest two media uploads)
+        const recentMediaRes = await fetch("/api/recentMedia");
+        const recentMediaData = await recentMediaRes.json();
+        if (recentMediaData.success) {
+          setRecentMedia(recentMediaData.data);
+        } else {
+          console.error("Failed to fetch media:", recentMediaData.error);
         }
       } catch (error) {
-        console.error("Error fetching blogs:", error);
+        console.error("Error fetching content:", error);
       } finally {
         setLoading(false);
       }
     };
-    fetchBlogs();
+
+    fetchContent();
   }, []);
 
   if (loading) {
@@ -175,7 +188,9 @@ const Home: React.FC = () => {
         />
 
         <section className="video-section">
-          <Video />
+          <Video 
+          media={recentMedia} title={""}     
+          />
         </section>
       </div>
       <Footer />

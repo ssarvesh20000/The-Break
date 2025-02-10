@@ -8,6 +8,11 @@ import "@styles/write.css";
 import { useRouter, useParams } from "next/navigation";
 import { Blog } from "@interfaces/Blog";
 
+
+// TODO add delete button when user clicks blog and enters edit page
+// see modify/page.tsx line 53 & 106 for how delete is done 
+// yours will be simpler because in that it removes the blog from the list of blogs that currnetly show on screen, but u just have to remove the blog from db if that makes sense
+// no frontend update other than navigate user back to home page if delete successful
 const Write = () => {
   // add image window toggle
   const [open, setOpen] = useState(true);
@@ -78,9 +83,12 @@ const Write = () => {
 
     checkAuthentication();
     fetchArticle();
+  }, [router]);
 
-    // handle reload and tab exit protection
-    function beforeUnload(e: BeforeUnloadEvent) {
+  useEffect(() => {
+     // handle reload and tab exit protection
+     function beforeUnload(e: BeforeUnloadEvent) {
+      console.log("beforeUnload called");
       if (isFormDirty) {
         e.preventDefault();
         confirm("Are you sure you want to leave? Your changes will be discarded.")
@@ -92,7 +100,7 @@ const Write = () => {
     return () => {
       window.removeEventListener('beforeunload', beforeUnload);
     };
-  }, [router]);
+  }, [isFormDirty]);
 
   const clearForm = () => {
     setTitle("");
@@ -153,6 +161,27 @@ const Write = () => {
     }
   };
 
+  const handleDelete = async () => {
+    if (!confirm("Are you sure you want to permanently delete this article?")) {
+      return;
+    }
+    try {
+      const res = await fetch("/api/admin", {
+        method: "DELETE",
+        body: JSON.stringify({ id: blog?._id }),
+      });
+      if (res.ok) {
+        alert("Article deleted");
+        router.push("/");
+      } else {
+        alert("Failed to delete article");
+      }
+    } catch (error) {
+      console.error("Error deleting article:", error);
+      alert("Error deleting article");
+    }
+  };
+  
   return (
     <div className="container">
       <button onClick={handleNavigation} className="return-button"> ← Return to Modify Page </button>
@@ -262,6 +291,10 @@ const Write = () => {
           disabled={isSubmitting}
         >
           {isSubmitting ? "Saving Changes..." : "Save Changes"}
+        </button>
+        <button type="button" 
+        className="delete-button" 
+        onClick={handleDelete}>Delete Article
         </button>
       </form>
     </div>

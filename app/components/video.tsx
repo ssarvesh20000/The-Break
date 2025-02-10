@@ -1,39 +1,67 @@
-//What we want is multimedia: an area for videos 
-//Videos not hyperlink but you watch them on the website 
 import React from 'react';
 import '@styles/Video.css';
+import { Media } from '@interfaces/Media';
+import { useRouter } from 'next/navigation';
 
-const Video: React.FC = () => {
-return (
-  <div className="video-container">
-      <h2>Multimedia (Coming Soon!)</h2>
-          <p>Watch our latest video content right here on our website.</p>
+interface VideoProps {
+  media: Media[];
+  title: string;
+}
 
-      {/* Video Section */}
+const Video: React.FC<VideoProps> = ({ media }) => {
+  const router = useRouter();
+
+  const handleMediaClick = (id: string) => {
+    router.push(`/pages/mediaView/${id}`);
+  };
+
+  return (
+    <div className="video-container">
+      <h2>Multimedia</h2>
+      <p>Watch our latest video form content right here on our website.</p>
+
+      {/* Video Grid Section */}
       <div className="video-grid">
-        {/* Video 1 */}
-      <div className="video-item">
-        <video controls>
-          <source src="/path/to/video1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <h4>Video Title 1</h4>
-            <p>Brief description of the video content.</p>
-        </div>
+        {media.length > 0 ? (
+          media.map((mediaItem) => (
+            <div 
+              key={mediaItem._id} 
+              className="video-item"
+              onClick={() => handleMediaClick(mediaItem._id)}
+              style={{ cursor: "pointer" }}
+            >
+              {/* YouTube Embedded Video */}
+              <div className="video-wrapper">
+              <iframe
+                width="550"
+                height="350"
+                src={`https://www.youtube.com/embed/${new URL(mediaItem.youtubeLink).searchParams.get("v")}`}
+                title={mediaItem.title}
+                //frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              </div>
+              {/* Title */}
+              <p className = "video-title">
+              {mediaItem.title}
+              </p>
+              {/* Author & Date */}
+              <p className="video-meta">
+                {mediaItem.author} - {new Date(mediaItem.date).toLocaleDateString()}
+              </p>
 
-        {/* Video 2 */}
-        <div className="video-item">
-          <video controls>
-            <source src="/path/to/video2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <h4>Video Title 2</h4>
-          <p>Brief description of the video content.</p>
-        </div>
-
-        {/* Add more video items as needed */}
-        </div>
-        </div>
+              {/* Description with fade effect */}
+              <div className="video-description-container">
+                <p className="video-description">{mediaItem.description}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No recent media available.</p>
+        )}
+      </div>
+    </div>
   );
 };
 

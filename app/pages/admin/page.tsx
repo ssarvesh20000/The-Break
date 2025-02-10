@@ -50,12 +50,17 @@ const Admin = () => {
       <div className="admin-tiles-container">
         <Link style={{ textDecoration: 'none' }} href="/pages/write">
           <div className="admin-tile">
-              <button className="admin-button">Writers page</button>
+              <button className="admin-button">Article Upload</button>
+          </div>
+        </Link>
+        <Link style={{ textDecoration: 'none' }} href="/pages/media">
+          <div className="admin-tile">
+              <button className="admin-button">Media Upload</button>
           </div>
         </Link>
         <Link style={{ textDecoration: 'none' }} href="/pages/modify">
           <div className="admin-tile">  
-            <button>Modify page</button>
+            <button>Edit Page</button>
           </div>
         </Link>
         <Link style={{ textDecoration: 'none' }} href="/">

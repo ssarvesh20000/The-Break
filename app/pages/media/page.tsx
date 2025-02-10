@@ -1,21 +1,15 @@
+//UPLOADING MEDIA PAGE
 'use client';
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import plus from "@assets/plusButton.png";
-import image from "@assets/image.png";
-import TextEditor from "@components/TextEditor";
+//import TextEditor from "@components/TextEditor";
 import "@styles/write.css";
 import { useRouter } from "next/navigation";
 
 const Write = () => {
-  const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const [media, setMedia] = useState<File | null>(null);
-  const [mediaPreview, setMediaPreview] = useState<string | null>(null);
+  const [media, setMedia] = useState("");
   const [description, setDescription] = useState("");
-  const [content, setContent] = useState("");
-  const [category, setCategory] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormDirty, setIsFormDirty] = useState(false);
   const router = useRouter();
@@ -54,11 +48,8 @@ const Write = () => {
   const clearForm = () => {
     setTitle("");
     setAuthor("");
-    setMedia(null);
-    setMediaPreview(null);
+    setMedia("");
     setDescription("");
-    setContent("");
-    setCategory("");
     setIsFormDirty(false);
   };
 
@@ -69,27 +60,32 @@ const Write = () => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("author", author);
-    formData.append("category", category);
-    if (media) formData.append("image", media);
+    formData.append("media", media);
     formData.append("description", description);
-    formData.append("content", content);
 
     try {
-      const res = await fetch("/api/admin", {
+       /* Change the api endpoint below to where this data is getting POST'ed to
+        To get started making this new backend/ api endpoint u should check out api/admin folder in the app
+        see what the POST method looks like in there specifically (basically just taking data that is sent in the request and adding it to the database)
+          (main diff between the existing POST method and urs is u dont have to worry about saving images, so ur method should be smaller/ simpler)
+        you wanna make a new folder called api/media and follow the same idea as the POST method in api/admin
+        once u r able to add a media thing to the db (u check the website and see it) go to mediaView.tsx, see comment on line 24 
+       */
+      const res = await fetch("/api/media", {
         method: "POST",
         body: formData,
       });
 
       if (res.ok) {
-        alert("Blog created successfully");
+        alert("Media uploaded successfully");
         clearForm();
         router.push("/pages/admin");
       } else {
-        alert("Failed to create blog");
+        alert("Failed to create media entry");
       }
     } catch (error) {
-      console.error("Error creating blog:", error);
-      alert("Error creating blog");
+      console.error("Error creating media:", error);
+      alert("Error creating media");
     } finally {
       setIsSubmitting(false);
     }
@@ -132,81 +128,23 @@ const Write = () => {
           required
         />
 
-        <h1>Select Article Category</h1>
-        <select 
-          value={category} 
-          onChange={(e) => { setCategory(e.target.value); setIsFormDirty(true); }} 
-          required
-        >
-          <option value="" disabled>Select a category</option>
-          <option value="United States">United States</option>
-          <option value="San Diego">San Diego</option>
-          <option value="World">World</option>
-          <option value="Opinion">Opinion</option>
-          {/*<option value="Multimedia">Multimedia</option>*/}
-        </select>
-
         <div className="media-upload">
-          <h1>Upload Image</h1>
-          <button 
-            type="button" 
-            className="upload-button"
-            onClick={() => setOpen(!open)}
-          >
-            <Image src={plus} alt="add" width={20} height={20} />
-          </button>
-          
-          {open && (
-            <div className="upload-options">
-              <label htmlFor="uploadImage" style={{ cursor: "pointer" }}>
-                <Image src={image} alt="Upload Image" width={20} height={20} />
-                <input 
-                  type="file"
-                  id="uploadImage"
-                  accept="image/*"
-                  style={{ display: "none" }}
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file) {
-                      setMedia(file);
-                      const reader = new FileReader();
-                      reader.onloadend = () => setMediaPreview(reader.result as string);
-                      reader.readAsDataURL(file);
-                    }
-                  }}
-                />
-              </label>
-            </div>
-          )}
-          
-          {mediaPreview && (
-            <div className="media-preview">
-              <h3>Preview:</h3>
-              <Image 
-                src={mediaPreview} 
-                alt="Selected Media"
-                width={0}
-                height={0}
-                style={{ width: '30%', height: 'auto' }}
-              />
-            </div>
-          )}
+          <h1>Input Youtube Link</h1>
+          <input 
+            type="text" 
+            placeholder = "Youtube Link"
+            className="media-input"
+            onChange={(e) => { setMedia(e.target.value); setIsFormDirty(true); }}
+          />
         </div>
 
-        <h1>Input Image Description</h1>
+        <h1>Input Video Description</h1>
         <textarea 
           placeholder="Description"
           value={description}
           onChange={(e) => { setDescription(e.target.value); setIsFormDirty(true); }}
           required
         />
-
-        <div className="editor-container">
-          <TextEditor 
-            value={content}
-            onChange={(updatedContent: string) => { setContent(updatedContent); setIsFormDirty(true); }}
-          />
-        </div>
 
         <button 
           type="submit" 

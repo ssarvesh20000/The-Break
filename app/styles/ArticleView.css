@@ -90,41 +90,25 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .view-image-description-wrapper {
-        float: none; /* Disable float for smaller screens */
-        display: block;
-        margin: 0 auto 16px; /* Center the wrapper */
-        width: 100%; /* Full width on smaller screens */
-        max-width: 450px; /* Restrict to original max width */
-    }
-
-    .article-view-image {
-        padding: 16px;
-        overflow-x: hidden;
-        
-    }
     .article-view-container {
-        width: calc(100% - 32px); /* Add breathing space for padding */
-        margin: 0 auto; /* Center the content */
+        padding: 0 16px;
+        width: 95%;
     }
     
-        .article-view-outer-container {
-            padding: 16px; /* Add padding to prevent content cutoffs */
-            margin: 0 auto; /* Center align for smaller screens */
-            width: 100%; /* Ensure it adapts to smaller screens */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-
-        .article-view-page {
-            padding: 16px; /* Add padding to prevent cutoff */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-
-    .article-view-description {
-        text-align: justify; /* Ensure text remains justified */
+    .article-view-image {
+        width: 100%;
+        height: auto;
     }
-
+    
+    .article-view-title {
+        font-size: 1.5rem;
+    }
+    
+    .article-view-author {
+        font-size: 1rem;
+    }
+    
     .article-view-content {
-        clear: both; /* Content flows fully below on smaller screens */
+        font-size: 1rem;
     }
 }
