@@ -99,13 +99,16 @@
     }
 
     .article-view-image {
-        padding: 16px;
-        overflow-x: hidden;
-        
+        padding: 0;
+        width: 100%; /* Full width on smaller screens */
+        margin: 0;
     }
     .article-view-container {
-        width: calc(100% - 32px); /* Add breathing space for padding */
-        margin: 0 auto; /* Center the content */
+        padding: 0 20px; /* Add padding to prevent cutoffs */
+       /*
+        width: calc(100% - 32px); /* Add breathing space for padding 
+        margin: 0 auto; /* Center the content 
+        */
     }
     
         .article-view-outer-container {
@@ -126,5 +129,6 @@
 
     .article-view-content {
         clear: both; /* Content flows fully below on smaller screens */
+        width: 100%; /* Full width on smaller screens */
     }
 }
