@@ -23,7 +23,7 @@ const MediaView = () => {
       try {
 
         console.log("Fetching Media with ID:", id);
-        const response = await fetch(`/api/media/${id}`);
+        const response = await fetch(`/api/mediaView/${id}`);
         const data = await response.json();
         setMedia(data.data);
       } catch (error) {
@@ -78,13 +78,3 @@ const MediaView = () => {
 }; 
 
 export default MediaView;
-
-
-/* congratulations on completing the first part of the mission in adding media to the db sarvy
-(also an idea, for modifying and delete media, u can add a tab in the modify page so the user can toggle between seeing blogs or media. just an idea lmk if u think having a whole new button is better for it)
-looks like u changed the api route already so thats good. so just check out the GET function in api/admin/routes.ts and it should be similar for media
-again sh be easier since we dont have an image, should just require returning the data and the frontend can handle turning the url into actual stuff to show
-if the api requires we pass in smth else other than a youtube url these api endpoint may require we pass in return diff (more processes) data so the frotnend api can handle it
-so maybe do some research on how that frontend api works to render youtube content. test it out with a hard coded youtube url and see what it gives u
-other than that this file is p small, just update that api endpoint and then replace line 59 instead of Image u put in ur api to render youtube url
-*/

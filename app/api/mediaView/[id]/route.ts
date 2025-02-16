@@ -5,7 +5,6 @@ import { ObjectId } from 'mongodb';
 
 type idParam = Promise<{ id: string }>;
 
-// TODO sarvy update this function to retrieve media instead of blogs, I have just copy and pasted the blog one here
 // GET endpoint to get media by id
 export async function GET(_: NextRequest, props: { params: idParam }) {
     await ConnectDB();

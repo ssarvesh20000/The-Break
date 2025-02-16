@@ -4,11 +4,7 @@ import "@styles/write.css";
 import { useRouter, useParams } from "next/navigation";
 import { Media } from "@interfaces/Media";
 
-
-
 const MediaEdit = () => {
-
-
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [youtubeLink, setYoutubeLink] = useState("");
@@ -26,7 +22,7 @@ const MediaEdit = () => {
     const fetchArticle = async () => {
       try {
         console.log("Fetching article with ID:", id);
-        const response = await fetch(`/api/media/${id}`);
+        const response = await fetch(`/api/mediaView/${id}`);
         const data = await response.json();
         setMedia(data.data);
 
@@ -43,21 +39,7 @@ const MediaEdit = () => {
         console.error("Error fetching article:", error);
       }
     };
-
-    const checkAuthentication = async () => {
-      try {
-        const res = await fetch("/api/login", {
-          method: "GET",
-          credentials: "include",
-        });
-        if (!res.ok) router.push("/pages/login");
-      } catch (error) {
-        console.error("Error checking authentication:", error);
-        router.push("/pages/login");
-      }
-    };
-
-    checkAuthentication();
+    
     fetchArticle();
   }, [router]);
 

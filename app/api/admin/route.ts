@@ -60,7 +60,6 @@ export async function POST(request: Request) {
     if (!image) {
         return NextResponse.json({ error: "Image is required" }, { status: 400 });
     }
-    // TODO add functionality if user uploads video
     if (image instanceof File) {
         // Get the fileId of the uploaded image
         const imageId = await uploadMedia(image);

@@ -18,8 +18,6 @@ export async function GET() {
     }
 }
 
-
-
 //POST function to add to blog to database, used in write page to add blog from form
 export async function POST(request: Request) {
     await ConnectDB();
@@ -57,7 +55,6 @@ export async function DELETE(request: Request) {
     }
 
 //    await deleteMedia(media.image);
-
     try {
         await MediaModel.deleteOne({ _id: id });
         return NextResponse.json({ success: true });
