@@ -21,21 +21,6 @@ const Write = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const checkAuthentication = async () => {
-      try {
-        const res = await fetch("/api/login", {
-          method: "GET",
-          credentials: "include",
-        });
-        if (!res.ok) router.push("/pages/login");
-      } catch (error) {
-        console.error("Error checking authentication:", error);
-        router.push("/pages/login");
-      }
-    };
-
-    checkAuthentication();
-
     // handle reload and tab exit protection
     function beforeUnload(e: BeforeUnloadEvent) {
       if (isFormDirty) {

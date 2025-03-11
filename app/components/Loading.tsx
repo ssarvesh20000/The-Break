@@ -1,5 +1,25 @@
-import Image from "next/image";
+const Loading = () => {
+    return (
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "#f8f9fa",
+            }}
+        >
+            <p style={{ fontSize: "20px", color: "#555" }}>
+                Loading...
+            </p>
+        </div>
+    );
+};
 
+export default Loading;
+
+/*
+import Image from "next/image";
 const Loading = () => {
     return (
         <div
@@ -13,7 +33,7 @@ const Loading = () => {
             }}
             >
             <Image
-                src="/assets/logo.png" // Ensure this path is correct for your Next.js project
+                src="/assets/logo.png" 
                 alt="Loading..."
                 width={500}
                 height={250}
@@ -26,3 +46,4 @@ const Loading = () => {
 };
 
 export default Loading;
+*/

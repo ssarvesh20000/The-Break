@@ -35,14 +35,3 @@ export async function POST(request: Request) {
         return NextResponse.json({ status: false}, { status: 500 });
     }
 }
-
-// GET function to check if user is logged in
-export async function GET(request: Request) {
-    const cookies = request.headers.get("cookie");
-
-    if (cookies?.includes("authToken=authenticated")) {
-        return NextResponse.json({ authenticated: true });
-    }
-
-    return NextResponse.json({ authenticated: false }, { status: 401 });
-}

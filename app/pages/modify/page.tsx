@@ -16,22 +16,6 @@ const Modify = () => {
   const [showMedia, setShowMedia] = useState(false);
 
   useEffect(() => {
-    const checkAuthentication = async () => {
-      try {
-        const res = await fetch("/api/login", {
-          method: "GET",
-          credentials: "include", // Include cookies in the request
-        });
-
-        if (!res.ok) { // if cookie is not present, redirect to login page
-          router.push("/pages/login");
-        }
-      } catch (error) {
-        console.error("Error checking authentication:", error);
-        router.push("/pages/login");
-      }
-    };
-
     const fetchBlogs = async () => {
       try {
         const res = await fetch("/api/admin");
@@ -60,8 +44,7 @@ const Modify = () => {
         console.error("Error fetching media uploads:", error);
       }
     };
-
-    checkAuthentication();
+    
     fetchBlogs();
     fetchMedia();
   }, [router]);

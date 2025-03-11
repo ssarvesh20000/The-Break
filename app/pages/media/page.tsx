@@ -15,21 +15,6 @@ const Write = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const checkAuthentication = async () => {
-      try {
-        const res = await fetch("/api/login", {
-          method: "GET",
-          credentials: "include",
-        });
-        if (!res.ok) router.push("/pages/login");
-      } catch (error) {
-        console.error("Error checking authentication:", error);
-        router.push("/pages/login");
-      }
-    };
-
-    checkAuthentication();
-
     // handle reload and tab exit protection
     function beforeUnload(e: BeforeUnloadEvent) {
       if (isFormDirty) {
@@ -64,13 +49,6 @@ const Write = () => {
     formData.append("description", description);
 
     try {
-       /* Change the api endpoint below to where this data is getting POST'ed to
-        To get started making this new backend/ api endpoint u should check out api/admin folder in the app
-        see what the POST method looks like in there specifically (basically just taking data that is sent in the request and adding it to the database)
-          (main diff between the existing POST method and urs is u dont have to worry about saving images, so ur method should be smaller/ simpler)
-        you wanna make a new folder called api/media and follow the same idea as the POST method in api/admin
-        once u r able to add a media thing to the db (u check the website and see it) go to mediaView.tsx, see comment on line 24 
-       */
       const res = await fetch("/api/media", {
         method: "POST",
         body: formData,
