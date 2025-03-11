@@ -52,7 +52,7 @@ const Multimedia: React.FC = () => {
   return (
     <div className="page-container">
       <HeaderNav />
-      <main className="main-content">
+      {/*<main className="main-content">*/}
         <div className="san-diego-page">
           <h2 className="category-title">Category</h2>
           <h1 className="page-title">Multimedia</h1>
@@ -109,7 +109,7 @@ const Multimedia: React.FC = () => {
             )}
           </div>
         </div>
-      </main>
+      {/*</main>*/}
       <Footer />
     </div>
   );

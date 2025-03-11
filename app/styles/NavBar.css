@@ -176,6 +176,7 @@
         background-color: white;
         padding: 40px 20px;
         gap: 30px;
+        font-size: 0.0rem;
         overflow-y: auto;
         z-index: 1019;
     }
