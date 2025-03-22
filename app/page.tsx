@@ -46,7 +46,7 @@ const Home: React.FC = () => {
         const recentMediaRes = await fetch("/api/recentMedia");
         const recentMediaData = await recentMediaRes.json();
         if (recentMediaData.success) {
-          setRecentMedia(recentMediaData.data);
+          setRecentMedia(recentMediaData.data.slice(0, 2)); // trim returned media to only have first two items
         } else {
           console.error("Failed to fetch media:", recentMediaData.error);
         }

@@ -15,19 +15,15 @@ const Multimedia: React.FC = () => {
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        const response = await fetch(`/api/media`);
+        const response = await fetch(`/api/recentMedia`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
         if (data.success) {
-          // Sort media by date (newest first)
-          const sortedMedia = data.data.sort(
-            (a: Media, b: Media) => new Date(b.date).getTime() - new Date(a.date).getTime()
-          );
-          setMedia(sortedMedia);
-          console.log("Fetched and sorted media:", sortedMedia);
+          setMedia(data.data);
+          console.log("Fetched and sorted media:", data.data);
         } else {
           console.error("Failed to fetch media:", data.error);
         }
