@@ -124,24 +124,29 @@
   }
 
   .article {
-    flex-direction: column;
-    padding: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    width: 100%;
+    /* Switch to a horizontal layout but reversed so content comes first */
+    flex-direction: row-reverse;
+    align-items: center;
   }
-
-  .article-image, .article-video {
-    width: 100% !important;
+  
+  .article-image,
+  .article-video {
+    /* Reduce image width so it fits beside the text */
+    width: 40% !important;
     height: auto !important;
-    aspect-ratio: 16/9;
-    margin: 0 0 16px 0;
+    /* Remove the right margin (default for desktop) and add left margin */
+    margin-right: 0;
+    margin-left: 20px;
   }
 
   .article-content {
-    width: 100%;
-    padding: 0;
+    /* Allow the text block to take the remaining space */
+    width: 60%;
+  }
+  
+  /* Hide the article excerpt (content) in mobile view */
+  .article-content > div:nth-child(3) {
+    display: none;
   }
 
   .article-title {
